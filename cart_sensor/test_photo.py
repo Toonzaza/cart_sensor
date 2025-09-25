@@ -4,7 +4,7 @@
 import os, sys, time, json, argparse, threading
 import serial
 
-# ================== GPIO (Trigger from GPIO16) ==================
+# ================== GPIO (Trigger from GPIO16 & GPIO20) ==================
 # ใช้ gpiozero + lgpio ตามตัวอย่างของคุณ
 os.environ.setdefault("GPIOZERO_PIN_FACTORY", "lgpio")
 try:
@@ -13,9 +13,9 @@ except Exception as e:
     DigitalInputDevice = None
     print(f"[GPIO] gpiozero not available: {e}", file=sys.stderr)
 
-GPIO_PIN     = 16       # ใช้ขา GPIO16 เป็น trigger
-GPIO_PULL_UP = False    # เหมือนตัวอย่างของคุณ
-DEBOUNCE_MS  = 200      # กันเด้งขอบสั้นๆ
+GPIO_PIN_RFID     = 16       # ใช้ขา GPIO16 เป็น trigger RFID
+GPIO_PULL_UP      = False    # เหมือนตัวอย่างของคุณ
+DEBOUNCE_MS       = 200      # กันเด้งขอบสั้นๆ
 
 # ================== ค่าพื้นฐาน/พอร์ต ==================
 BARCODE_PORTS = {
@@ -227,9 +227,10 @@ def elara_read_until(max_seconds, n_words_to_decode):
 
     return (epc, rssi, last_words, ascii_txt)
 
-# ================== GPIO Trigger Thread ==================
-_elara_lock = threading.Lock()
-_stop_event = threading.Event()
+# ================== GPIO Trigger Threads ==================
+_elara_lock   = threading.Lock()
+_barcode_lock = threading.Lock()
+_stop_event   = threading.Event()
 
 def _print_elara_result(epc, rssi, last_words, ascii_txt):
     if epc:
@@ -242,26 +243,27 @@ def _print_elara_result(epc, rssi, last_words, ascii_txt):
     else:
         print("[ELARA] no tag (timeout)")
 
-def start_gpio_trigger(n_words, max_wait):
+def start_gpio_trigger_rfid(n_words, max_wait, gpio_pin=GPIO_PIN_RFID):
     if DigitalInputDevice is None:
         print("[GPIO] Disabled (gpiozero not available)")
         return None
 
-    sensor = DigitalInputDevice(GPIO_PIN, pull_up=GPIO_PULL_UP,
+    sensor = DigitalInputDevice(gpio_pin, pull_up=GPIO_PULL_UP,
                                 bounce_time=DEBOUNCE_MS/1000.0)
 
-    print(f"[GPIO] Trigger armed on GPIO{GPIO_PIN} (falling edge).")
+    print(f"[GPIO] RFID trigger armed on GPIO{gpio_pin} (falling edge).")
 
     def _on_falling():
         now = time.monotonic()
-        print(f"[GPIO] Falling detected @ {now:.3f}, reading RFID ...")
-        with _elara_lock:
-            epc, rssi, last_words, ascii_txt = elara_read_until(max_wait, n_words)
-        _print_elara_result(epc, rssi, last_words, ascii_txt)
+        print(f"[GPIO] (RFID) Falling detected @ {now:.3f}, reading RFID ...")
+        def _worker():
+            with _elara_lock:
+                epc, rssi, last_words, ascii_txt = elara_read_until(max_wait, n_words)
+            _print_elara_result(epc, rssi, last_words, ascii_txt)
+        threading.Thread(target=_worker, daemon=True).start()
 
-    # 🔻 ใช้ขาลงแทน
+    # ใช้ขาลงแทน
     sensor.when_deactivated = _on_falling
-    # (ถ้ากังวลว่าเด้ง ให้ออฟ rising ทิ้งไปเลย)
     sensor.when_activated = None
 
     def _loop():
@@ -272,23 +274,68 @@ def start_gpio_trigger(n_words, max_wait):
     t.start()
     return sensor
 
+def start_gpio_barcode_trigger(gpio_pin, ser, timeout=5.0, name="BARCODE"):
+    """
+    สายโฟโตต่อ GPIO gpio_pin -> ตกขอบ (falling) จะสั่งให้สแกนบาร์โค้ด 1 ครั้ง
+    - ใช้ thread แยก + _barcode_lock กันยิงซ้ำ
+    """
+    if DigitalInputDevice is None:
+        print("[GPIO] Disabled (gpiozero not available)")
+        return None
+    if ser is None:
+        print(f"[{name}] Serial not open; barcode GPIO trigger disabled.")
+        return None
+
+    sensor = DigitalInputDevice(gpio_pin, pull_up=GPIO_PULL_UP,
+                                bounce_time=DEBOUNCE_MS/1000.0)
+
+    print(f"[GPIO] {name} trigger armed on GPIO{gpio_pin} (falling edge).")
+
+    def _on_falling():
+        now = time.monotonic()
+        print(f"[GPIO] ({name}) Falling detected @ {now:.3f}, scanning barcode ...")
+        def _worker():
+            if not _barcode_lock.acquire(blocking=False):
+                print(f"[{name}] scan skipped (busy).")
+                return
+            try:
+                code = mcr12_scan_until(ser, max_seconds=timeout)
+                if code:
+                    print(f"[{name}] READ: {code}")
+                else:
+                    print(f"[{name}] no read (timeout={timeout}s)")
+            finally:
+                _barcode_lock.release()
+        threading.Thread(target=_worker, daemon=True).start()
+
+    sensor.when_deactivated = _on_falling
+    sensor.when_activated = None
+    return sensor
+
 # ================== main ==================
 def main():
-    global GPIO_PIN
+    global GPIO_PIN_RFID
 
-
-    parser = argparse.ArgumentParser(description="Smart cart barcode/RFID utility (GPIO16 triggers RFID)")
+    parser = argparse.ArgumentParser(description="Smart cart barcode/RFID utility (GPIO16 triggers RFID, GPIO20 triggers BARCODE)")
+    # RFID
     parser.add_argument("--rfid-words", type=int, default=DEFAULT_RFID_WORDS,
                         help="จำนวนคำ (16-bit words) ท้ายที่ต้องการถอด ASCII จาก RFID (ค่าเริ่มต้น 5)")
     parser.add_argument("--rfid-timeout", type=float, default=MAX_WAIT_UNTIL_READ,
                         help="กำหนดเวลารออ่าน RFID เป็นวินาที; ไม่กำหนด = รอไม่จำกัด")
-    parser.add_argument("--gpio-pin", type=int, default=GPIO_PIN,
-                        help="กำหนดขา GPIO ที่ใช้เป็น trigger (ค่าเริ่มต้น 16)")
+    parser.add_argument("--gpio-pin", type=int, default=GPIO_PIN_RFID,
+                        help="กำหนดขา GPIO ที่ใช้เป็น trigger RFID (ค่าเริ่มต้น 16)")
+    # BARCODE via GPIO
+    parser.add_argument("--barcode-gpio-pin", type=int, default=20,
+                        help="กำหนดขา GPIO ที่ใช้เป็น trigger BARCODE (ค่าเริ่มต้น 20)")
+    parser.add_argument("--barcode-dev", choices=['1','2'], default='1',
+                        help='เลือกอุปกรณ์บาร์โค้ดที่จะยิงเมื่อ GPIO ทริกเกอร์ ("1"=/dev/barcode0, "2"=/dev/barcode1)')
+    parser.add_argument("--barcode-timeout", type=float, default=5.0,
+                        help="กำหนดเวลารออ่าน BARCODE (วินาที) เมื่อถูกทริกเกอร์จาก GPIO (ค่าเริ่มต้น 5)")
+
     args = parser.parse_args()
 
-    # sync ค่า GPIO_PIN ตาม argument
-    
-    GPIO_PIN = args.gpio_pin
+    # sync ค่า GPIO_PIN_RFID ตาม argument
+    GPIO_PIN_RFID = args.gpio_pin
 
     # เปิด Elara และตั้งค่าโหมด manual
     elara_open()
@@ -302,15 +349,26 @@ def main():
             print(f"[BARCODE{key}] open {port} ok")
         except Exception as e:
             print(f"[BARCODE{key}] open {port} failed: {e}")
+            sers[key] = None
 
     # เริ่ม GPIO trigger สำหรับ RFID (แทนโหมด 3)
-    gpio_obj = start_gpio_trigger(args.rfid_words, args.rfid_timeout)
+    gpio_rfid = start_gpio_trigger_rfid(args.rfid_words, args.rfid_timeout, gpio_pin=GPIO_PIN_RFID)
+
+    # เริ่ม GPIO trigger สำหรับ BARCODE จากโฟโตที่ GPIO20 (หรือที่กำหนด)
+    barcode_ser = sers.get(args.barcode_dev)
+    gpio_barcode = start_gpio_barcode_trigger(
+        gpio_pin=args.barcode_gpio_pin,
+        ser=barcode_ser,
+        timeout=args.barcode_timeout,
+        name=f"BARCODE{args.barcode_dev}"
+    )
 
     print("===== WAIT MODE =====")
-    print("1 = scan /dev/barcode0 (สแกนต่อเนื่องจนได้ค่า)")
-    print("2 = scan /dev/barcode1 (สแกนต่อเนื่องจนได้ค่า)")
-    print("   * RFID: ใช้สัญญาณจาก GPIO16 (rising) เพื่ออ่านแท็กอัตโนมัติ")
-    print("q = quit")
+    # print("1 = scan /dev/barcode0 (สแกนต่อเนื่องจนได้ค่า)")
+    # print("2 = scan /dev/barcode1 (สแกนต่อเนื่องจนได้ค่า)")
+    # print(f"   * RFID: ใช้สัญญาณจาก GPIO{GPIO_PIN_RFID} (falling) เพื่ออ่านแท็กอัตโนมัติ")
+    # print(f"   * BARCODE: ใช้สัญญาณจาก GPIO{args.barcode_gpio_pin} (falling) เพื่อยิงอ่าน BARCODE{args.barcode_dev}")
+    # print("q = quit")R
     print("----------------------")
 
     try:
@@ -319,7 +377,7 @@ def main():
             if sel in ('q', 'quit', 'exit'):
                 break
             elif sel in ('1', '2'):
-                if sel not in sers:
+                if sers.get(sel) is None:
                     print(f"[BARCODE{sel}] port not open"); continue
                 print(f"[BARCODE{sel}] scanning... (Ctrl+C to cancel)")
                 try:

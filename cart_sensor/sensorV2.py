@@ -1,104 +1,146 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import os
-os.environ.setdefault("GPIOZERO_PIN_FACTORY", "lgpio")  # Ubuntu on RPi
+import serial, json, time, argparse, sys
 
-import serial, json, time, threading, signal
-from gpiozero import DigitalInputDevice
+import paho.mqtt.client as mqtt
+from datetime import datetime
 
-# ================== CONFIG ==================
-ELARA_TTY   = '/dev/elara0'
+mqtt_cli = None
+
+def mqtt_connect(host, port, user=None, password=None, client_id="reader-node", keepalive=30):
+    global mqtt_cli
+    mqtt_cli = mqtt.Client(client_id=client_id, clean_session=True)
+    if user and password:
+        mqtt_cli.username_pw_set(user, password)
+    mqtt_cli.connect(host, port, keepalive)
+    mqtt_cli.loop_start()
+
+def mqtt_pub(topic, obj, qos=0, retain=False):
+    if mqtt_cli:
+        payload = json.dumps(obj, ensure_ascii=False)
+        mqtt_cli.publish(topic, payload, qos=qos, retain=retain)
+
+def now_ms():
+    return int(time.time() * 1000)
+
+
+# ================== ค่าพื้นฐาน/พอร์ต ==================
+BARCODE_PORTS = {
+    '1': '/dev/barcode0',  # -> /dev/ttyACM1 ไม่มี plate ช่องบน
+    '2': '/dev/barcode1',  # -> /dev/ttyACM2 มี plate ช่องล่าง
+}
+BARCODE_BAUD = 9600
+
+ELARA_TTY   = '/dev/elara0'   # -> /dev/ttyACM3 ช่องบนขวา
 ELARA_BAUD  = 115200
+ELARA_SAVE  = False
 
-PHOTO_GPIO  = 16          # โฟโต้อิเล็กทริกที่ GPIO16 (active-LOW)
-DEBOUNCE_S  = 0.03
-COOLDOWN_S  = 0.8
-ELARA_WINDOW_S = 3.0      # เวลารอรายงานหลัง Start
-VERBOSE_RAW = True
+# ถ้าอยากกันรอนานเกินไป ให้กำหนดวินาที; None = รอไม่จำกัด
+MAX_WAIT_UNTIL_READ = None
 
-RFID_LAST_WORDS = 5       # จำนวนคำ 16-bit ท้ายที่ถอด ASCII
+# จำนวน "คำ" ท้าย (16-bit words) ที่ต้องการถอดเป็น ASCII จาก RFID (ปรับได้ตอนรันด้วย --rfid-words)
+DEFAULT_RFID_WORDS = 5
 
-# ================== LOG ==================
-def log(msg):
-    print(time.strftime("[%H:%M:%S]"), msg, flush=True)
+# ================== MCR12: serial command helpers ==================
+def _mcr12_frame(cmd, da_bytes_12):
+    """ประกอบเฟรมตามสเปค MCR12: STX(0x02), CMD, DA0..DA11(12B), ETX(0x03), SUM"""
+    data = bytearray([0x02, cmd]) + bytearray(da_bytes_12[:12]) + bytearray([0x03])
+    checksum = (256 - (sum(data) & 0xFF)) & 0xFF
+    data.append(checksum)
+    return data
 
-# ================== ELARA I/O ==================
+def mcr12_enable(ser, delay_ms=0):
+    """
+    เริ่มสแกน: delay_ms=0 = ยิงต่อเนื่องจนหยุดด้วย disable,
+    delay_ms>0 = ยิงแบบกำหนดเวลา (ms)
+    """
+    DA0 = 0x01
+    if delay_ms and delay_ms > 0:
+        DA1 = 0x02
+        DA2 =  delay_ms        & 0xFF
+        DA3 = (delay_ms >> 8)  & 0xFF
+    else:
+        DA1, DA2, DA3 = 0x01, 0x00, 0x00
+    da = [DA0, DA1, DA2, DA3] + [0x00]*8
+    ser.write(_mcr12_frame(0x01, da))
+
+def mcr12_disable(ser):
+    """หยุดสแกน"""
+    da = [0x01, 0x00] + [0x00]*10
+    ser.write(_mcr12_frame(0x01, da))
+
+def mcr12_scan_until(ser, max_seconds=MAX_WAIT_UNTIL_READ):
+    """สแกนต่อเนื่องจนกว่าจะอ่านได้ 1 บรรทัด แล้วหยุด/คืนข้อความบาร์โค้ด (ยกเลิกด้วย Ctrl+C)"""
+    try: ser.reset_input_buffer()
+    except Exception: pass
+    mcr12_enable(ser, delay_ms=0)
+    t0 = time.time()
+    buf = bytearray()
+    line = None
+    try:
+        while True:
+            chunk = ser.read(256)
+            if chunk:
+                buf += chunk
+                if b'\r' in buf or b'\n' in buf:
+                    line = buf.replace(b'\r', b'\n').split(b'\n')[0].decode('utf-8', 'ignore').strip()
+                    if line:
+                        break
+            else:
+                time.sleep(0.01)
+            if max_seconds is not None and (time.time() - t0) > max_seconds:
+                break
+    finally:
+        mcr12_disable(ser)
+    return line
+
+# ================== ELARA: JSON/RCI helpers ==================
 elara = None
-io_lock = threading.Lock()
-
 def elara_open():
     global elara
-    if elara and elara.is_open:
-        return True
     try:
-        elara = serial.Serial(ELARA_TTY, ELARA_BAUD, timeout=0.1, write_timeout=0.5)
-        try:
-            elara.reset_input_buffer()
-            elara.reset_output_buffer()
-        except Exception:
-            pass
-        log(f"[ELARA] open {ELARA_TTY} ok")
-        return True
+        elara = serial.Serial(ELARA_TTY, ELARA_BAUD, timeout=0.2)
+        print(f"[ELARA] open {ELARA_TTY} ok")
     except Exception as e:
-        log(f"[ELARA] open {ELARA_TTY} failed: {e}")
+        print(f"[ELARA] open {ELARA_TTY} failed: {e}")
         elara = None
-        return False
 
-def _send(obj):
+def jsend(obj):
     if not elara: return
-    s = json.dumps(obj, separators=(',',':'))  # กำจัดช่องว่างให้เรียบสุด
-    elara.write((s + '\r\n').encode('utf-8'))
-    if VERBOSE_RAW:
-        log(f"[ELARA-TX] {s}")
+    elara.write((json.dumps(obj) + '\r\n').encode('utf-8'))
 
-def _read_lines(duration):
+def jread(timeout=0.3):
+    """อ่านสั้น ๆ (สำหรับวนซ้ำเอง)"""
     if not elara: return []
     t0 = time.time()
-    out = []
-    while time.time() - t0 < duration:
+    lines = []
+    while time.time() - t0 < timeout:
         ln = elara.readline()
         if ln:
             s = ln.decode('utf-8', 'ignore').strip()
-            if s:
-                if VERBOSE_RAW:
-                    log(f"[ELARA-RAW] {s}")
-                out.append(s)
+            if s: lines.append(s)
         else:
             time.sleep(0.02)
-    return out
+    return lines
 
-def _looks_like_error(s):
-    try:
-        msg = json.loads(s)
-    except Exception:
-        return False
-    return 'ErrID' in msg or (msg.get('Report','').lower().startswith('unknown'))
+def elara_set_manual_mode():
+    """ตั้งค่าให้ Elara เงียบจนกว่าจะสั่ง StartRZ และรายงาน EPC,RSSI,MB"""
+    if not elara: return
+    jsend({"Cmd":"StopRZ","RZ":["ALL"]}); _ = jread(0.2)
+    jsend({"Cmd":"SetCfg","Cfg":{"RdrStart":"NOTACTIVE"}}); _ = jread(0.2)
+    jsend({"Cmd":"SetProf","Prof":[{"ID":1,"DwnCnt":1}]});   _ = jread(0.2)
+    jsend({"Cmd":"SetRZ","RZ":[{"ID":0,"ProfIDs":[1]}]});    _ = jread(0.2)
+    jsend({"Cmd":"SetRpt","Rpt":{"Fields":["EPC","RSSI","MB"]}}); _ = jread(0.2)
+    if ELARA_SAVE:
+        jsend({"Cmd":"Save"}); _ = jread(0.5)
 
-def _try_cmd(variants, read_for=0.25, stop_on_success=True, label="CMD"):
-    """
-    ส่งคำสั่งหลายรูปแบบ (fallback) จนกว่าจะเห็นว่ารับได้ (ไม่มี ErrID ใน RAW)
-    คืน True/False
-    """
-    ok = False
-    for obj in variants:
-        _send(obj)
-        lines = _read_lines(read_for)
-        if not lines:
-            # ไม่มีอะไรตอบกลับ ก็ถือว่า "ไม่นับผิด" ลองตัวถัดไป
-            ok = True
-            if stop_on_success: break
-            continue
-        # ถ้าไม่มีบรรทัดไหนเป็น error → success
-        if not any(_looks_like_error(s) for s in lines):
-            ok = True
-            if stop_on_success: break
-    if not ok:
-        log(f"[ELARA] {label} variants all returned error (continuing anyway)")
-    return ok
-
-# ================== Decode helpers (เหมือนโค้ดเดิม) ==================
+# --------- ตัวช่วยแตก "คำ" และถอด ASCII จาก MB/EPC ---------
 def _split_words_from_mb(mb_field):
+    """
+    รับ MB รูป [[bank, offset, ":hhhh:hhhh:..."], ...]
+    คืน list คำ 4-hex (เช่น ["4d58","4b32",...]) ตามลำดับซ้าย->ขวา
+    """
     words = []
     if isinstance(mb_field, list):
         for entry in mb_field:
@@ -110,6 +152,10 @@ def _split_words_from_mb(mb_field):
     return words
 
 def _split_words_from_epc(epc_hex):
+    """
+    รับ EPC เป็น hex string เช่น '4d584b32322d313034390000'
+    คืน list คำ 4-hex ต่อเนื่องซ้าย->ขวา
+    """
     if not isinstance(epc_hex, str):
         return []
     h = ''.join([c for c in epc_hex.strip().lower() if c in '0123456789abcdef'])
@@ -118,6 +164,7 @@ def _split_words_from_epc(epc_hex):
     return [h[i:i+4] for i in range(0, len(h), 4)]
 
 def _words_to_ascii(words, big_endian=True):
+    """รวมคำ 16 บิตเป็นไบต์แล้วถอดเป็น ASCII (นอกช่วง 32..126 แทนด้วย '.')"""
     bs = bytearray()
     for w in words:
         val = int(w, 16)
@@ -126,167 +173,180 @@ def _words_to_ascii(words, big_endian=True):
     return ''.join(chr(b) if 32 <= b <= 126 else '.' for b in bs)
 
 def _decode_lastN_ascii_from_msg(msg, n_words):
+    """
+    ดึงคำจาก MB ถ้ามี; ถ้าไม่มีใช้ EPC
+    - ตัด padding '0000' ท้ายออกก่อน
+    - เลือก N คำสุดท้าย (ถ้ามีน้อยกว่า ใช้เท่าที่มี)
+    คืนค่า: (last_words_list, ascii_text) หรือ (None, None)
+    """
     words = []
     if 'MB' in msg:
         words = _split_words_from_mb(msg['MB'])
     if not words and msg.get('EPC'):
         words = _split_words_from_epc(msg['EPC'])
+
     if not words:
         return (None, None)
+
+    # ตัด padding 0000 ด้านท้าย
     while words and words[-1] == '0000':
         words.pop()
     if not words:
         return (None, None)
+
     lastN = words[-n_words:] if len(words) >= n_words else words
     ascii_text = _words_to_ascii(lastN, big_endian=True)
     return (lastN, ascii_text)
 
-def _find_tag_info(msg):
-    """พยายามหยิบ EPC/UII/RSSI จากกุญแจที่เป็นไปได้หลายแบบ"""
-    keys = ('EPC','UII','RSSI')
-    out = {}
-    def walk(x):
-        if isinstance(x, dict):
-            for k,v in x.items():
-                if k in keys and k not in out:
-                    out[k] = v
-                walk(v)
-        elif isinstance(x, list):
-            for it in x:
-                walk(it)
-    walk(msg)
-    return out
-
-# ================== High-level read (single shot) ==================
-def elara_read_single_ascii(window=ELARA_WINDOW_S, n_words=RFID_LAST_WORDS):
+def elara_read_until(max_seconds, n_words_to_decode):
     """
-    Start → read window → Stop. ใช้ fallback หลายรูปแบบของคำสั่ง
+    เริ่มอ่าน RZ0 แล้ววนจนพบ TagEvent จากนั้นหยุด
+    คืนค่า: (epc, rssi, last_words, ascii_text) หรือ (None, None, None, None)
     """
-    if not elara_open():
-        log("[ELARA] no port")
-        return False
+    if not elara:
+        print("[ELARA] no port")
+        return (None, None, None, None)
 
-    # ลองตั้งค่า format รายงานให้แน่ใจ (ไม่บังคับว่าต้องสำเร็จ)
-    _try_cmd(
-        variants=[
-            {"Cmd":"SetRpt","Rpt":{"Fields":["EPC","RSSI","MB"]}},
-            {"Cmd":"SetRpt","Rpt":{"Fields":["EPC","RSSI"]}},
-            {"Cmd":"SetRpt","RptFields":["EPC","RSSI","MB"]},
-        ],
-        read_for=0.25, stop_on_success=True, label="SetRpt"
-    )
+    jsend({"Cmd":"StopRZ","RZ":[0]}); _ = jread(0.1)
+    jsend({"Cmd":"StartRZ","RZ":[0]})
 
-    # กันค้าง: Stop ก่อน
-    _try_cmd(
-        variants=[
-            {"Cmd":"StopRZ","RZ":[0]},
-            {"Cmd":"StopRZ","RZ":0},
-            {"Cmd":"StopRZ"},
-            {"Cmd":"StopRead"},
-        ],
-        read_for=0.2, stop_on_success=True, label="Stop"
-    )
+    t0 = time.time()
+    epc, rssi = None, None
+    last_words, ascii_txt = None, None
 
-    # เริ่มอ่าน
-    log(f"[ELARA] Start (window={window:.1f}s)")
-    started_ok = _try_cmd(
-        variants=[
-            {"Cmd":"StartRZ","RZ":[0]},
-            {"Cmd":"StartRZ","RZ":0},
-            {"Cmd":"StartRZ"},
-            {"Cmd":"StartRead"},
-        ],
-        read_for=0.15, stop_on_success=True, label="Start"
-    )
-
-    tag_msg = None
     try:
-        for s in _read_lines(window):
-            try:
-                msg = json.loads(s)
-            except Exception:
-                continue
-            report = str(msg.get('Report','')).lower()
-            # รับทั้ง TagEvent/TagReport หรือข้อความที่มี EPC/UII
-            if report in ('tagevent','tagreport','tag') or msg.get('EPC') or msg.get('UII'):
-                tag_msg = msg
+        while True:
+            for s in jread(0.3):
+                try:
+                    msg = json.loads(s)
+                except Exception:
+                    continue
+                if msg.get("Report") == "TagEvent":
+                    epc  = msg.get('EPC') or msg.get('UII')
+                    rssi = msg.get('RSSI')
+                    last_words, ascii_txt = _decode_lastN_ascii_from_msg(msg, n_words_to_decode)
+                    raise StopIteration
+            if max_seconds is not None and (time.time() - t0) > max_seconds:
                 break
+    except StopIteration:
+        pass
     finally:
-        _try_cmd(
-            variants=[
-                {"Cmd":"StopRZ","RZ":[0]},
-                {"Cmd":"StopRZ","RZ":0},
-                {"Cmd":"StopRZ"},
-                {"Cmd":"StopRead"},
-            ],
-            read_for=0.2, stop_on_success=True, label="Stop"
-        )
+        jsend({"Cmd":"StopRZ","RZ":[0]})
 
-    if not tag_msg:
-        log("[ELARA] no tag within window")
-        return False
-
-    info = _find_tag_info(tag_msg)
-    epc  = info.get('EPC') or info.get('UII')
-    rssi = info.get('RSSI')
-    last_words, ascii_txt = _decode_lastN_ascii_from_msg(tag_msg, n_words)
-
-    log(f"[ELARA] EPC={epc} RSSI={rssi}")
-    if last_words:
-        log(f"[ELARA] MB/EPC last {len(last_words)} words: {':'.join(last_words)}")
-        log(f"[ELARA] ASCII: {ascii_txt}")
-    else:
-        log("[ELARA] (no MB/EPC words to decode)")
-    return True
-
-# ================== GPIO16 trigger ==================
-def handle_detection():
-    with io_lock:
-        log("[SENSOR] DETECT -> read RFID (single)")
-        elara_read_single_ascii(window=ELARA_WINDOW_S, n_words=RFID_LAST_WORDS)
-
-def run_sensor_loop():
-    sensor = DigitalInputDevice(PHOTO_GPIO, pull_up=False, bounce_time=None)
-    prev = sensor.value
-    log(f"[GPIO{PHOTO_GPIO}] init: {'HIGH(Idle)' if prev else 'LOW(Detect)'}")
-    last_fire = 0.0
-    while True:
-        v = sensor.value
-        if v != prev:
-            log(f"[GPIO{PHOTO_GPIO}] state -> {'HIGH' if v else 'LOW'}")
-            if v is False:  # FALLING
-                time.sleep(DEBOUNCE_S)
-                if sensor.value is False:
-                    now = time.time()
-                    if now - last_fire >= COOLDOWN_S:
-                        last_fire = now
-                        log(f"[GPIO{PHOTO_GPIO}] DETECT (falling) -> reading RFID")
-                        threading.Thread(target=handle_detection, daemon=True).start()
-                    else:
-                        log(f"[GPIO{PHOTO_GPIO}] detect ignored (cooldown)")
-            prev = v
-        time.sleep(0.002)
+    return (epc, rssi, last_words, ascii_txt)
 
 # ================== main ==================
 def main():
-    signal.signal(signal.SIGINT, signal.SIG_DFL)
-    elara_open()  # เปิดพอร์ตรอไว้ก่อน
+    parser = argparse.ArgumentParser(description="Smart cart barcode/RFID utility")
+    parser.add_argument("--rfid-words", type=int, default=DEFAULT_RFID_WORDS,
+                        help="จำนวนคำ (16-bit words) ท้ายที่ต้องการถอด ASCII จาก RFID (ค่าเริ่มต้น 5)")
+    
+    # ---- MQTT options ----
+    parser.add_argument("--mqtt-host", default="127.0.0.1", help="MQTT broker host")
+    parser.add_argument("--mqtt-port", type=int, default=1883, help="MQTT broker port")
+    parser.add_argument("--mqtt-user", default=None)
+    parser.add_argument("--mqtt-pass", default=None)
+    parser.add_argument("--mqtt-base", default="smartcart", help="MQTT topic base")
+    parser.add_argument("--device-id", default="pi5-01", help="who publishes (for trace)")
 
-    # เฝ้า GPIO16 ในเธรด
-    threading.Thread(target=run_sensor_loop, daemon=True).start()
+    
+    args = parser.parse_args()
 
-    log("===== READY =====")
-    print("GPIO16 ต่ำ (photo detect) ⇒ Start read RFID 1 ครั้ง (ถอด ASCII ท้าย)")
-    print("กด Ctrl+C เพื่อออก")
-    print("-----------------")
+    # เปิด Elara และตั้งค่าโหมด manual
+    elara_open()
+    elara_set_manual_mode()
 
-    # main thread ว่างเฉย ๆ ให้ Ctrl+C ได้
+        # เปิด MQTT
+    try:
+        mqtt_connect(args.mqtt_host, args.mqtt_port, args.mqtt_user, args.mqtt_pass,
+                     client_id=f"{args.device_id}-reader")
+        print(f"[MQTT] connected to {args.mqtt_host}:{args.mqtt_port}")
+    except Exception as e:
+        print(f"[MQTT] failed: {e}")
+
+    # เปิดพอร์ตบาร์โค้ดไว้ล่วงหน้า
+    sers = {}
+    for key, port in BARCODE_PORTS.items():
+        try:
+            sers[key] = serial.Serial(port, BARCODE_BAUD, timeout=0.1)
+            print(f"[BARCODE{key}] open {port} ok")
+        except Exception as e:
+            print(f"[BARCODE{key}] open {port} failed: {e}")
+
+    print("===== WAIT MODE =====")
+    print("1 = scan /dev/barcode0 (สแกนต่อเนื่องจนได้ค่า)")
+    print("2 = scan /dev/barcode1 (สแกนต่อเนื่องจนได้ค่า)")
+    print(f"3 = read /dev/elara0   (อ่านจนพบแท็ก + ถอด {args.rfid_words} คำท้ายเป็น ASCII)")
+    print("q = quit")
+    print("----------------------")
+
     try:
         while True:
-            time.sleep(1)
-    except KeyboardInterrupt:
+            sel = input("> ").strip().lower()
+            if sel in ('q', 'quit', 'exit'):
+                break
+            elif sel in ('1', '2'):
+                if sel not in sers:
+                    print(f"[BARCODE{sel}] port not open"); continue
+                print(f"[BARCODE{sel}] scanning... (Ctrl+C to cancel)")
+                try:
+                    code = mcr12_scan_until(sers[sel], max_seconds=MAX_WAIT_UNTIL_READ)
+                    if code: 
+                        print(f"[BARCODE{sel}] {code}")
+                        mqtt_pub(
+                            f"{args.mqtt_base}/read/barcode/{sel}",
+                            {
+                                "type": "barcode",
+                                "source": f"barcode{sel}",
+                                "code": code,
+                                "device": args.device_id,
+                                "ts": now_ms()
+                            },
+                            qos=0, retain=False
+                        )
+                    else:    print(f"[BARCODE{sel}] no read (timeout)")
+                except KeyboardInterrupt:
+                    print(f"[BARCODE{sel}] canceled")
+            elif sel == '3':
+                print(f"[ELARA] reading... decode last {args.rfid_words} word(s) (Ctrl+C to cancel)")
+                try:
+                    epc, rssi, last_words, ascii_txt = elara_read_until(MAX_WAIT_UNTIL_READ, args.rfid_words)
+                    if epc:
+                        print(f"[ELARA] EPC={epc} RSSI={rssi}")
+                        if last_words:
+                            print(f"[ELARA] MB/EPC last {len(last_words)} words: {':'.join(last_words)}")
+                            print(f"[ELARA] ASCII: {ascii_txt}")
+                        else:
+                            print("[ELARA] (no MB/EPC words to decode)")
+                        
+                        mqtt_pub(
+                            f"{args.mqtt_base}/read/rfid",
+                            {
+                                "type": "rfid",
+                                "source": "elara0",
+                                "epc": epc,
+                                "rssi": rssi,
+                                "last_words": last_words or [],
+                                "ascii": ascii_txt or "",
+                                "device": args.device_id,
+                                "ts": now_ms()
+                            },
+                            qos=0, retain=False
+                        )
+                    else:
+                        print("[ELARA] no tag (timeout)")
+                except KeyboardInterrupt:
+                    print("[ELARA] canceled")
+            elif sel == '':
+                continue
+            else:
+                print("choose 1/2/3 or q")
+    except (KeyboardInterrupt, EOFError):
         pass
     finally:
+        for s in sers.values():
+            try: s.close()
+            except: pass
         if elara:
             try: elara.close()
             except: pass
