@@ -1,92 +1,97 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+"""
+detect_sensor.py (orchestrator)
+- เหมือนเดิมทุกอย่าง ยกเว้น 'payload ที่ publish' จะมีแค่ sensor, gpio, value
+- mapping:
+    GPIO23 → BARCODE1
+    GPIO24 → BARCODE2
+    GPIO25 → RFID
+    GPIO16 → RFID
+"""
 
-import os, json, time, argparse
-import paho.mqtt.client as mqtt
+import time, threading
+from bus_sensor import MqttBus
+import drivers_sensor as drv
 
-def ts_now():
-    return time.strftime("%Y-%m-%d %H:%M:%S")
+# GPIO mapping
+GPIO_PHOTO_BARCODE1 = 23
+GPIO_PHOTO_BARCODE2 = 24
+GPIO_PHOTO_RFID_A   = 25
+GPIO_PHOTO_RFID_B   = 16
 
-def parse_args():
-    p = argparse.ArgumentParser(description="Detect-mode logger for SmartCart")
-    p.add_argument("--host", default=os.getenv("MQTT_HOST", "127.0.0.1"))
-    p.add_argument("--port", default=int(os.getenv("MQTT_PORT", "1883")), type=int)
-    p.add_argument("--user", default=os.getenv("MQTT_USER"))
-    p.add_argument("--password", default=os.getenv("MQTT_PASS"))
-    p.add_argument("--base", default=os.getenv("MQTT_BASE", "smartcart"))
-    p.add_argument("--station", default=os.getenv("STATION_ID", "slot1"))
-    p.add_argument("--client-id", default="detect-mode-logger")
-    p.add_argument("--show-payload", action="store_true",
-                   help="แสดง payload เต็มทุกครั้ง (default: แสดงเฉพาะ mode)")
-    p.add_argument("--ignore-first-retained", action="store_true",
-                   help="ละเว้นข้อความ retained ครั้งแรก (กัน log ซ้ำตอนเริ่ม)")
-    return p.parse_args()
+class SensorNode:
+    def __init__(self, bus: MqttBus, ser_map: dict, elara, rfid_words: int = 5):
+        self.bus = bus
+        self.ser_map = ser_map   # {'1': serial or None, '2': serial or None}
+        self.elara = elara       # serial or None
+        self.rfid_words = rfid_words
+        self._install_triggers()
 
-def main():
-    args = parse_args()
+    def _install_triggers(self):
+        if self.ser_map.get('1'): self._arm_barcode(GPIO_PHOTO_BARCODE1, '1')
+        if self.ser_map.get('2'): self._arm_barcode(GPIO_PHOTO_BARCODE2, '2')
+        if self.elara:
+            self._arm_rfid(GPIO_PHOTO_RFID_A)
+            self._arm_rfid(GPIO_PHOTO_RFID_B)
 
-    topic_desired = f"{args.base}/detect/{args.station}/desired"
-    topic_mode    = f"{args.base}/detect/{args.station}/mode"
+    # ---------- BARCODE ----------
+    def _arm_barcode(self, pin: int, dev_key: str):
+        sensor = drv.make_gpio_input(pin)
+        if sensor is None: return
+        print(f"[GPIO] BARCODE{dev_key} armed on GPIO{pin}")
+        lock = drv.BARCODE_LOCKS.get(dev_key)
 
-    print(f"[{ts_now()}] MQTT connecting to {args.host}:{args.port}")
-    print(f"[{ts_now()}] Subscribing: '{topic_desired}' (QoS1), '{topic_mode}' (QoS0)")
+        def on_falling():
+            val = 1 if sensor.value else 0
+            t = time.monotonic()
+            print(f"[GPIO] (BARCODE{dev_key}) FALLING @ {t:.3f} GPIO{pin} value={val} → scan (MCR12) until success ...")
 
-    first_retained_seen = {"desired": False, "mode": False}
+            def worker():
+                if not lock.acquire(blocking=False):
+                    print(f"[BARCODE{dev_key}] busy; skip"); return
+                try:
+                    code = drv.barcode_scan_until(self.ser_map[dev_key], max_seconds=None)  # wait until success
+                    # --------- ส่งแบบย่อ: sensor, gpio, value เท่านั้น ---------
+                    payload = {
+                        "sensor": f"barcode{dev_key}",
+                        "gpio": pin,
+                        "value": {"code": code}
+                    }
+                    self.bus.publish_sensor(payload)
+                finally:
+                    lock.release()
+            threading.Thread(target=worker, daemon=True).start()
 
-    def on_connect(cli, userdata, flags, rc, properties=None):
-        if rc == 0:
-            print(f"[{ts_now()}] MQTT connected OK")
-            cli.subscribe([(topic_desired, 1), (topic_mode, 0)])
-        else:
-            print(f"[{ts_now()}] MQTT connect failed rc={rc}")
+        sensor.when_deactivated = on_falling
+        sensor.when_activated   = None
 
-    def on_message(cli, userdata, msg):
-        nonlocal first_retained_seen
+    # ---------- RFID ----------
+    def _arm_rfid(self, pin: int):
+        sensor = drv.make_gpio_input(pin)
+        if sensor is None: return
+        print(f"[GPIO] RFID armed on GPIO{pin}")
 
-        topic = msg.topic
-        payload_raw = msg.payload.decode("utf-8", "ignore")
-        is_retained = getattr(msg, "retain", False)
+        def on_falling():
+            val = 1 if sensor.value else 0
+            t = time.monotonic()
+            print(f"[GPIO] (RFID) FALLING @ {t:.3f} GPIO{pin} value={val} → read Elara until tag ...")
 
-        # เลือกละเว้น retained ข้อความแรกได้ (กัน log ซ้ำตอนเปิดโปรแกรม)
-        key = "desired" if topic == topic_desired else "mode"
-        if args.ignore_first_retained and is_retained and not first_retained_seen[key]:
-            first_retained_seen[key] = True
-            print(f"[{ts_now()}] (skip first retained) {topic}")
-            return
-        first_retained_seen[key] = True
+            def worker():
+                with drv.ELARA_LOCK:
+                    epc, rssi, last_words, ascii_txt = drv.elara_read_until(
+                        self.elara, max_seconds=None, n_words_to_decode=self.rfid_words
+                    )
+                # --------- ส่งแบบย่อ: sensor, gpio, value เท่านั้น ---------
+                payload = {
+                    "sensor": "rfid0",
+                    "gpio": pin,
+                    "value": {
+                        "ascii": ascii_txt or ""   # <<<<<< เหลือเฉพาะ ascii
+                    }
+                }
+                self.bus.publish_sensor(payload)
+            threading.Thread(target=worker, daemon=True).start()
 
-        mode_val = None
-        try:
-            data = json.loads(payload_raw)
-            if isinstance(data, dict) and "mode" in data:
-                mode_val = data.get("mode")
-        except Exception:
-            # ถ้า payload ไม่ใช่ JSON (เช่น ส่งเป็น "start"/"stop") ก็ปล่อยผ่าน
-            data = payload_raw
-
-        tag = "RET" if is_retained else "LIVE"
-        if mode_val is not None:
-            print(f"[{ts_now()}] [{tag}] {topic} -> mode={mode_val}")
-        else:
-            print(f"[{ts_now()}] [{tag}] {topic} -> (no 'mode' field)")
-
-        if args.show_payload:
-            print(f"    payload: {payload_raw}")
-
-    cli = mqtt.Client(client_id=args.client_id, clean_session=True)
-    if args.user:
-        cli.username_pw_set(args.user, args.password or "")
-    cli.on_connect = on_connect
-    cli.on_message = on_message
-
-    # ทำ auto-reconnect เป็นขั้นบันได
-    cli.reconnect_delay_set(min_delay=1, max_delay=30)
-
-    cli.connect(args.host, args.port, keepalive=60)
-    try:
-        cli.loop_forever()
-    except KeyboardInterrupt:
-        print(f"\n[{ts_now()}] Task End.")
-
-if __name__ == "__main__":
-    main()
+        sensor.when_deactivated = on_falling
+        sensor.when_activated   = None

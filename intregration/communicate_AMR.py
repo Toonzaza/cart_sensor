@@ -1,253 +1,144 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-communicate_AMR.py
-- subscribe <base>/trigger  (จาก match_id)
-- อ่าน goal_id จาก state.json แล้ว map เป็น GoalName ด้วย goals_map.json
-- ส่งคำสั่ง ARCL "goto <GoalName>" ผ่าน Telnet ไปยัง AMR
-- publish ผลลัพธ์ไป <base>/amr/ack และรายงานสถานะ/ที่อยู่เป็นช่วง ๆ (optional) ไป <base>/amr/state
-"""
 
-import argparse, json, time, telnetlib, threading, queue
-from pathlib import Path
-from typing import Optional, Dict
+import os, json, time, telnetlib, signal
 import paho.mqtt.client as mqtt
 
-# ---------- Telnet ARCL client ----------
-class ARCLClient:
-    def __init__(self, host="192.168.0.3", port=7171, password="adept",
-                 connect_timeout=5.0, rw_timeout=5.0):
-        self.host, self.port = host, port
-        self.password = password
-        self.connect_timeout = connect_timeout
-        self.rw_timeout = rw_timeout
-        self.tn: Optional[telnetlib.Telnet] = None
-        self.lock = threading.Lock()
+# ---- CONFIG ----
+STATE_PATH = "/home/fibo/cart_ws/intregration/data/state.json"
+GOALS_MAP_PATH = "/home/fibo/cart_ws/intregration/data/goals_map.json"
 
-    def _expect(self, what: bytes, timeout=None) -> bool:
-        if not self.tn: return False
-        idx, _, _ = self.tn.expect([what], timeout or self.rw_timeout)
-        return idx == 0
+MQTT_HOST  = "127.0.0.1"
+MQTT_PORT  = 1883
+BASE       = "smartcart"
+SUB_TOPIC  = f"{BASE}/toggle_omron"   # << subscribe trigger จาก match_id
 
-    def connect(self) -> None:
-        """เชื่อมต่อและ login ถ้ายังไม่พร้อม"""
-        with self.lock:
-            if self.tn is not None:
-                return
-            self.tn = telnetlib.Telnet(self.host, self.port, timeout=self.connect_timeout)
-            # รอ prompt ขอสายรหัส
-            self._expect(b"Enter password:", timeout=self.rw_timeout)
-            self.tn.write((self.password + "\r\n").encode("ascii"))
-            # รอการตอบรับสั้น ๆ (บางเวอร์ชันจะส่ง "Welcome" หรือ prompt เงียบ)
-            time.sleep(0.2)
+AMR_HOST   = "192.168.0.3"
+AMR_PORT   = 7171
+AMR_PASS   = "adept"
+TELNET_TIMEOUT = 5.0
 
-    def send_cmd(self, cmd: str) -> str:
-        """
-        ส่งคำสั่ง ARCL หนึ่งบรรทัดและอ่านคำตอบช่วงสั้น ๆ กลับมาเป็นสตริง
-        (ARCL ไม่มีมาตรฐาน "END" ตายตัว—ใช้อ่านคายบัฟเฟอร์ช่วงสั้น ๆ แทน)
-        """
-        with self.lock:
-            if self.tn is None:
-                self.connect()
-            # เขียนคำสั่ง
-            self.tn.write((cmd + "\r\n").encode("ascii"))
-            # เก็บคำตอบช่วงสั้น ๆ
-            time.sleep(0.2)
-            out = b""
-            # ดูดบัฟเฟอร์ที่มีอยู่ (ไม่บล็อกนาน)
-            t0 = time.time()
-            while time.time() - t0 < self.rw_timeout:
-                try:
-                    chunk = self.tn.read_very_eager()
-                except EOFError:
-                    break
-                if chunk:
-                    out += chunk
-                    # เว้นจังหวะสั้น ๆ รอให้ส่งหมด
-                    time.sleep(0.05)
-                else:
-                    break
-            return out.decode(errors="ignore")
-
-    def goto(self, goal_name: str) -> str:
-        """สั่งไปเป้าหมาย"""
-        return self.send_cmd(f"goto {goal_name}")
-
-    def where_am_i(self) -> str:
-        """ขอสถานะ/ที่อยู่คร่าว ๆ (ขึ้นกับเวอร์ชัน ARCL)"""
-        # บางระบบใช้ 'whereAmI' หรือ 'getState' / 'getGoal'
-        # ลอง whereAmI ก่อน ถ้าไม่ได้คุณปรับเป็นคำสั่งที่ AMR ของคุณรองรับ
-        return self.send_cmd("whereAmI")
-
-    def close(self):
-        with self.lock:
-            try:
-                if self.tn:
-                    self.tn.write(b"logout\r\n")
-                    self.tn.close()
-            finally:
-                self.tn = None
-
-# ---------- Utilities ----------
-def load_json(path: str) -> dict:
-    p = Path(path)
-    if not p.exists():
-        return {}
+# ---- helpers ----
+def _load_json(path: str):
     try:
-        return json.loads(p.read_text(encoding="utf-8"))
-    except Exception:
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception as e:
+        print(f"[LOAD] {path} failed: {e}")
         return {}
 
-def pick_goal_id(state_file: str) -> Optional[str]:
-    d = load_json(state_file)
-    if isinstance(d.get("expected"), dict) and d.get("goal_id") is None:
-        # บางระบบอาจเก็บ goal_id ใน expected — รองรับกรณีนี้ได้ถ้าจำเป็น
-        pass
-    return d.get("goal_id")
+def _resolve_goal(goal_id: str, goals_map: dict):
+    """
+    คืน (cmd, goal_name)
+    รองรับ goals_map:
+      - {"DOT400002": "Goal2"}
+      - {"DOT400002": {"goal":"Goal2", "cmd":"goto"}}
+    ถ้าไม่พบ คืน (None, None)
+    """
+    if not goal_id or not isinstance(goals_map, dict):
+        return (None, None)
+    entry = goals_map.get(goal_id)
+    if entry is None:
+        return (None, None)
+    if isinstance(entry, str):
+        return ("goto", entry)  # default cmd
+    if isinstance(entry, dict):
+        goal_name = entry.get("goal") or entry.get("arcl_goal") or entry.get("name")
+        cmd = entry.get("cmd") or entry.get("command") or "goto"
+        if goal_name:
+            return (cmd, goal_name)
+    return (None, None)
 
-# ---------- Communicator ----------
-class CommunicateAMR:
-    def __init__(self, mqtt_host: str, mqtt_port: int, base: str,
-                 state_file: str, goals_map_file: str,
-                 arcl_host: str, arcl_port: int, arcl_password: str,
-                 poll_state_sec: Optional[float] = None):
-        self.base = base
-        self.topic_trigger = f"{base}/trigger"      # รับจาก match_id
-        self.topic_ack     = f"{base}/amr/ack"      # รายงานผลส่งคำสั่ง
-        self.topic_state   = f"{base}/amr/state"    # รายงานสถานะ (optional)
+def _telnet_send_amr(cmd_lines):
+    """
+    เปิด telnet → ส่ง password → ส่งชุดคำสั่ง → ปิด
+    cmd_lines: list[str] เช่น ["goto Goal2", "waitTaskFinish"]
+    """
+    try:
+        print(f"[TELNET] connect {AMR_HOST}:{AMR_PORT}")
+        tn = telnetlib.Telnet(AMR_HOST, AMR_PORT, TELNET_TIMEOUT)
 
-        self.state_file = state_file
-        self.goals_map: Dict[str, str] = load_json(goals_map_file)
+        # ส่งรหัสผ่านทันที (ส่วนใหญ่ ARCL จะอ่านเป็นบรรทัดแรก)
+        tn.write((AMR_PASS + "\n").encode("ascii"))
+        time.sleep(0.2)  # รอ login
 
-        self.cli = mqtt.Client(client_id="communicate_AMR")
-        self.cli.on_connect = self._on_connect
-        self.cli.on_message = self._on_message
-        self.cli.connect(mqtt_host, mqtt_port, keepalive=30)
+        for line in cmd_lines:
+            out = (line + "\n").encode("ascii")
+            print(f"[TELNET] >> {line}")
+            tn.write(out)
+            time.sleep(0.1)
 
-        self.arcl = ARCLClient(host=arcl_host, port=arcl_port, password=arcl_password)
-        self.queue = queue.Queue()  # serialize trigger → ARCL
-
-        # worker ส่งคำสั่ง
-        self.worker = threading.Thread(target=self._worker_loop, daemon=True)
-        self.worker.start()
-
-        # optional: โพลสถานะเป็นช่วง ๆ
-        self.poll_state_sec = poll_state_sec
-        if poll_state_sec and poll_state_sec > 0:
-            self.poller = threading.Thread(target=self._poll_state_loop, daemon=True)
-            self.poller.start()
-
-    # ------ MQTT callbacks ------
-    def _on_connect(self, c, u, f, rc):
-        c.subscribe(self.topic_trigger, qos=1)
-        print(f"[MQTT] subscribed {self.topic_trigger}")
-
-    def _on_message(self, c, u, msg):
-        if msg.topic != self.topic_trigger:
-            return
+        # อ่านทิ้งเล็กน้อย (optional)
         try:
-            payload = json.loads(msg.payload.decode("utf-8"))
+            resp = tn.read_very_eager().decode("utf-8", "ignore")
+            if resp:
+                print("[TELNET] <<", resp.strip()[:500])
         except Exception:
-            print("[WARN] bad JSON trigger")
-            return
-        # ใส่คิวให้ worker จัดการ
-        self.queue.put(payload)
+            pass
 
-    # ------ worker ------
-    def _worker_loop(self):
-        while True:
-            trig = self.queue.get()
-            try:
-                self._handle_trigger(trig)
-            except Exception as e:
-                print(f"[ERR] handle trigger: {e}")
+        tn.close()
+        print("[TELNET] closed.")
+        return True
+    except Exception as e:
+        print(f"[TELNET] error: {e}")
+        return False
 
-    def _handle_trigger(self, trig: dict):
-        # อ่าน goal_id จาก state.json (ถ้าข้อความมี goal_id ก็ใช้จากข้อความได้)
-        goal_id = trig.get("goal_id") or pick_goal_id(self.state_file)
-        if not goal_id:
-            self._publish_ack("error", "missing_goal_id", trig, None, None)
-            return
+# ---- MQTT handlers ----
+def on_connect(client, userdata, flags, rc):
+    print("communicate_AMR running. Ctrl+C to quit.")
+    print(f"[MQTT] sub {SUB_TOPIC}")
+    client.subscribe(SUB_TOPIC)
 
-        goal_name = self.goals_map.get(goal_id)
-        if not goal_name:
-            self._publish_ack("error", f"goal_id_not_mapped:{goal_id}", trig, goal_id, None)
-            return
-
-        # ส่ง ARCL
-        try:
-            self.arcl.connect()
-            reply = self.arcl.goto(goal_name)
-            # ประเมินคร่าว ๆ ว่าสำเร็จไหมจากข้อความตอบ
-            ok = ("OK" in reply.upper()) or ("DONE" in reply.upper()) or ("ACCEPTED" in reply.upper())
-            self._publish_ack("ok" if ok else "sent", None if ok else reply, trig, goal_id, goal_name)
-        except Exception as e:
-            self._publish_ack("error", f"{type(e).__name__}: {e}", trig, goal_id, goal_name)
-
-    def _publish_ack(self, status: str, detail: Optional[str], trig: dict,
-                     goal_id: Optional[str], goal_name: Optional[str]):
-        msg = {
-            "status": status,                # ok | sent | error
-            "detail": detail,                # ข้อความตอบกลับ/สาเหตุ
-            "goal_id": goal_id,
-            "goal_name": goal_name,
-            "trigger": trig,
-            "ts": time.strftime("%Y-%m-%dT%H:%M:%S"),
-        }
-        self.cli.publish(self.topic_ack, json.dumps(msg), qos=1)
-        print(f"[ACK] {msg}")
-
-    # ------ polling AMR state (optional) ------
-    def _poll_state_loop(self):
-        while True:
-            try:
-                self.arcl.connect()
-                reply = self.arcl.where_am_i()
-                self.cli.publish(self.topic_state, json.dumps({
-                    "raw": reply,
-                    "ts": time.strftime("%Y-%m-%dT%H:%M:%S"),
-                }), qos=0)
-            except Exception as e:
-                print(f"[STATE] poll error: {e}")
-            time.sleep(self.poll_state_sec or 5)
-
-    def loop_forever(self):
-        self.cli.loop_forever()
-
-# ---------- CLI ----------
-def main():
-    ap = argparse.ArgumentParser(description="communicate_AMR: receive trigger → map goal → send ARCL via Telnet")
-    # MQTT
-    ap.add_argument("--mqtt-host", default="localhost")
-    ap.add_argument("--mqtt-port", type=int, default=1883)
-    ap.add_argument("--mqtt-base", default="smartcart")
-    # Files
-    ap.add_argument("--state-file", default="state.json",
-                    help="ไฟล์ที่ server_pi เขียน goal_id ล่าสุด (และ expected)")
-    ap.add_argument("--goals-map", default="goals_map.json",
-                    help="ไฟล์ map goal_id → GoalName ของ AMR/ARCL")
-    # ARCL/Telnet
-    ap.add_argument("--arcl-host", default="192.168.0.3")
-    ap.add_argument("--arcl-port", type=int, default=7171)
-    ap.add_argument("--arcl-password", default="adept")
-    # Optional polling
-    ap.add_argument("--poll-state-sec", type=float, default=0.0,
-                    help="ถ้า >0 จะโพลสถานะ AMR เป็นช่วง ๆ (วินาที)")
-    args = ap.parse_args()
-
-    svc = CommunicateAMR(
-        mqtt_host=args.mqtt_host, mqtt_port=args.mqtt_port, base=args.mqtt_base,
-        state_file=args.state_file, goals_map_file=args.goals_map,
-        arcl_host=args.arcl_host, arcl_port=args.arcl_port, arcl_password=args.arcl_password,
-        poll_state_sec=args.poll_state_sec if args.poll_state_sec > 0 else None
-    )
-    print("communicate_AMR running. Ctrl+C to stop.")
+def on_message(client, userdata, msg):
+    # รับ trigger จาก match_id
     try:
-        svc.loop_forever()
-    except KeyboardInterrupt:
-        pass
-    finally:
-        svc.arcl.close()
+        payload = json.loads(msg.payload.decode("utf-8"))
+    except Exception as e:
+        print(f"[MQTT] bad payload: {e}")
+        return
+
+    # goal_id อาจอยู่ที่ payload["goal_id"] หรือ payload["latest_job_ids"]["goal_id"]
+    goal_id = payload.get("goal_id")
+    if goal_id is None:
+        lj = payload.get("latest_job_ids") or {}
+        goal_id = lj.get("goal_id")
+
+    print(f"[TOGGLE] received. goal_id={goal_id}")
+
+    # โหลด goals_map + state ปัจจุบัน (เผื่ออยาก log/ตรวจ)
+    goals_map = _load_json(GOALS_MAP_PATH)
+    state = _load_json(STATE_PATH)
+
+    cmd, goal_name = _resolve_goal(goal_id, goals_map)
+    if not cmd or not goal_name:
+        print(f"[MAP] goal_id '{goal_id}' not found in {GOALS_MAP_PATH}")
+        return
+
+    # เตรียมคำสั่ง ARCL
+    # ค่าเริ่มต้น: "goto <goal_name>"
+    # ถ้าคุณต้องการเพิ่มลำดับ เช่น waitTaskFinish; map ใน goals_map อาจระบุรายการคำสั่งเองได้
+    cmd_lines = [f"{cmd} {goal_name}"]
+
+    # ส่งไปที่ AMR
+    ok = _telnet_send_amr(cmd_lines)
+    if ok:
+        print(f"[AMR] command sent: {cmd_lines}")
+    else:
+        print("[AMR] failed to send command.")
+
+def main():
+    cli = mqtt.Client(client_id="communicate_AMR")
+    cli.on_connect = on_connect
+    cli.on_message = on_message
+    cli.connect(MQTT_HOST, MQTT_PORT, 30)
+
+    def _exit(*_):
+        try: cli.loop_stop(); cli.disconnect()
+        finally: os._exit(0)
+
+    signal.signal(signal.SIGINT, _exit)
+    signal.signal(signal.SIGTERM, _exit)
+    cli.loop_forever()
 
 if __name__ == "__main__":
     main()

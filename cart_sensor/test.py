@@ -4,7 +4,7 @@ os.environ.setdefault("GPIOZERO_PIN_FACTORY","lgpio")
 
 from gpiozero import DigitalInputDevice
 
-PIN = 16
+PIN = 23
 
 sensor= DigitalInputDevice(PIN,pull_up=False)
 
