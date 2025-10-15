@@ -1,0 +1,2 @@
+/home/fibo/cart_ws/intregration/match_id.py:182: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="match_id")

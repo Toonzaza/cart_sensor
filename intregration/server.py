@@ -1,9 +1,9 @@
-# app_main.py
+# main_server.py
 import os, json, asyncio, websockets
 from fn_server import (
-    mqtt_init, mqtt_pub, now_fields, to_none,
-    publish_job_topics, publish_detect_config, detect_mode,
-    setup_amr_status_subscriptions, persist_state_and_log
+    mqtt_init, now_fields, normalize_ids, _to_none_token,
+    publish_job_topics, publish_detect_config, detect_mode_any,
+    setup_amr_status_subscriptions, persist_state_and_log, _fill_two_slots
 )
 
 # ========== WebSocket Handler ==========
@@ -12,40 +12,50 @@ async def handle_client(websocket, mqtt_cli):
         try:
             data = json.loads(message)
 
-            # แบบ list [CUH, MXK, DOT]
+            # ===== list mode =====
             if isinstance(data, list):
-                if len(data) != 3:
-                    await websocket.send(json.dumps({"status":"error","message":"expect list length 3 [CUH, MXK, DOT]"}))
+                if len(data) == 3:
+                    cuh_raw, mxk_raw, dot_raw = data
+                    cuh_ids = normalize_ids([cuh_raw])
+                    kit_ids = normalize_ids([mxk_raw])
+                    goal = _to_none_token(dot_raw)
+                elif len(data) == 5:
+                    cuh1, cuh2, mxk1, mxk2, dot_raw = data
+                    cuh_ids = normalize_ids([cuh1, cuh2])
+                    kit_ids = normalize_ids([mxk1, mxk2])
+                    goal = _to_none_token(dot_raw)
+                else:
+                    await websocket.send(json.dumps({"status":"error","message":"expect list length 3 or 5"}))
                     continue
 
-                cuh_raw, mxk_raw, dot_raw = data
-                cuh = to_none(cuh_raw)
-                kit = to_none(mxk_raw)
-                goal = to_none(dot_raw)
+                cuh2 = _fill_two_slots(cuh_ids)
+                kit2 = _fill_two_slots(kit_ids)
 
                 if goal is None:
-                    await websocket.send(json.dumps({"status":"error","message":"DOT must not be None"})); continue
-                if cuh is None and kit is None:
-                    await websocket.send(json.dumps({"status":"error","message":"either CUH or MXK must be present"})); continue
+                    await websocket.send(json.dumps({"status":"error","message":"goal_id must not be None"})); continue
+                if (cuh2[0] is None and cuh2[1] is None) and (kit2[0] is None and kit2[1] is None):
+                    await websocket.send(json.dumps({"status":"error","message":"either CUH or KIT must be present"})); continue
 
                 ts, d, t, iso = now_fields()
-                # <<< บันทึกลงไฟล์ (เฉพาะค่าจาก Web App) >>>
-                persist_state_and_log(cuh, kit, goal, ts, d, t, iso)
+                persist_state_and_log([x for x in cuh2 if x], [x for x in kit2 if x], goal, ts, d, t, iso)
+                publish_job_topics(mqtt_cli, [x for x in cuh2 if x], [x for x in kit2 if x], goal, ts, d, t, iso)
+                publish_detect_config(mqtt_cli, [x for x in cuh2 if x], [x for x in kit2 if x], goal, ts, d, t, iso)
 
-                # MQTT publish ไปยังระบบตรวจจับ/แดชบอร์ด
-                publish_job_topics(mqtt_cli, cuh, kit, goal, ts, d, t, iso)
-                publish_detect_config(mqtt_cli, cuh, kit, goal, ts, d, t, iso)
+                mode = detect_mode_any([x for x in cuh2 if x], [x for x in kit2 if x], goal)
+                mapped = {
+                    "cuh_ids": cuh2, "kit_ids": kit2, "goal_id": goal, "mode": mode
+                }
+                if cuh2[0] is not None: mapped["cuh_id"] = cuh2[0]
+                if kit2[0] is not None: mapped["kit_id"] = kit2[0]
 
-                mode = detect_mode(cuh, kit, goal)
-                print(f"[WS][{iso}] CUH={cuh} KIT={kit} GOAL={goal} MODE={mode}")
+                print(f"[WS][{iso}] LIST cuh_ids={cuh2} kit_ids={kit2} goal={goal} mode={mode}")
                 await websocket.send(json.dumps({
-                    "status":"ok","type":"job_ids",
-                    "mapped":{"cuh_id":cuh,"kit_id":kit,"goal_id":goal,"mode":mode},
+                    "status":"ok","type":"job_ids","mapped":mapped,
                     "ts": ts, "date": d, "time": t, "iso": iso
                 }))
                 continue
 
-            # โหมด object (compat เดิม)
+            # ===== object mode =====
             if isinstance(data, dict) and data.get("type") == "new_order":
                 print("[WS] New Order:", data)
                 await websocket.send(json.dumps({"status": "received", "type": "new_order"}))
@@ -57,22 +67,35 @@ async def handle_client(websocket, mqtt_cli):
                 continue
 
             if isinstance(data, dict) and data.get("type") == "job_ids":
-                cuh = data.get("cuh_id"); kit = data.get("kit_id"); goal = data.get("goal_id")
-                if not all(isinstance(x, str) and x for x in [cuh, kit, goal]):
-                    await websocket.send(json.dumps({"status":"error","message":"cuh_id/kit_id/goal_id must be non-empty strings"})); continue
+                cuh_ids = normalize_ids(data.get("cuh_ids", []))
+                kit_ids = normalize_ids(data.get("kit_ids", []))
+                if not cuh_ids and "cuh_id" in data:
+                    x = _to_none_token(data.get("cuh_id"))
+                    if x: cuh_ids = [x]
+                if not kit_ids and "kit_id" in data:
+                    x = _to_none_token(data.get("kit_id"))
+                    if x: kit_ids = [x]
+                goal = _to_none_token(data.get("goal_id"))
+
+                cuh2 = _fill_two_slots(cuh_ids)
+                kit2 = _fill_two_slots(kit_ids)
+
+                if goal is None:
+                    await websocket.send(json.dumps({"status":"error","message":"goal_id must not be None"})); continue
+                if (cuh2[0] is None and cuh2[1] is None) and (kit2[0] is None and kit2[1] is None):
+                    await websocket.send(json.dumps({"status":"error","message":"either CUH or KIT must be present"})); continue
 
                 ts, d, t, iso = now_fields()
-                # <<< บันทึกลงไฟล์ (เฉพาะค่าจาก Web App) >>>
-                persist_state_and_log(cuh, kit, goal, ts, d, t, iso)
+                persist_state_and_log([x for x in cuh2 if x], [x for x in kit2 if x], goal, ts, d, t, iso)
+                publish_job_topics(mqtt_cli, [x for x in cuh2 if x], [x for x in kit2 if x], goal, ts, d, t, iso)
+                publish_detect_config(mqtt_cli, [x for x in cuh2 if x], [x for x in kit2 if x], goal, ts, d, t, iso)
 
-                # MQTT publish
-                publish_job_topics(mqtt_cli, cuh, kit, goal, ts, d, t, iso)
-                publish_detect_config(mqtt_cli, cuh, kit, goal, ts, d, t, iso)
-
-                mode = detect_mode(cuh, kit, goal)
-                print(f"[WS][{iso}] OBJ CUH={cuh} KIT={kit} GOAL={goal} MODE={mode}")
-                await websocket.send(json.dumps({"status":"ok","type":"job_ids","mode":mode,
-                                                 "ts":ts,"date":d,"time":t,"iso":iso}))
+                mode = detect_mode_any([x for x in cuh2 if x], [x for x in kit2 if x], goal)
+                print(f"[WS][{iso}] OBJ cuh_ids={cuh2} kit_ids={kit2} goal={goal} mode={mode}")
+                await websocket.send(json.dumps({
+                    "status":"ok","type":"job_ids","mode":mode,
+                    "ts":ts,"date":d,"time":t,"iso":iso
+                }))
                 continue
 
             await websocket.send(json.dumps({"status":"error","message":"unsupported payload"}))
@@ -84,8 +107,7 @@ async def handle_client(websocket, mqtt_cli):
 # ========== Main ==========
 async def main():
     mqtt_cli = mqtt_init(client_id="ws-bridge-server")
-    setup_amr_status_subscriptions(mqtt_cli)   # รับสถานะ AMR → พิมพ์หน้าจอ (ไม่เก็บไฟล์)
-
+    setup_amr_status_subscriptions(mqtt_cli)
     host = os.getenv("WS_HOST", "0.0.0.0")
     port = int(os.getenv("WS_PORT", "8765"))
     async with websockets.serve(lambda ws: handle_client(ws, mqtt_cli), host, port):
