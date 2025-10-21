@@ -1,2 +1,90 @@
 /home/fibo/cart_ws/intregration/led_actuator.py:78: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
   cli = mqtt.Client(client_id="led_actuator_gpiozero")
+/home/fibo/cart_ws/intregration/led_actuator.py:78: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="led_actuator_gpiozero")
+/home/fibo/cart_ws/intregration/led_actuator.py:78: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="led_actuator_gpiozero")
+/home/fibo/cart_ws/intregration/led_actuator.py:78: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="led_actuator_gpiozero")
+/home/fibo/cart_ws/intregration/led_actuator.py:78: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="led_actuator_gpiozero")
+/home/fibo/cart_ws/intregration/led_actuator.py:78: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="led_actuator_gpiozero")
+/home/fibo/cart_ws/intregration/led_actuator.py:78: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="led_actuator_gpiozero")
+/home/fibo/cart_ws/intregration/led_actuator.py:78: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="led_actuator_gpiozero")
+Traceback (most recent call last):
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/gpiozero/pins/pi.py", line 411, in pin
+    pin = self.pins[info]
+          ~~~~~~~~~^^^^^^
+KeyError: PinInfo(number=29, name='GPIO5', names=frozenset({'BCM5', 5, 'BOARD29', 'GPIO5', 'WPI21', '5', 'J8:29'}), pull='', row=15, col=1, interfaces=frozenset({'', 'i2c', 'spi', 'dpi', 'uart', 'gpio'}))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/led_actuator.py", line 95, in <module>
+    main()
+  File "/home/fibo/cart_ws/intregration/led_actuator.py", line 77, in main
+    gpio_setup()
+  File "/home/fibo/cart_ws/intregration/led_actuator.py", line 28, in gpio_setup
+    _outputs[p] = OutputDevice(p, active_high=True, initial_value=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/gpiozero/devices.py", line 108, in __call__
+    self = super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/gpiozero/output_devices.py", line 74, in __init__
+    super().__init__(pin, pin_factory=pin_factory)
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/gpiozero/mixins.py", line 75, in __init__
+    super().__init__(*args, **kwargs)
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/gpiozero/devices.py", line 553, in __init__
+    pin = self.pin_factory.pin(pin)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/gpiozero/pins/pi.py", line 413, in pin
+    pin = self.pin_class(self, info)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/gpiozero/pins/lgpio.py", line 126, in __init__
+    lgpio.gpio_claim_input(
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/lgpio.py", line 755, in gpio_claim_input
+    return _u2i(_lgpio._gpio_claim_input(handle&0xffff, lFlags, gpio))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/lgpio.py", line 458, in _u2i
+    raise error(error_text(v))
+lgpio.error: 'GPIO busy'
+Traceback (most recent call last):
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/gpiozero/pins/pi.py", line 411, in pin
+    pin = self.pins[info]
+          ~~~~~~~~~^^^^^^
+KeyError: PinInfo(number=29, name='GPIO5', names=frozenset({'BOARD29', '5', 'BCM5', 'J8:29', 5, 'WPI21', 'GPIO5'}), pull='', row=15, col=1, interfaces=frozenset({'', 'dpi', 'spi', 'gpio', 'uart', 'i2c'}))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/led_actuator.py", line 95, in <module>
+    main()
+  File "/home/fibo/cart_ws/intregration/led_actuator.py", line 77, in main
+    gpio_setup()
+  File "/home/fibo/cart_ws/intregration/led_actuator.py", line 28, in gpio_setup
+    _outputs[p] = OutputDevice(p, active_high=True, initial_value=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/gpiozero/devices.py", line 108, in __call__
+    self = super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/gpiozero/output_devices.py", line 74, in __init__
+    super().__init__(pin, pin_factory=pin_factory)
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/gpiozero/mixins.py", line 75, in __init__
+    super().__init__(*args, **kwargs)
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/gpiozero/devices.py", line 553, in __init__
+    pin = self.pin_factory.pin(pin)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/gpiozero/pins/pi.py", line 413, in pin
+    pin = self.pin_class(self, info)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/gpiozero/pins/lgpio.py", line 126, in __init__
+    lgpio.gpio_claim_input(
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/lgpio.py", line 755, in gpio_claim_input
+    return _u2i(_lgpio._gpio_claim_input(handle&0xffff, lFlags, gpio))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/lgpio.py", line 458, in _u2i
+    raise error(error_text(v))
+lgpio.error: 'GPIO busy'

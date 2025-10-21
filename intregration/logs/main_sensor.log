@@ -1,0 +1,14 @@
+/home/fibo/cart_env/lib/python3.12/site-packages/gpiozero/mixins.py:216: CallbackSetToNone: The callback was set to None. This may have been unintentional e.g. btn.when_pressed = pressed() instead of btn.when_pressed = pressed
+  warnings.warn(CallbackSetToNone(callback_warning))
+/home/fibo/cart_env/lib/python3.12/site-packages/gpiozero/mixins.py:216: CallbackSetToNone: The callback was set to None. This may have been unintentional e.g. btn.when_pressed = pressed() instead of btn.when_pressed = pressed
+  warnings.warn(CallbackSetToNone(callback_warning))
+/home/fibo/cart_env/lib/python3.12/site-packages/gpiozero/mixins.py:216: CallbackSetToNone: The callback was set to None. This may have been unintentional e.g. btn.when_pressed = pressed() instead of btn.when_pressed = pressed
+  warnings.warn(CallbackSetToNone(callback_warning))
+/home/fibo/cart_env/lib/python3.12/site-packages/gpiozero/mixins.py:216: CallbackSetToNone: The callback was set to None. This may have been unintentional e.g. btn.when_pressed = pressed() instead of btn.when_pressed = pressed
+  warnings.warn(CallbackSetToNone(callback_warning))
+/home/fibo/cart_env/lib/python3.12/site-packages/gpiozero/mixins.py:216: CallbackSetToNone: The callback was set to None. This may have been unintentional e.g. btn.when_pressed = pressed() instead of btn.when_pressed = pressed
+  warnings.warn(CallbackSetToNone(callback_warning))
+/home/fibo/cart_env/lib/python3.12/site-packages/gpiozero/mixins.py:216: CallbackSetToNone: The callback was set to None. This may have been unintentional e.g. btn.when_pressed = pressed() instead of btn.when_pressed = pressed
+  warnings.warn(CallbackSetToNone(callback_warning))
+/home/fibo/cart_env/lib/python3.12/site-packages/gpiozero/mixins.py:216: CallbackSetToNone: The callback was set to None. This may have been unintentional e.g. btn.when_pressed = pressed() instead of btn.when_pressed = pressed
+  warnings.warn(CallbackSetToNone(callback_warning))

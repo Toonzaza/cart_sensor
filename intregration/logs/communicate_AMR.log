@@ -37,3 +37,884 @@ Traceback (most recent call last):
     tn = self._connect()
          ^^^^^^^^^^^^^^^
 TimeoutError: timed out
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback
+/home/fibo/cart_ws/intregration/communicate_AMR.py:261: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback
+/home/fibo/cart_ws/intregration/communicate_AMR.py:261: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback
+/home/fibo/cart_ws/intregration/communicate_AMR.py:261: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback
+/home/fibo/cart_ws/intregration/communicate_AMR.py:261: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback
+/home/fibo/cart_ws/intregration/communicate_AMR.py:261: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[MAIN] running. Press Ctrl+C to quit.
+communicate_AMR running. Ctrl+C to quit.
+[MQTT] sub smartcart/toggle_omron
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[TELNET] connect 192.168.0.3:7171
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+ConnectionRefusedError: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+ConnectionRefusedError: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+ConnectionRefusedError: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 141, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+ConnectionRefusedError: [Errno 111] Connection refused
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback
+/home/fibo/cart_ws/intregration/communicate_AMR.py:297: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 148, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+TimeoutError: timed out
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 148, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+TimeoutError: timed out
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 148, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+TimeoutError: timed out
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 148, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+TimeoutError: timed out
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 148, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+TimeoutError: timed out
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 148, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+TimeoutError: timed out
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback
+/home/fibo/cart_ws/intregration/communicate_AMR.py:449: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback
+/home/fibo/cart_ws/intregration/communicate_AMR.py:449: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback, re
+/home/fibo/cart_ws/intregration/communicate_AMR.py:464: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
