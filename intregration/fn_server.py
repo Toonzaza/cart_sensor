@@ -10,15 +10,15 @@ LOG_PATH   = os.path.join(DATA_DIR, "job_ids.jsonl")
 os.makedirs(DATA_DIR, exist_ok=True)
 
 # ========= ENV / CONFIG =========
-MQTT_HOST = os.getenv("MQTT_HOST", "127.0.0.1")
-MQTT_PORT = int(os.getenv("MQTT_PORT", "1883"))
-MQTT_USER = os.getenv("MQTT_USER")
-MQTT_PASS = os.getenv("MQTT_PASS")
-MQTT_BASE = os.getenv("MQTT_BASE", "smartcart")
+MQTT_HOST  = os.getenv("MQTT_HOST", "127.0.0.1")
+MQTT_PORT  = int(os.getenv("MQTT_PORT", "1883"))
+MQTT_USER  = os.getenv("MQTT_USER")
+MQTT_PASS  = os.getenv("MQTT_PASS")
+MQTT_BASE  = os.getenv("MQTT_BASE", "smartcart")
 STATION_ID = os.getenv("STATION_ID", "slot1")
 
-TOPIC_JOB_LATEST = f"{MQTT_BASE}/job/latest"
-TOPIC_JOB_EVENT  = f"{MQTT_BASE}/job/event"
+TOPIC_JOB_LATEST     = f"{MQTT_BASE}/job/latest"
+TOPIC_JOB_EVENT      = f"{MQTT_BASE}/job/event"
 TOPIC_DETECT_DESIRED = f"{MQTT_BASE}/detect/{STATION_ID}/desired"
 TOPIC_DETECT_MODE    = f"{MQTT_BASE}/detect/{STATION_ID}/mode"
 
@@ -72,8 +72,17 @@ def _atomic_write(path: str, text: str):
         tmp_path = tmp.name
     os.replace(tmp_path, path)
 
-def persist_state_and_log(cuh_ids: List[str], kit_ids: List[str], goal: str, ts, d, t, iso):
-    """บันทึก state.json เป็น arrays 2 ช่อง + null ตาม slot; log แบบเดียวกัน"""
+def persist_state_and_log(
+    cuh_ids: List[str],
+    kit_ids: List[str],
+    goal: str,
+    ts, d, t, iso,
+    op: Optional[str] = None
+):
+    """
+    บันทึก state.json เป็น arrays 2 ช่อง + null ตาม slot; log แบบเดียวกัน
+    เพิ่ม op: "Request"/"Return" (optional) ลงใน state/log เพื่อให้ node อื่นอ้างอิงได้
+    """
     cuh2 = _fill_two_slots(cuh_ids)
     kit2 = _fill_two_slots(kit_ids)
 
@@ -89,15 +98,21 @@ def persist_state_and_log(cuh_ids: List[str], kit_ids: List[str], goal: str, ts,
     if kit2[0] is not None:
         payload["kit_id"] = kit2[0]
 
+    # ใส่ op ถ้าถูกต้อง
+    if op in ("Request", "Return"):
+        payload["op"] = op
+
     state = {"latest_job_ids": payload}
     _atomic_write(STATE_PATH, json.dumps(state, ensure_ascii=False, indent=2))
     with open(LOG_PATH, "a", encoding="utf-8") as f:
         f.write(json.dumps(payload, ensure_ascii=False) + "\n")
+    print(f"[STATE] latest_job_ids: {payload}")
 
 # ========= MQTT =========
 def mqtt_init(client_id: str = "ws-bridge-server") -> mqtt.Client:
     cli = mqtt.Client(client_id=client_id, clean_session=True)
-    if MQTT_USER: cli.username_pw_set(MQTT_USER, MQTT_PASS or "")
+    if MQTT_USER:
+        cli.username_pw_set(MQTT_USER, MQTT_PASS or "")
     cli.connect(MQTT_HOST, MQTT_PORT, 60)
     cli.loop_start()
     return cli
@@ -106,7 +121,6 @@ def mqtt_pub(cli: mqtt.Client, topic: str, obj: Dict[str, Any], qos=0, retain=Fa
     cli.publish(topic, json.dumps(obj, ensure_ascii=False), qos=qos, retain=retain)
 
 # ========= ARCL parse (ย่อ) =========
-import re
 _re_state        = re.compile(r"\bstate\s*[:=]\s*([A-Za-z_]+)", re.I)
 _re_task_state   = re.compile(r"\btask\s*state\s*[:=]\s*([A-Za-z_]+)", re.I)
 _re_batt_pct     = re.compile(r"\b(batt|battery).{0,10}?(\d{1,3})\s*%")

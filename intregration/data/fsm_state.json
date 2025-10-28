@@ -1,0 +1,37 @@
+{
+  "ts": 1761660015.6256347,
+  "date": "2025-10-28",
+  "time": "21:00:15",
+  "iso": "2025-10-28T21:00:15+0700",
+  "state": "IDLE",
+  "current": null,
+  "queue_len": 0,
+  "match": {
+    "required": {
+      "cuh": true,
+      "kit": true
+    },
+    "matched": {
+      "cuh": true,
+      "kit": true
+    },
+    "complete": true,
+    "seen": {
+      "barcode": "1245452",
+      "rfid": "MXK22-1049"
+    },
+    "op": "Request",
+    "goal_id": "DOT400002"
+  },
+  "photo": {
+    "state": {
+      "barcode1": 1,
+      "barcode2": 1,
+      "rfidA": 1,
+      "rfidB": 1
+    },
+    "clear_since": null,
+    "required_secs": 5.0
+  },
+  "mode": "auto"
+}

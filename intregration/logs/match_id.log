@@ -18,3 +18,401 @@
   cli = mqtt.Client(client_id="match_id")
 /home/fibo/cart_ws/intregration/match_id.py:182: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
   cli = mqtt.Client(client_id="match_id")
+/home/fibo/cart_ws/intregration/match_id.py:182: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="match_id")
+/home/fibo/cart_ws/intregration/match_id.py:178: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="match_id")
+/home/fibo/cart_ws/intregration/match_id.py:178: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="match_id")
+/home/fibo/cart_ws/intregration/match_id.py:178: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="match_id")
+/home/fibo/cart_ws/intregration/match_id.py:178: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="match_id")
+/home/fibo/cart_ws/intregration/match_id.py:178: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="match_id")
+/home/fibo/cart_ws/intregration/match_id.py:178: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="match_id")
+/home/fibo/cart_ws/intregration/match_id.py:178: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="match_id")
+/home/fibo/cart_ws/intregration/match_id.py:178: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="match_id")
+/home/fibo/cart_ws/intregration/match_id.py:178: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="match_id")
+/home/fibo/cart_ws/intregration/match_id.py:178: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="match_id")
+/home/fibo/cart_ws/intregration/match_id.py:178: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="match_id")
+/home/fibo/cart_ws/intregration/match_id.py:178: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="match_id")
+/home/fibo/cart_ws/intregration/match_id.py:178: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="match_id")
+/home/fibo/cart_ws/intregration/match_id.py:178: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="match_id")
+/home/fibo/cart_ws/intregration/match_id.py:178: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="match_id")
+/home/fibo/cart_ws/intregration/match_id.py:178: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="match_id")
+/home/fibo/cart_ws/intregration/match_id.py:178: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="match_id")
+/home/fibo/cart_ws/intregration/match_id.py:178: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="match_id")
+/home/fibo/cart_ws/intregration/match_id.py:178: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="match_id")
+/home/fibo/cart_ws/intregration/match_id.py:178: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="match_id")
+/home/fibo/cart_ws/intregration/match_id.py:178: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="match_id")
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+[STATE] load failed (/home/fibo/cart_ws/intregration/data/state.json): Expecting value: line 1 column 1 (char 0)
+[MQTT] pub smartcart/match: {'latest_job_ids': {}, 'op': None, 'required': {'cuh': False, 'kit': False}, 'matched': {'cuh': False, 'kit': False}, 'matched_values': {'cuh': None, 'kit': None}, 'seen': {}, 'complete': True, 'ts': 1761648180.4362993}
+[MATCH] complete=True (op=None); waiting orchestrator to act.
+[STATE] load failed (/home/fibo/cart_ws/intregration/data/state.json): Expecting value: line 1 column 1 (char 0)
+[MQTT] pub smartcart/match: {'latest_job_ids': {}, 'op': None, 'required': {'cuh': False, 'kit': False}, 'matched': {'cuh': False, 'kit': False}, 'matched_values': {'cuh': None, 'kit': None}, 'seen': {}, 'complete': True, 'ts': 1761648180.4766135}
+[MATCH] complete=True (op=None); waiting orchestrator to act.
+[STATE] load failed (/home/fibo/cart_ws/intregration/data/state.json): Expecting value: line 1 column 1 (char 0)
+[MQTT] pub smartcart/match: {'latest_job_ids': {}, 'op': None, 'required': {'cuh': False, 'kit': False}, 'matched': {'cuh': False, 'kit': False}, 'matched_values': {'cuh': None, 'kit': None}, 'seen': {}, 'complete': True, 'ts': 1761648180.4770267}
+[MATCH] complete=True (op=None); waiting orchestrator to act.
+[STATE] load failed (/home/fibo/cart_ws/intregration/data/state.json): Expecting value: line 1 column 1 (char 0)
+[MQTT] pub smartcart/match: {'latest_job_ids': {}, 'op': None, 'required': {'cuh': False, 'kit': False}, 'matched': {'cuh': False, 'kit': False}, 'matched_values': {'cuh': None, 'kit': None}, 'seen': {}, 'complete': True, 'ts': 1761648180.4772925}
+[MATCH] complete=True (op=None); waiting orchestrator to act.
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761648188.5954669, 'date': '2025-10-28', 'time': '17:43:08', 'iso': '2025-10-28T17:43:08+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Request'}, 'op': 'Request', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': False, 'kit': False}, 'matched_values': {'cuh': None, 'kit': None}, 'seen': {}, 'complete': False, 'ts': 1761648198.340827}
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761648188.5954669, 'date': '2025-10-28', 'time': '17:43:08', 'iso': '2025-10-28T17:43:08+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Request'}, 'op': 'Request', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': False, 'kit': False}, 'matched_values': {'cuh': None, 'kit': None}, 'seen': {}, 'complete': False, 'ts': 1761648198.9066103}
+[LED] cmd -> smartcart/led/cmd: {'target': 'cuh1', 'result': 'ok', 'green_gpio': 20, 'red_gpio': 21, 'ts': 1761648201.8575332}
+[MATCH] BARCODE gpio=23 code='1245452' vs expect='1245452' -> True
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761648188.5954669, 'date': '2025-10-28', 'time': '17:43:08', 'iso': '2025-10-28T17:43:08+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Request'}, 'op': 'Request', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': True, 'kit': False}, 'matched_values': {'cuh': '1245452', 'kit': None}, 'seen': {'barcode': '1245452'}, 'complete': False, 'ts': 1761648201.8576512}
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761648188.5954669, 'date': '2025-10-28', 'time': '17:43:08', 'iso': '2025-10-28T17:43:08+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Request'}, 'op': 'Request', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': True, 'kit': False}, 'matched_values': {'cuh': '1245452', 'kit': None}, 'seen': {'barcode': '1245452'}, 'complete': False, 'ts': 1761648207.3589683}
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761648188.5954669, 'date': '2025-10-28', 'time': '17:43:08', 'iso': '2025-10-28T17:43:08+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Request'}, 'op': 'Request', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': True, 'kit': False}, 'matched_values': {'cuh': '1245452', 'kit': None}, 'seen': {'barcode': '1245452'}, 'complete': False, 'ts': 1761648210.360144}
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761648188.5954669, 'date': '2025-10-28', 'time': '17:43:08', 'iso': '2025-10-28T17:43:08+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Request'}, 'op': 'Request', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': True, 'kit': False}, 'matched_values': {'cuh': '1245452', 'kit': None}, 'seen': {'barcode': '1245452'}, 'complete': False, 'ts': 1761648210.9340436}
+[LED] cmd -> smartcart/led/cmd: {'target': 'kit1', 'result': 'ok', 'green_gpio': 5, 'red_gpio': 6, 'ts': 1761648211.5517945}
+[MATCH] RFID gpio=25 read='MXK22-1049' vs expect='MXK22-1049' -> True
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761648188.5954669, 'date': '2025-10-28', 'time': '17:43:08', 'iso': '2025-10-28T17:43:08+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Request'}, 'op': 'Request', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': True, 'kit': True}, 'matched_values': {'cuh': '1245452', 'kit': 'MXK22-1049'}, 'seen': {'barcode': '1245452', 'rfid': 'MXK22-1049'}, 'complete': True, 'ts': 1761648211.5519125}
+[MATCH] complete=True (op=Request); waiting orchestrator to act.
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+/home/fibo/cart_ws/intregration/match_id.py:178: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="match_id")
+/home/fibo/cart_ws/intregration/match_id.py:178: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="match_id")
+/home/fibo/cart_ws/intregration/match_id.py:178: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="match_id")
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761657692.5616436, 'date': '2025-10-28', 'time': '20:21:32', 'iso': '2025-10-28T20:21:32+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Return'}, 'op': 'Return', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': False, 'kit': False}, 'matched_values': {'cuh': None, 'kit': None}, 'seen': {}, 'complete': False, 'ts': 1761657774.3027406}
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761657692.5616436, 'date': '2025-10-28', 'time': '20:21:32', 'iso': '2025-10-28T20:21:32+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Return'}, 'op': 'Return', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': False, 'kit': False}, 'matched_values': {'cuh': None, 'kit': None}, 'seen': {}, 'complete': False, 'ts': 1761657774.3427598}
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761657692.5616436, 'date': '2025-10-28', 'time': '20:21:32', 'iso': '2025-10-28T20:21:32+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Return'}, 'op': 'Return', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': False, 'kit': False}, 'matched_values': {'cuh': None, 'kit': None}, 'seen': {}, 'complete': False, 'ts': 1761657774.3432682}
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761657692.5616436, 'date': '2025-10-28', 'time': '20:21:32', 'iso': '2025-10-28T20:21:32+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Return'}, 'op': 'Return', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': False, 'kit': False}, 'matched_values': {'cuh': None, 'kit': None}, 'seen': {}, 'complete': False, 'ts': 1761657774.343558}
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761657692.5616436, 'date': '2025-10-28', 'time': '20:21:32', 'iso': '2025-10-28T20:21:32+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Return'}, 'op': 'Return', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': False, 'kit': False}, 'matched_values': {'cuh': None, 'kit': None}, 'seen': {}, 'complete': False, 'ts': 1761657789.6786485}
+[LED] cmd -> smartcart/led/cmd: {'target': 'cuh1', 'result': 'ok', 'green_gpio': 20, 'red_gpio': 21, 'ts': 1761657790.0003126}
+[MATCH] BARCODE gpio=23 code='1245452' vs expect='1245452' -> True
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761657692.5616436, 'date': '2025-10-28', 'time': '20:21:32', 'iso': '2025-10-28T20:21:32+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Return'}, 'op': 'Return', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': True, 'kit': False}, 'matched_values': {'cuh': '1245452', 'kit': None}, 'seen': {'barcode': '1245452'}, 'complete': False, 'ts': 1761657790.0004508}
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761657692.5616436, 'date': '2025-10-28', 'time': '20:21:32', 'iso': '2025-10-28T20:21:32+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Return'}, 'op': 'Return', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': True, 'kit': False}, 'matched_values': {'cuh': '1245452', 'kit': None}, 'seen': {'barcode': '1245452'}, 'complete': False, 'ts': 1761657790.310656}
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761657692.5616436, 'date': '2025-10-28', 'time': '20:21:32', 'iso': '2025-10-28T20:21:32+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Return'}, 'op': 'Return', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': True, 'kit': False}, 'matched_values': {'cuh': '1245452', 'kit': None}, 'seen': {'barcode': '1245452'}, 'complete': False, 'ts': 1761657791.3020024}
+[LED] cmd -> smartcart/led/cmd: {'target': 'cuh1', 'result': 'ok', 'green_gpio': 20, 'red_gpio': 21, 'ts': 1761657791.7333622}
+[MATCH] BARCODE gpio=23 code='1245452' vs expect='1245452' -> True
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761657692.5616436, 'date': '2025-10-28', 'time': '20:21:32', 'iso': '2025-10-28T20:21:32+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Return'}, 'op': 'Return', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': True, 'kit': False}, 'matched_values': {'cuh': '1245452', 'kit': None}, 'seen': {'barcode': '1245452'}, 'complete': False, 'ts': 1761657791.733491}
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761657692.5616436, 'date': '2025-10-28', 'time': '20:21:32', 'iso': '2025-10-28T20:21:32+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Return'}, 'op': 'Return', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': True, 'kit': False}, 'matched_values': {'cuh': '1245452', 'kit': None}, 'seen': {'barcode': '1245452'}, 'complete': False, 'ts': 1761657791.8114576}
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761657692.5616436, 'date': '2025-10-28', 'time': '20:21:32', 'iso': '2025-10-28T20:21:32+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Return'}, 'op': 'Return', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': True, 'kit': False}, 'matched_values': {'cuh': '1245452', 'kit': None}, 'seen': {'barcode': '1245452'}, 'complete': False, 'ts': 1761657795.1004143}
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761657692.5616436, 'date': '2025-10-28', 'time': '20:21:32', 'iso': '2025-10-28T20:21:32+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Return'}, 'op': 'Return', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': True, 'kit': False}, 'matched_values': {'cuh': '1245452', 'kit': None}, 'seen': {'barcode': '1245452'}, 'complete': False, 'ts': 1761657795.522432}
+[LED] cmd -> smartcart/led/cmd: {'target': 'cuh1', 'result': 'ok', 'green_gpio': 20, 'red_gpio': 21, 'ts': 1761657806.3319144}
+[MATCH] BARCODE gpio=23 code='1245452' vs expect='1245452' -> True
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761657692.5616436, 'date': '2025-10-28', 'time': '20:21:32', 'iso': '2025-10-28T20:21:32+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Return'}, 'op': 'Return', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': True, 'kit': False}, 'matched_values': {'cuh': '1245452', 'kit': None}, 'seen': {'barcode': '1245452'}, 'complete': False, 'ts': 1761657806.332024}
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761657692.5616436, 'date': '2025-10-28', 'time': '20:21:32', 'iso': '2025-10-28T20:21:32+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Return'}, 'op': 'Return', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': True, 'kit': False}, 'matched_values': {'cuh': '1245452', 'kit': None}, 'seen': {'barcode': '1245452'}, 'complete': False, 'ts': 1761657816.7580774}
+/home/fibo/cart_ws/intregration/match_id.py:178: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="match_id")
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761657692.5616436, 'date': '2025-10-28', 'time': '20:21:32', 'iso': '2025-10-28T20:21:32+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Return'}, 'op': 'Return', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': True, 'kit': False}, 'matched_values': {'cuh': '1245452', 'kit': None}, 'seen': {'barcode': '1245452'}, 'complete': False, 'ts': 1761657817.1140552}
+[LED] cmd -> smartcart/led/cmd: {'target': 'kit1', 'result': 'ok', 'green_gpio': 5, 'red_gpio': 6, 'ts': 1761657817.2912533}
+[MATCH] RFID gpio=25 read='MXK22-1049' vs expect='MXK22-1049' -> True
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761657692.5616436, 'date': '2025-10-28', 'time': '20:21:32', 'iso': '2025-10-28T20:21:32+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Return'}, 'op': 'Return', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': True, 'kit': True}, 'matched_values': {'cuh': '1245452', 'kit': 'MXK22-1049'}, 'seen': {'barcode': '1245452', 'rfid': 'MXK22-1049'}, 'complete': True, 'ts': 1761657817.2913606}
+[MATCH] complete=True (op=Return); waiting orchestrator to act.
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761657692.5616436, 'date': '2025-10-28', 'time': '20:21:32', 'iso': '2025-10-28T20:21:32+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Return'}, 'op': 'Return', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': False, 'kit': False}, 'matched_values': {'cuh': None, 'kit': None}, 'seen': {}, 'complete': False, 'ts': 1761657820.4115071}
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761657692.5616436, 'date': '2025-10-28', 'time': '20:21:32', 'iso': '2025-10-28T20:21:32+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Return'}, 'op': 'Return', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': False, 'kit': False}, 'matched_values': {'cuh': None, 'kit': None}, 'seen': {}, 'complete': False, 'ts': 1761657820.6918857}
+[LED] cmd -> smartcart/led/cmd: {'target': 'kit1', 'result': 'ok', 'green_gpio': 5, 'red_gpio': 6, 'ts': 1761657821.5525393}
+[MATCH] RFID gpio=25 read='MXK22-1049' vs expect='MXK22-1049' -> True
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761657692.5616436, 'date': '2025-10-28', 'time': '20:21:32', 'iso': '2025-10-28T20:21:32+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Return'}, 'op': 'Return', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': False, 'kit': True}, 'matched_values': {'cuh': None, 'kit': 'MXK22-1049'}, 'seen': {'rfid': 'MXK22-1049'}, 'complete': False, 'ts': 1761657821.552646}
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+match_id running. Ctrl+C to quit.
+/home/fibo/cart_ws/intregration/match_id.py:178: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="match_id")
+match_id running. Ctrl+C to quit.
+[MQTT] sub smartcart/sensor
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761658668.7380567, 'date': '2025-10-28', 'time': '20:37:48', 'iso': '2025-10-28T20:37:48+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Return'}, 'op': 'Return', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': False, 'kit': False}, 'matched_values': {'cuh': None, 'kit': None}, 'seen': {}, 'complete': False, 'ts': 1761659519.5433586}
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761658668.7380567, 'date': '2025-10-28', 'time': '20:37:48', 'iso': '2025-10-28T20:37:48+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Return'}, 'op': 'Return', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': False, 'kit': False}, 'matched_values': {'cuh': None, 'kit': None}, 'seen': {}, 'complete': False, 'ts': 1761659519.5836408}
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761658668.7380567, 'date': '2025-10-28', 'time': '20:37:48', 'iso': '2025-10-28T20:37:48+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Return'}, 'op': 'Return', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': False, 'kit': False}, 'matched_values': {'cuh': None, 'kit': None}, 'seen': {}, 'complete': False, 'ts': 1761659519.5840876}
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761658668.7380567, 'date': '2025-10-28', 'time': '20:37:48', 'iso': '2025-10-28T20:37:48+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Return'}, 'op': 'Return', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': False, 'kit': False}, 'matched_values': {'cuh': None, 'kit': None}, 'seen': {}, 'complete': False, 'ts': 1761659519.5843682}
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761658668.7380567, 'date': '2025-10-28', 'time': '20:37:48', 'iso': '2025-10-28T20:37:48+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Return'}, 'op': 'Return', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': False, 'kit': False}, 'matched_values': {'cuh': None, 'kit': None}, 'seen': {}, 'complete': False, 'ts': 1761659647.9247932}
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761658668.7380567, 'date': '2025-10-28', 'time': '20:37:48', 'iso': '2025-10-28T20:37:48+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Return'}, 'op': 'Return', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': False, 'kit': False}, 'matched_values': {'cuh': None, 'kit': None}, 'seen': {}, 'complete': False, 'ts': 1761659648.4559357}
+[LED] cmd -> smartcart/led/cmd: {'target': 'cuh1', 'result': 'ok', 'green_gpio': 20, 'red_gpio': 21, 'ts': 1761659649.9007785}
+[MATCH] BARCODE gpio=23 code='1245452' vs expect='1245452' -> True
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761658668.7380567, 'date': '2025-10-28', 'time': '20:37:48', 'iso': '2025-10-28T20:37:48+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Return'}, 'op': 'Return', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': True, 'kit': False}, 'matched_values': {'cuh': '1245452', 'kit': None}, 'seen': {'barcode': '1245452'}, 'complete': False, 'ts': 1761659649.9008958}
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761658668.7380567, 'date': '2025-10-28', 'time': '20:37:48', 'iso': '2025-10-28T20:37:48+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Return'}, 'op': 'Return', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': True, 'kit': False}, 'matched_values': {'cuh': '1245452', 'kit': None}, 'seen': {'barcode': '1245452'}, 'complete': False, 'ts': 1761659667.0526934}
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761658668.7380567, 'date': '2025-10-28', 'time': '20:37:48', 'iso': '2025-10-28T20:37:48+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Return'}, 'op': 'Return', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': True, 'kit': False}, 'matched_values': {'cuh': '1245452', 'kit': None}, 'seen': {'barcode': '1245452'}, 'complete': False, 'ts': 1761659668.0037143}
+[LED] cmd -> smartcart/led/cmd: {'target': 'kit1', 'result': 'ok', 'green_gpio': 5, 'red_gpio': 6, 'ts': 1761659668.1843357}
+[MATCH] RFID gpio=25 read='MXK22-1049' vs expect='MXK22-1049' -> True
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761658668.7380567, 'date': '2025-10-28', 'time': '20:37:48', 'iso': '2025-10-28T20:37:48+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Return'}, 'op': 'Return', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': True, 'kit': True}, 'matched_values': {'cuh': '1245452', 'kit': 'MXK22-1049'}, 'seen': {'barcode': '1245452', 'rfid': 'MXK22-1049'}, 'complete': True, 'ts': 1761659668.1844437}
+[MATCH] complete=True (op=Return); waiting orchestrator to act.
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761659798.7953784, 'date': '2025-10-28', 'time': '20:56:38', 'iso': '2025-10-28T20:56:38+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Request'}, 'op': 'Request', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': False, 'kit': False}, 'matched_values': {'cuh': None, 'kit': None}, 'seen': {}, 'complete': False, 'ts': 1761659808.6900873}
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761659798.7953784, 'date': '2025-10-28', 'time': '20:56:38', 'iso': '2025-10-28T20:56:38+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Request'}, 'op': 'Request', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': False, 'kit': False}, 'matched_values': {'cuh': None, 'kit': None}, 'seen': {}, 'complete': False, 'ts': 1761659809.2648432}
+[LED] cmd -> smartcart/led/cmd: {'target': 'cuh1', 'result': 'ok', 'green_gpio': 20, 'red_gpio': 21, 'ts': 1761659811.1048708}
+[MATCH] BARCODE gpio=23 code='1245452' vs expect='1245452' -> True
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761659798.7953784, 'date': '2025-10-28', 'time': '20:56:38', 'iso': '2025-10-28T20:56:38+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Request'}, 'op': 'Request', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': True, 'kit': False}, 'matched_values': {'cuh': '1245452', 'kit': None}, 'seen': {'barcode': '1245452'}, 'complete': False, 'ts': 1761659811.104981}
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761659798.7953784, 'date': '2025-10-28', 'time': '20:56:38', 'iso': '2025-10-28T20:56:38+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Request'}, 'op': 'Request', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': True, 'kit': False}, 'matched_values': {'cuh': '1245452', 'kit': None}, 'seen': {'barcode': '1245452'}, 'complete': False, 'ts': 1761659815.384257}
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761659798.7953784, 'date': '2025-10-28', 'time': '20:56:38', 'iso': '2025-10-28T20:56:38+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Request'}, 'op': 'Request', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': True, 'kit': False}, 'matched_values': {'cuh': '1245452', 'kit': None}, 'seen': {'barcode': '1245452'}, 'complete': False, 'ts': 1761659815.6745636}
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761659798.7953784, 'date': '2025-10-28', 'time': '20:56:38', 'iso': '2025-10-28T20:56:38+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Request'}, 'op': 'Request', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': True, 'kit': False}, 'matched_values': {'cuh': '1245452', 'kit': None}, 'seen': {'barcode': '1245452'}, 'complete': False, 'ts': 1761659816.2317135}
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761659798.7953784, 'date': '2025-10-28', 'time': '20:56:38', 'iso': '2025-10-28T20:56:38+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Request'}, 'op': 'Request', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': True, 'kit': False}, 'matched_values': {'cuh': '1245452', 'kit': None}, 'seen': {'barcode': '1245452'}, 'complete': False, 'ts': 1761659817.2141037}
+[LED] cmd -> smartcart/led/cmd: {'target': 'kit1', 'result': 'ok', 'green_gpio': 5, 'red_gpio': 6, 'ts': 1761659817.2509491}
+[MATCH] RFID gpio=25 read='MXK22-1049' vs expect='MXK22-1049' -> True
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761659798.7953784, 'date': '2025-10-28', 'time': '20:56:38', 'iso': '2025-10-28T20:56:38+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Request'}, 'op': 'Request', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': True, 'kit': True}, 'matched_values': {'cuh': '1245452', 'kit': 'MXK22-1049'}, 'seen': {'barcode': '1245452', 'rfid': 'MXK22-1049'}, 'complete': True, 'ts': 1761659817.2510486}
+[MATCH] complete=True (op=Request); waiting orchestrator to act.
+[LED] cmd -> smartcart/led/cmd: {'target': 'kit1', 'result': 'ok', 'green_gpio': 5, 'red_gpio': 6, 'ts': 1761659818.2629898}
+[MATCH] RFID gpio=25 read='MXK22-1049' vs expect='MXK22-1049' -> True
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761659798.7953784, 'date': '2025-10-28', 'time': '20:56:38', 'iso': '2025-10-28T20:56:38+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Request'}, 'op': 'Request', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': False, 'kit': True}, 'matched_values': {'cuh': None, 'kit': 'MXK22-1049'}, 'seen': {'rfid': 'MXK22-1049'}, 'complete': False, 'ts': 1761659818.263092}
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761659798.7953784, 'date': '2025-10-28', 'time': '20:56:38', 'iso': '2025-10-28T20:56:38+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Request'}, 'op': 'Request', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': False, 'kit': True}, 'matched_values': {'cuh': None, 'kit': 'MXK22-1049'}, 'seen': {'rfid': 'MXK22-1049'}, 'complete': False, 'ts': 1761659826.4675221}
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761659798.7953784, 'date': '2025-10-28', 'time': '20:56:38', 'iso': '2025-10-28T20:56:38+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Request'}, 'op': 'Request', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': False, 'kit': True}, 'matched_values': {'cuh': None, 'kit': 'MXK22-1049'}, 'seen': {'rfid': 'MXK22-1049'}, 'complete': False, 'ts': 1761659827.0796368}
+[LED] cmd -> smartcart/led/cmd: {'target': 'kit1', 'result': 'ok', 'green_gpio': 5, 'red_gpio': 6, 'ts': 1761659829.8165283}
+[MATCH] RFID gpio=25 read='MXK22-1049' vs expect='MXK22-1049' -> True
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761659798.7953784, 'date': '2025-10-28', 'time': '20:56:38', 'iso': '2025-10-28T20:56:38+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Request'}, 'op': 'Request', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': False, 'kit': True}, 'matched_values': {'cuh': None, 'kit': 'MXK22-1049'}, 'seen': {'rfid': 'MXK22-1049'}, 'complete': False, 'ts': 1761659829.8166318}
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761659798.7953784, 'date': '2025-10-28', 'time': '20:56:38', 'iso': '2025-10-28T20:56:38+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Request'}, 'op': 'Request', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': False, 'kit': True}, 'matched_values': {'cuh': None, 'kit': 'MXK22-1049'}, 'seen': {'rfid': 'MXK22-1049'}, 'complete': False, 'ts': 1761659833.4312549}
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761659798.7953784, 'date': '2025-10-28', 'time': '20:56:38', 'iso': '2025-10-28T20:56:38+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Request'}, 'op': 'Request', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': False, 'kit': True}, 'matched_values': {'cuh': None, 'kit': 'MXK22-1049'}, 'seen': {'rfid': 'MXK22-1049'}, 'complete': False, 'ts': 1761659834.1500957}
+[LED] cmd -> smartcart/led/cmd: {'target': 'kit1', 'result': 'ok', 'green_gpio': 5, 'red_gpio': 6, 'ts': 1761659835.8937497}
+[MATCH] RFID gpio=25 read='MXK22-1049' vs expect='MXK22-1049' -> True
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761659798.7953784, 'date': '2025-10-28', 'time': '20:56:38', 'iso': '2025-10-28T20:56:38+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Request'}, 'op': 'Request', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': False, 'kit': True}, 'matched_values': {'cuh': None, 'kit': 'MXK22-1049'}, 'seen': {'rfid': 'MXK22-1049'}, 'complete': False, 'ts': 1761659835.893847}
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761659798.7953784, 'date': '2025-10-28', 'time': '20:56:38', 'iso': '2025-10-28T20:56:38+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Request'}, 'op': 'Request', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': False, 'kit': True}, 'matched_values': {'cuh': None, 'kit': 'MXK22-1049'}, 'seen': {'rfid': 'MXK22-1049'}, 'complete': False, 'ts': 1761659838.0500717}
+[MQTT] pub smartcart/match: {'latest_job_ids': {'ts': 1761659798.7953784, 'date': '2025-10-28', 'time': '20:56:38', 'iso': '2025-10-28T20:56:38+0700', 'goal_id': 'DOT400002', 'cuh_ids': ['1245452', None], 'kit_ids': ['MXK22-1049', None], 'cuh_id': '1245452', 'kit_id': 'MXK22-1049', 'op': 'Request'}, 'op': 'Request', 'required': {'cuh': True, 'kit': True}, 'matched': {'cuh': False, 'kit': True}, 'matched_values': {'cuh': None, 'kit': 'MXK22-1049'}, 'seen': {'rfid': 'MXK22-1049'}, 'complete': False, 'ts': 1761659839.2315705}
+/home/fibo/cart_ws/intregration/match_id.py:178: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="match_id")

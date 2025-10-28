@@ -11,7 +11,6 @@ BASE       = "smartcart"
 
 SUB_TOPIC        = f"{BASE}/sensor"
 PUB_MATCH_TOPIC  = f"{BASE}/match"
-AMR_TOGGLE_TOPIC = f"{BASE}/toggle_omron"
 LED_CMD_TOPIC    = f"{BASE}/led/cmd"
 
 # trigger GPIO -> index
@@ -66,7 +65,7 @@ class MatchState:
         self.seen = {}
         self.matched_values = {"cuh": None, "kit": None}
     def as_dict(self):
-        return {"cuh_id": self.cuh_ok, "kit_id": self.kit_ok}
+        return {"cuh": self.cuh_ok, "kit": self.kit_ok}
 
 ms = MatchState()
 
@@ -155,8 +154,11 @@ def on_message(client, userdata, msg):
 
     complete = ((not cuh_required) or ms.cuh_ok) and ((not kit_required) or ms.kit_ok)
 
+    # include op in match report for orchestrator to decide
+    op = (latest_job or {}).get("op")
     out = {
         "latest_job_ids": latest_job,
+        "op": op,
         "required": {"cuh": cuh_required, "kit": kit_required},
         "matched": ms.as_dict(),
         "matched_values": ms.matched_values,
@@ -167,15 +169,9 @@ def on_message(client, userdata, msg):
     client.publish(PUB_MATCH_TOPIC, json.dumps(out, ensure_ascii=False), qos=0, retain=False)
     print(f"[MQTT] pub {PUB_MATCH_TOPIC}: {out}")
 
+    # ❌ ไม่ toggle AMR แล้ว — ปล่อยให้ run_all (FSM) เป็นคนตัดสินใจ/สั่งงาน
     if complete:
-        toggle = {
-            "reason": "match_complete",
-            "latest_job_ids": latest_job,
-            "goal_id": latest_job.get("goal_id"),
-            "ts": time.time()
-        }
-        client.publish(AMR_TOGGLE_TOPIC, json.dumps(toggle, ensure_ascii=False), qos=1, retain=False)
-        print(f"[AMR] 🔔 trigger -> {AMR_TOGGLE_TOPIC}: {toggle}")
+        print(f"[MATCH] complete=True (op={op}); waiting orchestrator to act.")
         ms.reset()
 
 def main():
