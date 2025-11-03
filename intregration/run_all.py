@@ -3,8 +3,8 @@
 
 import os, sys, json, time, signal, pathlib, subprocess, re
 from collections import deque
+from typing import Optional, Dict, Any, Set
 import paho.mqtt.client as mqtt
-from typing import Optional, Dict, Any
 
 # ---------- PATH/CONFIG ----------
 BASE_DIR = pathlib.Path(__file__).resolve().parent
@@ -13,7 +13,7 @@ LOG_DIR.mkdir(exist_ok=True)
 
 DATA_DIR        = pathlib.Path(os.path.expanduser("~/cart_ws/intregration/data"))
 DATA_DIR.mkdir(parents=True, exist_ok=True)
-STATE_PATH      = DATA_DIR / "state.json"       # main_server เขียนไฟล์นี้
+STATE_PATH      = DATA_DIR / "state.json"       # main_server เขียนไฟล์นี้ (และฝัง op)
 FSM_STATE_PATH  = DATA_DIR / "fsm_state.json"   # orchestrator เขียนไฟล์นี้
 
 MQTT_HOST  = os.getenv("MQTT_HOST", "127.0.0.1")
@@ -25,7 +25,8 @@ TOPIC_TOGGLE     = f"{MQTT_BASE}/toggle_omron"
 TOPIC_MATCH      = f"{MQTT_BASE}/match"
 TOPIC_AMR_STATUS = f"{MQTT_BASE}/amr/status"
 TOPIC_AMR_CONN   = f"{MQTT_BASE}/amr/connected"
-TOPIC_SENSOR     = f"{MQTT_BASE}/sensor"      # << NEW: รับสถานะ photo จาก main_sensor/detect_sensor
+TOPIC_SENSOR     = f"{MQTT_BASE}/sensor"
+TOPIC_LED_CMD    = f"{MQTT_BASE}/led/cmd"
 
 # รายการโหนดที่จะสตาร์ท
 ORDER = [
@@ -68,6 +69,12 @@ def _safe_write_json(path: pathlib.Path, obj: Dict[str, Any]):
         json.dump(obj, f, ensure_ascii=False, indent=2)
     os.replace(tmp, path)
 
+def _clear_file(path: pathlib.Path):
+    try:
+        _safe_write_json(path, {})
+    except Exception as e:
+        print(f"[INIT] cannot clear {path}: {e}")
+
 def _at_least_one_present(cuh_ids, kit_ids) -> bool:
     return any(bool(x) for x in (cuh_ids or [])) or any(bool(x) for x in (kit_ids or []))
 
@@ -75,41 +82,84 @@ def _parse_arrived_line(line: str) -> Optional[str]:
     m = re.match(r"^Arrived at\s+(.+)$", line.strip(), re.I)
     return m.group(1).strip() if m else None
 
+def _fill_two(vals):
+    v = list(vals or [])
+    v = v[:2] + [None, None]
+    return [v[0], v[1]]
+
+# ---------- MQTT helper for retained clearing ----------
+def mqtt_connect():
+    cli = mqtt.Client(client_id="run_all_bootstrap")
+    cli.connect(MQTT_HOST, MQTT_PORT, 30)
+    cli.loop_start()
+    return cli
+
+def mqtt_clear_retained(cli: mqtt.Client, topic: str):
+    # publish payload ว่าง retain=True เพื่อล้าง retained ตามสเปค
+    cli.publish(topic, b"", qos=1, retain=True)
+
+def mqtt_led_clear(cli: mqtt.Client):
+    # เคลียร์ LED ทุกจุด (ถ้า led_actuator ต้องการ payload อื่น แจ้งได้)
+    for target in ("cuh1","cuh2","kit1","kit2"):
+        cli.publish(
+            TOPIC_LED_CMD,
+            json.dumps({"target": target, "result": "skip", "ts": time.time()}),
+            qos=1, retain=False
+        )
+
+def initial_cleanup():
+    cli = mqtt_connect()
+    try:
+        print("[INIT] clearing state files and retained messages...")
+        _clear_file(STATE_PATH)
+        _clear_file(FSM_STATE_PATH)
+        mqtt_clear_retained(cli, TOPIC_JOB_LATEST)
+        mqtt_led_clear(cli)
+        time.sleep(0.3)
+    finally:
+        cli.loop_stop(); cli.disconnect()
+
 # ---------- FSM ----------
 class OrchestratorFSM:
     """
-    Auto mode (no toggle from WS):
+    Auto mode:
       - Request: WAIT_MATCH → dispatch เมื่อ smartcart/match complete
-      - Return : WAIT_PHOTO_CLEAR (photo 4 ตัวโล่งต่อเนื่อง ≥5s) → dispatch
+      - Return : WAIT_PHOTO_CLEAR (photo 4 ตัวโล่งต่อเนื่อง ≥ 5s) → dispatch
     States:
-      IDLE, WAIT_MATCH, WAIT_PHOTO_CLEAR, DISPATCHED, EN_ROUTE, AT_DEST, RETURNING, DONE
+      IDLE, WAIT_MATCH, WAIT_PHOTO_CLEAR, EN_ROUTE, AT_DEST, RETURNING, DONE
     """
-    PHOTO_NAMES_TARGET = ("barcode1", "barcode2", "rfidA", "rfidB")  # จาก detect_sensor.py ที่เราแก้ไป
+    PHOTO_NAMES_TARGET = ("barcode1", "barcode2", "rfidA", "rfidB")
 
     def __init__(self, mqtt_cli: mqtt.Client):
         self.cli = mqtt_cli
-        self.queue = deque()     # jobs: {"op","goal_id","cuh_ids","kit_ids"}
-        self.current = None
+        self.queue: deque = deque()     # jobs: {"op","goal_id","cuh_ids","kit_ids"}
+        self.current: Optional[Dict[str, Any]] = None
         self.state   = "IDLE"
         self.last_update_ts = time.time()
 
-        # match snapshot (ไว้ดูใน fsm_state.json และใช้สำหรับ Request)
         self.match_info = {
-            "required": None,
-            "matched": None,
-            "complete": False,
-            "seen": {},
-            "op": None,
-            "goal_id": None,
+            "required": None, "matched": None, "complete": False,
+            "seen": {}, "op": None, "goal_id": None,
         }
 
-        # --- Return photo-clear guard ---
-        # เก็บสถานะล่าสุดของ photo ทั้ง 4 ตัว: name -> 0/1
         self.photo_state: Dict[str, int] = {}
-        # หากเคลียร์ครบ 4 ตัว จะเซ็ตเวลาเริ่มจับเวลาไว้ที่นี่
         self.photo_clear_since: Optional[float] = None
-        # ต้องโล่งต่อเนื่องกี่วินาที
         self.photo_clear_secs_required = 5.0
+
+        # กันซ้ำ
+        self._seen_jobs: Set[str] = set()
+        self._seen_capacity = 100
+        self._last_done_fingerprint: Optional[str] = None
+        self._last_done_ts: float = 0.0
+
+    def _fingerprint(self, job: Dict[str, Any]) -> str:
+        return json.dumps(
+            {"op": job.get("op"),
+             "goal_id": job.get("goal_id"),
+             "cuh_ids": job.get("cuh_ids"),
+             "kit_ids": job.get("kit_ids")},
+            sort_keys=True
+        )
 
     def _persist(self):
         ts, d, t, iso = _now_fields()
@@ -130,12 +180,17 @@ class OrchestratorFSM:
 
     # ---- MQTT events
     def on_job_latest(self, payload: Dict[str, Any]):
+        """
+        NOTE: main_server ของคุณ publish job/latest 'ไม่มี op'
+        และฝัง op ลงใน state.json → เราอ่าน 'op' จาก STATE_PATH
+        """
         st = _safe_read_json(STATE_PATH)
         latest = st.get("latest_job_ids") or {}
-        op = latest.get("op")
-        goal = payload.get("goal_id")
-        cuh_ids = payload.get("cuh_ids") or []
-        kit_ids = payload.get("kit_ids") or []
+
+        op   = latest.get("op")
+        goal = latest.get("goal_id") or payload.get("goal_id")
+        cuh2 = _fill_two(latest.get("cuh_ids") or ([latest.get("cuh_id")] if latest.get("cuh_id") else []))
+        kit2 = _fill_two(latest.get("kit_ids") or ([latest.get("kit_id")] if latest.get("kit_id") else []))
 
         if op not in ("Request", "Return"):
             print(f"[FSM] ignore job: invalid op in state.json (op={op})")
@@ -143,11 +198,31 @@ class OrchestratorFSM:
         if not goal:
             print("[FSM] ignore job: missing goal_id")
             return
-        if not _at_least_one_present(cuh_ids, kit_ids):
+        if not _at_least_one_present(cuh2, kit2):
             print("[FSM] ignore job: both CUH and KIT empty")
             return
 
-        job = {"op": op, "goal_id": goal, "cuh_ids": cuh_ids, "kit_ids": kit_ids}
+        # ใช้ ts จาก payload ถ้ามี (main_server ใส่ให้ใน publish_job_topics) — ถ้าไม่มี จะ fallback เป็น now
+        ts_in = payload.get("ts") if isinstance(payload, dict) else None
+        if not isinstance(ts_in, (int, float)):
+            ts_in = time.time()
+
+        job = {"op": op, "goal_id": goal, "cuh_ids": cuh2, "kit_ids": kit2}
+        fp  = self._fingerprint(job)
+        key = f"{fp}|{int(ts_in)}"
+
+        if key in self._seen_jobs:
+            print("[FSM] ignore job: duplicate key (already seen)")
+            return
+
+        if self._last_done_fingerprint and fp == self._last_done_fingerprint and ts_in <= self._last_done_ts + 1e-6:
+            print("[FSM] ignore job: same as last done (retained duplicate)")
+            return
+
+        self._seen_jobs.add(key)
+        if len(self._seen_jobs) > self._seen_capacity:
+            self._seen_jobs = set(list(self._seen_jobs)[-self._seen_capacity:])
+
         self.queue.append(job)
         print(f"[FSM] queued job: {job} (qlen={len(self.queue)})")
 
@@ -173,42 +248,25 @@ class OrchestratorFSM:
         self.last_update_ts = time.time()
         self._persist()
 
-        # ถ้ากำลังรอ match สำหรับ Request → dispatch เมื่อครบ
         if self.current and self.state == "WAIT_MATCH":
             if op == "Request" and complete and goal == self.current.get("goal_id"):
                 print(f"[FSM] Request match complete for goal={goal} → dispatch now")
                 self._dispatch_current()
 
     def on_sensor(self, payload: Dict[str, Any]):
-        """
-        ฟัง smartcart/sensor
-        จาก detect_sensor.py เราจะได้:
-          sensor == "photo"
-          gpio == <pin>
-          value: {"state": 0|1, "name": "barcode1|barcode2|rfidA|rfidB"}
-        """
-        if not isinstance(payload, dict):
-            return
-        if (payload.get("sensor") != "photo") or ("value" not in payload):
-            return
-
-        v = payload.get("value") or {}
-        name = v.get("name")
-        if not name:
-            return
-        state = v.get("state")
+        if not isinstance(payload, dict): return
+        if payload.get("sensor") != "photo" or "value" not in payload: return
+        v = payload["value"]; name = v.get("name")
+        if not name: return
         try:
-            state = int(state)
+            state = 1 if int(v.get("state",1)) else 0
         except Exception:
-            return
-        state = 1 if state else 0
+            state = 1
         self.photo_state[name] = state
         self.last_update_ts = time.time()
 
-        # ถ้าเป็นงาน Return และกำลังอยู่ใน WAIT_PHOTO_CLEAR → ตรวจ all-clear
         if self.current and self.current.get("op") == "Return" and self.state == "WAIT_PHOTO_CLEAR":
             self._check_photo_clear_and_maybe_start_timer()
-
         self._persist()
 
     def on_amr_status(self, payload: Dict[str, Any]):
@@ -229,8 +287,7 @@ class OrchestratorFSM:
 
     # ---- core
     def _prepare(self):
-        if self.current or not self.queue:
-            return
+        if self.current or not self.queue: return
         self.current = self.queue.popleft()
         op = self.current["op"]
 
@@ -238,32 +295,26 @@ class OrchestratorFSM:
             self.state = "WAIT_MATCH"
             print(f"[FSM] WAIT_MATCH (Request) goal={self.current['goal_id']}")
         else:
-            # Return: ต้องรอให้ photo ทั้ง 4 ตัว "โล่ง" ต่อเนื่อง >= 5s ก่อน
             self.state = "WAIT_PHOTO_CLEAR"
-            self.photo_clear_since = None  # reset timer
+            self.photo_clear_since = None
             print(f"[FSM] WAIT_PHOTO_CLEAR (Return) goal={self.current['goal_id']}")
-            # เผื่อ sensor เพิ่ง publish มาก่อนแล้ว all-clear อยู่แล้ว:
             self._check_photo_clear_and_maybe_start_timer()
-
         self._persist()
 
     def _check_photo_clear_and_maybe_start_timer(self):
-        # ตรวจว่าครบทั้ง 4 name อยู่ใน state==1 หรือยัง
-        all_present = all((name in self.photo_state) for name in self.PHOTO_NAMES_TARGET)
-        all_clear = all_present and all(self.photo_state.get(n, 0) == 1 for n in self.PHOTO_NAMES_TARGET)
-
+        all_present = all((n in self.photo_state) for n in self.PHOTO_NAMES_TARGET)
+        all_clear   = all_present and all(self.photo_state.get(n,0)==1 for n in self.PHOTO_NAMES_TARGET)
         if all_clear:
             if self.photo_clear_since is None:
                 self.photo_clear_since = time.time()
-                print(f"[FSM] photo all-clear → start 5s timer")
+                print("[FSM] photo all-clear → start 5s timer")
         else:
             if self.photo_clear_since is not None:
-                print(f"[FSM] photo became blocked again → reset timer")
+                print("[FSM] photo became blocked again → reset timer")
             self.photo_clear_since = None
 
     def _dispatch_current(self):
-        if not self.current:
-            return
+        if not self.current: return
         payload = {
             "reason": "fsm_dispatch",
             "goal_id": self.current["goal_id"],
@@ -284,25 +335,49 @@ class OrchestratorFSM:
 
     def _finish_current(self):
         done = self.current
+        # เก็บ fingerprint + ts ของงานล่าสุดที่เสร็จ เพื่อกัน retained/ซ้ำ
+        try:
+            self._last_done_fingerprint = self._fingerprint(done) if done else None
+        except Exception:
+            self._last_done_fingerprint = None
+        self._last_done_ts = time.time()
+
         self.current = None
         self.state = "IDLE"
-        # reset ตัวแปร photo สำหรับงานถัดไป (ไม่ reset map ทั้งหมด เพื่อคง snapshot ให้ UI ได้)
         self.photo_clear_since = None
         print(f"[FSM] job done: {done}")
         self._persist()
-        time.sleep(0.4)
+
+        # ---- RESET หลังงานจบ ----
+        try:
+            _safe_write_json(STATE_PATH, {})
+            _safe_write_json(FSM_STATE_PATH, {})
+            # เคลียร์ retained ของ job/latest
+            self.cli.publish(TOPIC_JOB_LATEST, b"", qos=1, retain=True)
+            # เคลียร์ LED
+            for target in ("cuh1","cuh2","kit1","kit2"):
+                self.cli.publish(
+                    TOPIC_LED_CMD,
+                    json.dumps({"target":target,"result":"skip","ts":time.time()}),
+                    qos=1, retain=False
+                )
+        except Exception as e:
+            print(f"[FSM] reset-after-done error: {e}")
+
+        time.sleep(0.3)
         self._prepare()
 
     # ---- watchdog
     def watchdog_tick(self):
-        # กรณี Return: ถ้ากำลังรอ photo-clear และจับเวลาไว้แล้ว ให้เช็คครบ 5s ที่นี่ด้วย
+        # Return: all-clear ≥ N วินาที → dispatch
         if self.current and self.current.get("op") == "Return" and self.state == "WAIT_PHOTO_CLEAR":
             if self.photo_clear_since is not None:
                 elapsed = time.time() - self.photo_clear_since
                 if elapsed >= self.photo_clear_secs_required:
                     print(f"[FSM] photo clear for {elapsed:.1f}s ≥ {self.photo_clear_secs_required}s → dispatch Return")
                     self._dispatch_current()
-        # ทั่วไป: รีเซ็ตถ้าไม่มีการอัพเดตนานเกินไป
+
+        # reset ถ้านิ่งเกินไป
         idle_secs = time.time() - self.last_update_ts
         if self.current and idle_secs > 30*60:
             print(f"[FSM] watchdog: no updates for {int(idle_secs)}s → reset to IDLE")
@@ -321,7 +396,7 @@ def start_fsm_mqtt():
         subs = [
             (TOPIC_JOB_LATEST, 1),
             (TOPIC_MATCH, 1),
-            (TOPIC_SENSOR, 1),        # << NEW
+            (TOPIC_SENSOR, 1),
             (TOPIC_AMR_STATUS, 0),
             (TOPIC_AMR_CONN, 1),
         ]
@@ -352,6 +427,9 @@ def start_fsm_mqtt():
 
 # ---------- main ----------
 def main():
+    # 0) เคลียร์สิ่งค้างก่อนเริ่ม
+    initial_cleanup()
+
     # 1) start nodes
     for name, script in ORDER:
         PROCS.append(start_node(name, script))
@@ -384,4 +462,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

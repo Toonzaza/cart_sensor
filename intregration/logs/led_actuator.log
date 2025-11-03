@@ -724,3 +724,27 @@ lgpio.error: 'GPIO busy'
   cli = mqtt.Client(client_id="led_actuator_gpiozero")
 /home/fibo/cart_ws/intregration/led_actuator.py:78: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
   cli = mqtt.Client(client_id="led_actuator_gpiozero")
+/home/fibo/cart_ws/intregration/led_actuator.py:78: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="led_actuator_gpiozero")
+/home/fibo/cart_ws/intregration/led_actuator.py:78: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="led_actuator_gpiozero")
+/home/fibo/cart_ws/intregration/led_actuator.py:78: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="led_actuator_gpiozero")
+/home/fibo/cart_ws/intregration/led_actuator.py:78: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="led_actuator_gpiozero")
+/home/fibo/cart_ws/intregration/led_actuator.py:78: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="led_actuator_gpiozero")
+/home/fibo/cart_ws/intregration/led_actuator.py:78: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="led_actuator_gpiozero")
+/home/fibo/cart_ws/intregration/led_actuator.py:78: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="led_actuator_gpiozero")
+/home/fibo/cart_ws/intregration/led_actuator.py:78: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="led_actuator_gpiozero")
+/home/fibo/cart_ws/intregration/led_actuator.py:78: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="led_actuator_gpiozero")
+/home/fibo/cart_ws/intregration/led_actuator.py:78: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="led_actuator_gpiozero")
+/home/fibo/cart_ws/intregration/led_actuator.py:78: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="led_actuator_gpiozero")
+/home/fibo/cart_ws/intregration/led_actuator.py:78: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="led_actuator_gpiozero")

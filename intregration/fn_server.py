@@ -1,12 +1,15 @@
-# fn_server.py
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 import os, json, time, unicodedata, re, tempfile
-from typing import Dict, Any, List, Optional
+from typing import Dict, Any, List, Optional, Tuple
 import paho.mqtt.client as mqtt
 
-# ========= PATHS (ค่าจาก Web App) =========
+# ========= PATHS =========
 DATA_DIR   = os.path.expanduser("~/cart_ws/intregration/data")
 STATE_PATH = os.path.join(DATA_DIR, "state.json")
 LOG_PATH   = os.path.join(DATA_DIR, "job_ids.jsonl")
+GOALS_MAP_PATH = os.getenv("GOALS_MAP_PATH", os.path.join(DATA_DIR, "goals_map.json"))
 os.makedirs(DATA_DIR, exist_ok=True)
 
 # ========= ENV / CONFIG =========
@@ -26,7 +29,7 @@ TOPIC_DETECT_MODE    = f"{MQTT_BASE}/detect/{STATION_ID}/mode"
 TOPIC_AMR_STATUS_IN = f"{MQTT_BASE}/amr/status"
 TOPIC_AMR_CONN_IN   = f"{MQTT_BASE}/amr/connected"
 
-# ========= Utils =========
+# ========= Utils: time / string =========
 def now_fields():
     ts = time.time()
     lt = time.localtime(ts)
@@ -46,7 +49,7 @@ def _to_none_token(x: Any) -> Optional[str]:
     return None if s_norm.lower() == "none" or s == "" else s
 
 def normalize_ids(vals: List[Any]) -> List[str]:
-    """คัด None/'None'/ว่าง ออก แล้วคืน list[str]"""
+    """กรอง None/'None'/ว่าง ออก แล้วคืน list[str]"""
     out: List[str] = []
     for v in vals:
         nv = _to_none_token(v)
@@ -63,6 +66,44 @@ def _fill_two_slots(vals: List[str]) -> List[Optional[str]]:
         return [v[0], None]
     return v  # len == 2
 
+# ========= Goal map (STRICT: key ต้องเป็น DOTxxxxxx) =========
+_DOT_RE = re.compile(r"^DOT\d{6,}$", re.I)
+
+def _load_goals_map() -> Dict[str, str]:
+    try:
+        with open(GOALS_MAP_PATH, "r", encoding="utf-8") as f:
+            m = json.load(f)
+        # key = DOT..., value = goal_name
+        return {str(k).strip().upper(): str(v).strip() for k, v in m.items()}
+    except Exception:
+        return {}
+
+def validate_and_map_goal(dot_id: Optional[str]) -> Tuple[Optional[str], Optional[str], Optional[str]]:
+    """
+    รับ dot_id (อะไรก็ได้) -> (goal_id(DOT...), goal_name, error_msg)
+    - goal_id ต้อง match ^DOT\d{6,}$ (case-insensitive) และอยู่ใน goals_map.json
+    """
+    if not dot_id:
+        return None, None, "missing DOT"
+    s = str(dot_id).strip().upper()
+    if not _DOT_RE.match(s):
+        return None, None, f"invalid DOT format '{dot_id}'"
+    goals_map = _load_goals_map()  # hot-reload ทุกครั้ง
+    goal_name = goals_map.get(s)
+    if not goal_name:
+        return None, None, f"unknown DOT '{s}' (not found in goals_map.json)"
+    return s, goal_name, None
+
+def map_status_to_op(status: Any) -> Optional[str]:
+    s = (str(status or "")).strip().lower()
+    if s == "approved":
+        return "Request"
+    if s == "returning":
+        return "Return"
+    if s in ("request","return"):
+        return s.capitalize()
+    return None
+
 # ========= Safe write =========
 def _atomic_write(path: str, text: str):
     d = os.path.dirname(path)
@@ -75,30 +116,31 @@ def _atomic_write(path: str, text: str):
 def persist_state_and_log(
     cuh_ids: List[str],
     kit_ids: List[str],
-    goal: str,
+    goal_id: str,              # DOT...
     ts, d, t, iso,
-    op: Optional[str] = None
+    op: Optional[str] = None,
+    goal_name: Optional[str] = None
 ):
     """
-    บันทึก state.json เป็น arrays 2 ช่อง + null ตาม slot; log แบบเดียวกัน
-    เพิ่ม op: "Request"/"Return" (optional) ลงใน state/log เพื่อให้ node อื่นอ้างอิงได้
+    บันทึก state.json และ log (.jsonl)
+    - goal_id = DOTxxx
+    - goal_name = ชื่อ waypoint (จาก goals_map.json)
+    - op = 'Request'/'Return'
     """
     cuh2 = _fill_two_slots(cuh_ids)
     kit2 = _fill_two_slots(kit_ids)
 
     payload = {
         "ts": ts, "date": d, "time": t, "iso": iso,
-        "goal_id": goal,
+        "goal_id": goal_id,
+        "goal_name": goal_name,
         "cuh_ids": cuh2,
         "kit_ids": kit2
     }
-    # legacy single (ช่อง 1 ถ้ามี)
     if cuh2[0] is not None:
         payload["cuh_id"] = cuh2[0]
     if kit2[0] is not None:
         payload["kit_id"] = kit2[0]
-
-    # ใส่ op ถ้าถูกต้อง
     if op in ("Request", "Return"):
         payload["op"] = op
 
@@ -164,12 +206,13 @@ def detect_mode_any(cuh_ids: List[str], kit_ids: List[str], goal: Optional[str])
     if has_kit and not has_cuh: return "KIT_ONLY"
     return None
 
-def publish_job_topics(cli: mqtt.Client, cuh_ids: List[str], kit_ids: List[str], goal: str, ts, d, t, iso):
+def publish_job_topics(cli: mqtt.Client, cuh_ids: List[str], kit_ids: List[str], goal: str, ts, d, t, iso, goal_name: Optional[str] = None):
     cuh2 = _fill_two_slots(cuh_ids)
     kit2 = _fill_two_slots(kit_ids)
     payload = {
         "ts": ts, "date": d, "time": t, "iso": iso,
         "goal_id": goal,
+        "goal_name": goal_name,
         "cuh_ids": cuh2,
         "kit_ids": kit2,
         "cuh_id": cuh2[0],
