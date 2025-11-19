@@ -1,29 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-detect_sensor.py (orchestrator of physical sensors)
-
-สิ่งที่คงเดิม:
-- ใช้ GPIO23/24 เป็นทริกเกอร์สแกน BARCODE1/BARCODE2 (เมื่อ FALLING → สแกน)
-- ใช้ GPIO25/16 เป็นทริกเกอร์อ่าน RFID (เมื่อ FALLING → อ่านจนเจอแท็ก)
-- payload สำหรับสแกน/อ่าน ส่งแบบย่อ {"sensor","gpio","value":{...}} ไปที่ MQTT ผ่าน MqttBus
-
-สิ่งที่เพิ่ม:
-- ส่ง "สถานะ photo" ทุกครั้งที่พินเปลี่ยนค่า (ขึ้น/ลง):
-  sensor="photo", value={"state":1|0, "name":"barcode1/barcode2/rfidA/rfidB"}
-  state=1  หมายถึงลำแสงโล่ง (ไม่ถูกบัง) / ไม่มีของ
-  state=0  หมายถึงลำแสงถูกบัง / มีของ
-
-หมายเหตุ:
-- เราไม่เพิ่มพินใหม่ ใช้พินเดิม 23/24/25/16 ซึ่งเป็นโฟโต้ของแต่ละตำแหน่งอยู่แล้ว
-- ไม่ชนกับทริกเกอร์เดิม เพราะเราผูก callback ทั้ง rising และ falling
-"""
-
 import time, threading
 from bus_sensor import MqttBus
 import drivers_sensor as drv
 
-# GPIO mapping (โฟโต้ 4 ตัว)
+# GPIO mapping
 GPIO_PHOTO_BARCODE1 = 23
 GPIO_PHOTO_BARCODE2 = 24
 GPIO_PHOTO_RFID_A   = 25
@@ -67,7 +48,7 @@ class SensorNode:
         if self.ser_map.get('2'):
             self._arm_barcode(GPIO_PHOTO_BARCODE2, '2')
 
-        # RFID triggers (ใช้โฟโต้ร่วมพิน)
+        # RFID triggers
         if self.elara:
             self._arm_rfid(GPIO_PHOTO_RFID_A)
             self._arm_rfid(GPIO_PHOTO_RFID_B)

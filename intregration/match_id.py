@@ -169,7 +169,6 @@ def on_message(client, userdata, msg):
     client.publish(PUB_MATCH_TOPIC, json.dumps(out, ensure_ascii=False), qos=0, retain=False)
     print(f"[MQTT] pub {PUB_MATCH_TOPIC}: {out}")
 
-    # ❌ ไม่ toggle AMR แล้ว — ปล่อยให้ run_all (FSM) เป็นคนตัดสินใจ/สั่งงาน
     if complete:
         print(f"[MATCH] complete=True (op={op}); waiting orchestrator to act.")
         ms.reset()

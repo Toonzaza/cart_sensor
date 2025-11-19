@@ -1,11 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-GPIO + Barcode(MCR12 only) + RFID(Elara)
-- GPIO: gpiozero + lgpio  (แบบเดียวกับตัวอย่างของคุณ)
-- Barcode: ใช้ MCR12 enable/disable เท่านั้น (ไม่มีโหมด simple)
-- RFID: ThingMagic Elara JSON/RCI
-"""
 
 import os, sys, time, json, threading
 from typing import Optional, Tuple

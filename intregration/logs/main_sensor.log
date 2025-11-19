@@ -965,3 +965,1475 @@ serial.serialutil.SerialException: write failed: [Errno 5] Input/output error
 [ELARA] open /dev/elara0 failed: [Errno 2] could not open port /dev/elara0: [Errno 2] No such file or directory: '/dev/elara0'
 ===== RUNNING (Ctrl+C to quit) =====
 Stopped.
+[MQTT] connected to 127.0.0.1:1883, base='smartcart'
+[BARCODE] open /dev/barcode0 ok
+[BARCODE] open /dev/barcode1 ok
+[ELARA] open /dev/elara0 ok
+[GPIO] BARCODE1 armed on GPIO23
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[GPIO] BARCODE2 armed on GPIO24
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 1, 'name': 'barcode2'}}
+[GPIO] RFID armed on GPIO25
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[GPIO] RFID armed on GPIO16
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 16, 'value': {'state': 1, 'name': 'rfidB'}}
+===== RUNNING (Ctrl+C to quit) =====
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 65, in <module>
+    main()
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 56, in main
+    bus.close()
+  File "/home/fibo/cart_ws/intregration/bus_sensor.py", line 26, in close
+    self.cli.loop_stop()
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/paho/mqtt/client.py", line 2364, in loop_stop
+    self._thread.join()
+  File "/usr/lib/python3.12/threading.py", line 1147, in join
+    self._wait_for_tstate_lock()
+  File "/usr/lib/python3.12/threading.py", line 1167, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+Exception in thread Thread-4 (worker):
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 72, in barcode_scan_until
+    chunk = ser.read(256)
+            ^^^^^^^^^^^^^
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/serial/serialposix.py", line 595, in read
+    raise SerialException(
+serial.serialutil.SerialException: device reports readiness to read but returned no data (device disconnected or multiple access on port?)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/serial/serialposix.py", line 621, in write
+    n = os.write(self.fd, d)
+        ^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/detect_sensor.py", line 82, in worker
+    code = drv.barcode_scan_until(self.ser_map[dev_key], max_seconds=None)  # wait until success
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 84, in barcode_scan_until
+    mcr12_disable(ser)
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 51, in mcr12_disable
+    ser.write(_mcr12_frame(0x01, da))
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/serial/serialposix.py", line 655, in write
+    raise SerialException('write failed: {}'.format(e))
+serial.serialutil.SerialException: write failed: [Errno 5] Input/output error
+Exception in thread Thread-5 (worker):
+Traceback (most recent call last):
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/serial/serialposix.py", line 621, in write
+    n = os.write(self.fd, d)
+        ^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/detect_sensor.py", line 82, in worker
+    code = drv.barcode_scan_until(self.ser_map[dev_key], max_seconds=None)  # wait until success
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 66, in barcode_scan_until
+    mcr12_enable(ser, delay_ms=0)
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 47, in mcr12_enable
+    ser.write(_mcr12_frame(0x01, da))
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/serial/serialposix.py", line 655, in write
+    raise SerialException('write failed: {}'.format(e))
+serial.serialutil.SerialException: write failed: [Errno 5] Input/output error
+Exception in thread Thread-6 (worker):
+Traceback (most recent call last):
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/serial/serialposix.py", line 621, in write
+    n = os.write(self.fd, d)
+        ^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/detect_sensor.py", line 82, in worker
+    code = drv.barcode_scan_until(self.ser_map[dev_key], max_seconds=None)  # wait until success
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 66, in barcode_scan_until
+    mcr12_enable(ser, delay_ms=0)
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 47, in mcr12_enable
+    ser.write(_mcr12_frame(0x01, da))
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/serial/serialposix.py", line 655, in write
+    raise SerialException('write failed: {}'.format(e))
+serial.serialutil.SerialException: write failed: [Errno 5] Input/output error
+Exception in thread Thread-7 (worker):
+Traceback (most recent call last):
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/serial/serialposix.py", line 621, in write
+    n = os.write(self.fd, d)
+        ^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/detect_sensor.py", line 82, in worker
+    code = drv.barcode_scan_until(self.ser_map[dev_key], max_seconds=None)  # wait until success
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 66, in barcode_scan_until
+    mcr12_enable(ser, delay_ms=0)
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 47, in mcr12_enable
+    ser.write(_mcr12_frame(0x01, da))
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/serial/serialposix.py", line 655, in write
+    raise SerialException('write failed: {}'.format(e))
+serial.serialutil.SerialException: write failed: [Errno 5] Input/output error
+[MQTT] connected to 127.0.0.1:1883, base='smartcart'
+[BARCODE] open /dev/barcode0 ok
+[BARCODE] open /dev/barcode1 ok
+[ELARA] open /dev/elara0 ok
+[GPIO] BARCODE1 armed on GPIO23
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[GPIO] BARCODE2 armed on GPIO24
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 1, 'name': 'barcode2'}}
+[GPIO] RFID armed on GPIO25
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[GPIO] RFID armed on GPIO16
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 16, 'value': {'state': 1, 'name': 'rfidB'}}
+===== RUNNING (Ctrl+C to quit) =====
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 170.761 GPIO23 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'barcode1', 'gpio': 23, 'value': {'code': 'CUH22-1030'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 0, 'name': 'rfidA'}}
+[GPIO] (RFID) FALLING @ 195.792 GPIO25 value=0 → read Elara until tag ...
+[PUB] smartcart/sensor: {'sensor': 'rfid0', 'gpio': 25, 'value': {'ascii': 'MXK22-1049'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 1068.127 GPIO23 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'barcode1', 'gpio': 23, 'value': {'code': 'CUH22-1030'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 0, 'name': 'rfidA'}}
+[GPIO] (RFID) FALLING @ 1121.185 GPIO25 value=0 → read Elara until tag ...
+[PUB] smartcart/sensor: {'sensor': 'rfid0', 'gpio': 25, 'value': {'ascii': 'MXK22-1049'}}
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 65, in <module>
+    main()
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 56, in main
+    bus.close()
+  File "/home/fibo/cart_ws/intregration/bus_sensor.py", line 26, in close
+    self.cli.loop_stop()
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/paho/mqtt/client.py", line 2364, in loop_stop
+    self._thread.join()
+  File "/usr/lib/python3.12/threading.py", line 1147, in join
+    self._wait_for_tstate_lock()
+  File "/usr/lib/python3.12/threading.py", line 1167, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[MQTT] connected to 127.0.0.1:1883, base='smartcart'
+[BARCODE] open /dev/barcode0 ok
+[BARCODE] open /dev/barcode1 ok
+[ELARA] open /dev/elara0 ok
+[GPIO] cannot claim GPIO23: 'GPIO busy'
+[GPIO] cannot claim GPIO24: 'GPIO busy'
+[GPIO] cannot claim GPIO25: 'GPIO busy'
+[GPIO] cannot claim GPIO16: 'GPIO busy'
+===== RUNNING (Ctrl+C to quit) =====
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 65, in <module>
+    main()
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 56, in main
+    bus.close()
+  File "/home/fibo/cart_ws/intregration/bus_sensor.py", line 26, in close
+    self.cli.loop_stop()
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/paho/mqtt/client.py", line 2364, in loop_stop
+    self._thread.join()
+  File "/usr/lib/python3.12/threading.py", line 1147, in join
+    self._wait_for_tstate_lock()
+  File "/usr/lib/python3.12/threading.py", line 1167, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[MQTT] connected to 127.0.0.1:1883, base='smartcart'
+[BARCODE] open /dev/barcode0 ok
+[BARCODE] open /dev/barcode1 ok
+[ELARA] open /dev/elara0 ok
+[GPIO] cannot claim GPIO23: 'GPIO busy'
+[GPIO] cannot claim GPIO24: 'GPIO busy'
+[GPIO] cannot claim GPIO25: 'GPIO busy'
+[GPIO] cannot claim GPIO16: 'GPIO busy'
+===== RUNNING (Ctrl+C to quit) =====
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 65, in <module>
+    main()
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 56, in main
+    bus.close()
+  File "/home/fibo/cart_ws/intregration/bus_sensor.py", line 26, in close
+    self.cli.loop_stop()
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/paho/mqtt/client.py", line 2364, in loop_stop
+    self._thread.join()
+  File "/usr/lib/python3.12/threading.py", line 1147, in join
+    self._wait_for_tstate_lock()
+  File "/usr/lib/python3.12/threading.py", line 1167, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[MQTT] connected to 127.0.0.1:1883, base='smartcart'
+[BARCODE] open /dev/barcode0 ok
+[BARCODE] open /dev/barcode1 ok
+[ELARA] open /dev/elara0 ok
+[GPIO] cannot claim GPIO23: 'GPIO busy'
+[GPIO] cannot claim GPIO24: 'GPIO busy'
+[GPIO] cannot claim GPIO25: 'GPIO busy'
+[GPIO] cannot claim GPIO16: 'GPIO busy'
+===== RUNNING (Ctrl+C to quit) =====
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 65, in <module>
+    main()
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 56, in main
+    bus.close()
+  File "/home/fibo/cart_ws/intregration/bus_sensor.py", line 26, in close
+    self.cli.loop_stop()
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/paho/mqtt/client.py", line 2364, in loop_stop
+    self._thread.join()
+  File "/usr/lib/python3.12/threading.py", line 1147, in join
+    self._wait_for_tstate_lock()
+  File "/usr/lib/python3.12/threading.py", line 1167, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[MQTT] connected to 127.0.0.1:1883, base='smartcart'
+[BARCODE] open /dev/barcode0 ok
+[BARCODE] open /dev/barcode1 ok
+[ELARA] open /dev/elara0 ok
+[GPIO] cannot claim GPIO23: 'GPIO busy'
+[GPIO] cannot claim GPIO24: 'GPIO busy'
+[GPIO] cannot claim GPIO25: 'GPIO busy'
+[GPIO] cannot claim GPIO16: 'GPIO busy'
+===== RUNNING (Ctrl+C to quit) =====
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 65, in <module>
+    main()
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 56, in main
+    bus.close()
+  File "/home/fibo/cart_ws/intregration/bus_sensor.py", line 26, in close
+    self.cli.loop_stop()
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/paho/mqtt/client.py", line 2364, in loop_stop
+    self._thread.join()
+  File "/usr/lib/python3.12/threading.py", line 1147, in join
+    self._wait_for_tstate_lock()
+  File "/usr/lib/python3.12/threading.py", line 1167, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[MQTT] connected to 127.0.0.1:1883, base='smartcart'
+[BARCODE] open /dev/barcode0 ok
+[BARCODE] open /dev/barcode1 ok
+[ELARA] open /dev/elara0 ok
+[GPIO] BARCODE1 armed on GPIO23
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[GPIO] BARCODE2 armed on GPIO24
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 1, 'name': 'barcode2'}}
+[GPIO] RFID armed on GPIO25
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[GPIO] RFID armed on GPIO16
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 16, 'value': {'state': 1, 'name': 'rfidB'}}
+===== RUNNING (Ctrl+C to quit) =====
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 1567.919 GPIO23 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 1570.170 GPIO23 value=0 → scan (MCR12) until success ...
+[BARCODE1] busy; skip
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 1571.512 GPIO23 value=0 → scan (MCR12) until success ...
+[BARCODE1] busy; skip
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 1572.087 GPIO23 value=0 → scan (MCR12) until success ...
+[BARCODE1] busy; skip
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 1583.811 GPIO23 value=1 → scan (MCR12) until success ...
+[BARCODE1] busy; skip
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'barcode1', 'gpio': 23, 'value': {'code': 'CUH22-1030'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 1598.140 GPIO23 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'barcode1', 'gpio': 23, 'value': {'code': 'CUH22-1030'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 1599.895 GPIO23 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'barcode1', 'gpio': 23, 'value': {'code': 'CUH22-1030'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 1601.640 GPIO23 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 1603.800 GPIO23 value=0 → scan (MCR12) until success ...
+[BARCODE1] busy; skip
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 1606.549 GPIO23 value=0 → scan (MCR12) until success ...
+[BARCODE1] busy; skip
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 1622.140 GPIO23 value=0 → scan (MCR12) until success ...
+[BARCODE1] busy; skip
+[PUB] smartcart/sensor: {'sensor': 'barcode1', 'gpio': 23, 'value': {'code': 'CUH22-1030'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 1626.220 GPIO23 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'barcode1', 'gpio': 23, 'value': {'code': 'CUH22-1030'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 0, 'name': 'rfidA'}}
+[GPIO] (RFID) FALLING @ 1637.634 GPIO25 value=0 → read Elara until tag ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[PUB] smartcart/sensor: {'sensor': 'rfid0', 'gpio': 25, 'value': {'ascii': 'MXK22-1049'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 0, 'name': 'rfidA'}}
+[GPIO] (RFID) FALLING @ 1654.669 GPIO25 value=0 → read Elara until tag ...
+[PUB] smartcart/sensor: {'sensor': 'rfid0', 'gpio': 25, 'value': {'ascii': 'MXK22-1049'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 0, 'name': 'rfidA'}}
+[GPIO] (RFID) FALLING @ 2017.720 GPIO25 value=0 → read Elara until tag ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 2019.688 GPIO23 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'barcode1', 'gpio': 23, 'value': {'code': 'CUH22-1030'}}
+[PUB] smartcart/sensor: {'sensor': 'rfid0', 'gpio': 25, 'value': {'ascii': 'MXK22-1049'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 4001.428 GPIO23 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'barcode1', 'gpio': 23, 'value': {'code': 'CUH22-1030'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 0, 'name': 'rfidA'}}
+[GPIO] (RFID) FALLING @ 4018.059 GPIO25 value=0 → read Elara until tag ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 0, 'name': 'rfidA'}}
+[GPIO] (RFID) FALLING @ 4023.714 GPIO25 value=0 → read Elara until tag ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 0, 'name': 'rfidA'}}
+[GPIO] (RFID) FALLING @ 4030.806 GPIO25 value=0 → read Elara until tag ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[PUB] smartcart/sensor: {'sensor': 'rfid0', 'gpio': 25, 'value': {'ascii': 'MXK22-1049'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 0, 'name': 'rfidA'}}
+[GPIO] (RFID) FALLING @ 4055.341 GPIO25 value=0 → read Elara until tag ...
+[PUB] smartcart/sensor: {'sensor': 'rfid0', 'gpio': 25, 'value': {'ascii': 'MXK22-1049'}}
+[PUB] smartcart/sensor: {'sensor': 'rfid0', 'gpio': 25, 'value': {'ascii': 'MXK22-1049'}}
+[PUB] smartcart/sensor: {'sensor': 'rfid0', 'gpio': 25, 'value': {'ascii': 'MXK22-1049'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 4470.857 GPIO23 value=0 → scan (MCR12) until success ...
+[MQTT] connected to 127.0.0.1:1883, base='smartcart'
+[BARCODE] open /dev/barcode0 ok
+[BARCODE] open /dev/barcode1 ok
+[ELARA] open /dev/elara0 ok
+[GPIO] cannot claim GPIO23: 'GPIO busy'
+[GPIO] cannot claim GPIO24: 'GPIO busy'
+[GPIO] cannot claim GPIO25: 'GPIO busy'
+[GPIO] cannot claim GPIO16: 'GPIO busy'
+===== RUNNING (Ctrl+C to quit) =====
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 65, in <module>
+    main()
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 56, in main
+    bus.close()
+  File "/home/fibo/cart_ws/intregration/bus_sensor.py", line 26, in close
+    self.cli.loop_stop()
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/paho/mqtt/client.py", line 2364, in loop_stop
+    self._thread.join()
+  File "/usr/lib/python3.12/threading.py", line 1147, in join
+    self._wait_for_tstate_lock()
+  File "/usr/lib/python3.12/threading.py", line 1167, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[MQTT] connected to 127.0.0.1:1883, base='smartcart'
+[BARCODE] open /dev/barcode0 ok
+[BARCODE] open /dev/barcode1 ok
+[ELARA] open /dev/elara0 ok
+[GPIO] cannot claim GPIO23: 'GPIO busy'
+[GPIO] cannot claim GPIO24: 'GPIO busy'
+[GPIO] cannot claim GPIO25: 'GPIO busy'
+[GPIO] cannot claim GPIO16: 'GPIO busy'
+===== RUNNING (Ctrl+C to quit) =====
+Stopped.
+Exception ignored in atexit callback: <function _shutdown at 0xffff98c847c0>
+Traceback (most recent call last):
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/gpiozero/devices.py", line 631, in _shutdown
+    _devices_shutdown()
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/gpiozero/devices.py", line 625, in _devices_shutdown
+    Device.pin_factory.close()
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/gpiozero/pins/lgpio.py", line 74, in close
+    lgpio.gpiochip_close(self._handle)
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/lgpio.py", line 661, in gpiochip_close
+    return _u2i(_lgpio._gpiochip_close(handle&0xffff))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt: 
+[MQTT] connected to 127.0.0.1:1883, base='smartcart'
+[BARCODE] open /dev/barcode0 ok
+[BARCODE] open /dev/barcode1 ok
+[ELARA] open /dev/elara0 ok
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 65, in <module>
+    main()
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 38, in main
+    drv.elara_set_manual_mode(elara)
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 116, in elara_set_manual_mode
+    jsend(elara, {"Cmd":"StopRZ","RZ":["ALL"]}); _ = jread(elara, 0.2)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 99, in jsend
+    elara.write((json.dumps(obj) + '\r\n').encode('utf-8'))
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/serial/serialposix.py", line 640, in write
+    abort, ready, _ = select.select([self.pipe_abort_write_r], [self.fd], [], None)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[MQTT] connected to 127.0.0.1:1883, base='smartcart'
+[BARCODE] open /dev/barcode0 ok
+[BARCODE] open /dev/barcode1 ok
+[ELARA] open /dev/elara0 ok
+[GPIO] BARCODE1 armed on GPIO23
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[GPIO] BARCODE2 armed on GPIO24
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 1, 'name': 'barcode2'}}
+[GPIO] RFID armed on GPIO25
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[GPIO] RFID armed on GPIO16
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 16, 'value': {'state': 1, 'name': 'rfidB'}}
+===== RUNNING (Ctrl+C to quit) =====
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 9651.617 GPIO23 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'barcode1', 'gpio': 23, 'value': {'code': 'CUH22-1030'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 0, 'name': 'rfidA'}}
+[GPIO] (RFID) FALLING @ 9673.695 GPIO25 value=0 → read Elara until tag ...
+[PUB] smartcart/sensor: {'sensor': 'rfid0', 'gpio': 25, 'value': {'ascii': 'MXK22-1049'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 10004.869 GPIO23 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'barcode1', 'gpio': 23, 'value': {'code': 'CUH22-1030'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 10027.948 GPIO23 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'barcode1', 'gpio': 23, 'value': {'code': 'CUH22-1030'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 0, 'name': 'rfidA'}}
+[GPIO] (RFID) FALLING @ 10036.544 GPIO25 value=0 → read Elara until tag ...
+[PUB] smartcart/sensor: {'sensor': 'rfid0', 'gpio': 25, 'value': {'ascii': 'MXK22-1049'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 65, in <module>
+    main()
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 56, in main
+    bus.close()
+  File "/home/fibo/cart_ws/intregration/bus_sensor.py", line 26, in close
+    self.cli.loop_stop()
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/paho/mqtt/client.py", line 2364, in loop_stop
+    self._thread.join()
+  File "/usr/lib/python3.12/threading.py", line 1147, in join
+    self._wait_for_tstate_lock()
+  File "/usr/lib/python3.12/threading.py", line 1167, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+Exception in thread Thread-2 (worker):
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 72, in barcode_scan_until
+    chunk = ser.read(256)
+            ^^^^^^^^^^^^^
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/serial/serialposix.py", line 595, in read
+    raise SerialException(
+serial.serialutil.SerialException: device reports readiness to read but returned no data (device disconnected or multiple access on port?)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/serial/serialposix.py", line 621, in write
+    n = os.write(self.fd, d)
+        ^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/detect_sensor.py", line 82, in worker
+    code = drv.barcode_scan_until(self.ser_map[dev_key], max_seconds=None)  # wait until success
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 84, in barcode_scan_until
+    mcr12_disable(ser)
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 51, in mcr12_disable
+    ser.write(_mcr12_frame(0x01, da))
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/serial/serialposix.py", line 655, in write
+    raise SerialException('write failed: {}'.format(e))
+serial.serialutil.SerialException: write failed: [Errno 5] Input/output error
+Exception in thread Thread-3 (worker):
+Traceback (most recent call last):
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/serial/serialposix.py", line 621, in write
+    n = os.write(self.fd, d)
+        ^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/detect_sensor.py", line 82, in worker
+    code = drv.barcode_scan_until(self.ser_map[dev_key], max_seconds=None)  # wait until success
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 66, in barcode_scan_until
+    mcr12_enable(ser, delay_ms=0)
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 47, in mcr12_enable
+    ser.write(_mcr12_frame(0x01, da))
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/serial/serialposix.py", line 655, in write
+    raise SerialException('write failed: {}'.format(e))
+serial.serialutil.SerialException: write failed: [Errno 5] Input/output error
+Exception in thread Thread-4 (worker):
+Traceback (most recent call last):
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/serial/serialposix.py", line 621, in write
+    n = os.write(self.fd, d)
+        ^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/detect_sensor.py", line 82, in worker
+    code = drv.barcode_scan_until(self.ser_map[dev_key], max_seconds=None)  # wait until success
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 66, in barcode_scan_until
+    mcr12_enable(ser, delay_ms=0)
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 47, in mcr12_enable
+    ser.write(_mcr12_frame(0x01, da))
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/serial/serialposix.py", line 655, in write
+    raise SerialException('write failed: {}'.format(e))
+serial.serialutil.SerialException: write failed: [Errno 5] Input/output error
+Exception in thread Thread-5 (worker):
+Traceback (most recent call last):
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/serial/serialposix.py", line 621, in write
+    n = os.write(self.fd, d)
+        ^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/detect_sensor.py", line 82, in worker
+    code = drv.barcode_scan_until(self.ser_map[dev_key], max_seconds=None)  # wait until success
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 66, in barcode_scan_until
+    mcr12_enable(ser, delay_ms=0)
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 47, in mcr12_enable
+    ser.write(_mcr12_frame(0x01, da))
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/serial/serialposix.py", line 655, in write
+    raise SerialException('write failed: {}'.format(e))
+serial.serialutil.SerialException: write failed: [Errno 5] Input/output error
+Exception in thread Thread-6 (worker):
+Traceback (most recent call last):
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/serial/serialposix.py", line 621, in write
+    n = os.write(self.fd, d)
+        ^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/detect_sensor.py", line 82, in worker
+    code = drv.barcode_scan_until(self.ser_map[dev_key], max_seconds=None)  # wait until success
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 66, in barcode_scan_until
+    mcr12_enable(ser, delay_ms=0)
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 47, in mcr12_enable
+    ser.write(_mcr12_frame(0x01, da))
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/serial/serialposix.py", line 655, in write
+    raise SerialException('write failed: {}'.format(e))
+serial.serialutil.SerialException: write failed: [Errno 5] Input/output error
+Exception in thread Thread-7 (worker):
+Traceback (most recent call last):
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/serial/serialposix.py", line 621, in write
+    n = os.write(self.fd, d)
+        ^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/detect_sensor.py", line 82, in worker
+    code = drv.barcode_scan_until(self.ser_map[dev_key], max_seconds=None)  # wait until success
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 66, in barcode_scan_until
+    mcr12_enable(ser, delay_ms=0)
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 47, in mcr12_enable
+    ser.write(_mcr12_frame(0x01, da))
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/serial/serialposix.py", line 655, in write
+    raise SerialException('write failed: {}'.format(e))
+serial.serialutil.SerialException: write failed: [Errno 5] Input/output error
+Exception in thread Thread-8 (worker):
+Traceback (most recent call last):
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/serial/serialposix.py", line 621, in write
+    n = os.write(self.fd, d)
+        ^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/detect_sensor.py", line 123, in worker
+    epc, rssi, last_words, ascii_txt = drv.elara_read_until(
+                                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 171, in elara_read_until
+    jsend(elara, {"Cmd":"StopRZ","RZ":[0]}); _ = jread(elara, 0.1)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 99, in jsend
+    elara.write((json.dumps(obj) + '\r\n').encode('utf-8'))
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/serial/serialposix.py", line 655, in write
+    raise SerialException('write failed: {}'.format(e))
+serial.serialutil.SerialException: write failed: [Errno 5] Input/output error
+[MQTT] connected to 127.0.0.1:1883, base='smartcart'
+[BARCODE] open /dev/barcode0 ok
+[BARCODE] open /dev/barcode1 ok
+[ELARA] open /dev/elara0 ok
+[GPIO] BARCODE1 armed on GPIO23
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[GPIO] BARCODE2 armed on GPIO24
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 1, 'name': 'barcode2'}}
+[GPIO] RFID armed on GPIO25
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[GPIO] RFID armed on GPIO16
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 16, 'value': {'state': 1, 'name': 'rfidB'}}
+===== RUNNING (Ctrl+C to quit) =====
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 10183.975 GPIO23 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 10241.206 GPIO23 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 10246.007 GPIO23 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 10247.460 GPIO23 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 10257.578 GPIO23 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 10258.721 GPIO23 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 0, 'name': 'rfidA'}}
+[GPIO] (RFID) FALLING @ 10268.505 GPIO25 value=0 → read Elara until tag ...
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 65, in <module>
+    main()
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 56, in main
+    bus.close()
+  File "/home/fibo/cart_ws/intregration/bus_sensor.py", line 26, in close
+    self.cli.loop_stop()
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/paho/mqtt/client.py", line 2364, in loop_stop
+    self._thread.join()
+  File "/usr/lib/python3.12/threading.py", line 1147, in join
+    self._wait_for_tstate_lock()
+  File "/usr/lib/python3.12/threading.py", line 1167, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+Exception in thread Thread-7 (worker):
+Traceback (most recent call last):
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/serial/serialposix.py", line 621, in write
+    n = os.write(self.fd, d)
+        ^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/detect_sensor.py", line 123, in worker
+    epc, rssi, last_words, ascii_txt = drv.elara_read_until(
+                                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 171, in elara_read_until
+    jsend(elara, {"Cmd":"StopRZ","RZ":[0]}); _ = jread(elara, 0.1)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 99, in jsend
+    elara.write((json.dumps(obj) + '\r\n').encode('utf-8'))
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/serial/serialposix.py", line 655, in write
+    raise SerialException('write failed: {}'.format(e))
+serial.serialutil.SerialException: write failed: [Errno 5] Input/output error
+Exception in thread Thread-9 (worker):
+Traceback (most recent call last):
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/serial/serialposix.py", line 621, in write
+    n = os.write(self.fd, d)
+        ^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/detect_sensor.py", line 123, in worker
+    epc, rssi, last_words, ascii_txt = drv.elara_read_until(
+                                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 171, in elara_read_until
+    jsend(elara, {"Cmd":"StopRZ","RZ":[0]}); _ = jread(elara, 0.1)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 99, in jsend
+    elara.write((json.dumps(obj) + '\r\n').encode('utf-8'))
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/serial/serialposix.py", line 655, in write
+    raise SerialException('write failed: {}'.format(e))
+serial.serialutil.SerialException: write failed: [Errno 5] Input/output error
+[MQTT] connected to 127.0.0.1:1883, base='smartcart'
+[BARCODE] open /dev/barcode0 ok
+[BARCODE] open /dev/barcode1 ok
+[ELARA] open /dev/elara0 ok
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 65, in <module>
+    main()
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 38, in main
+    drv.elara_set_manual_mode(elara)
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 116, in elara_set_manual_mode
+    jsend(elara, {"Cmd":"StopRZ","RZ":["ALL"]}); _ = jread(elara, 0.2)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 99, in jsend
+    elara.write((json.dumps(obj) + '\r\n').encode('utf-8'))
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/serial/serialposix.py", line 640, in write
+    abort, ready, _ = select.select([self.pipe_abort_write_r], [self.fd], [], None)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+Exception in thread Thread-12 (worker):
+Traceback (most recent call last):
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/serial/serialposix.py", line 621, in write
+    n = os.write(self.fd, d)
+        ^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/detect_sensor.py", line 123, in worker
+    epc, rssi, last_words, ascii_txt = drv.elara_read_until(
+                                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 171, in elara_read_until
+    jsend(elara, {"Cmd":"StopRZ","RZ":[0]}); _ = jread(elara, 0.1)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 99, in jsend
+    elara.write((json.dumps(obj) + '\r\n').encode('utf-8'))
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/serial/serialposix.py", line 655, in write
+    raise SerialException('write failed: {}'.format(e))
+serial.serialutil.SerialException: write failed: [Errno 5] Input/output error
+[MQTT] connected to 127.0.0.1:1883, base='smartcart'
+[BARCODE] open /dev/barcode0 ok
+[BARCODE] open /dev/barcode1 ok
+[ELARA] open /dev/elara0 ok
+[GPIO] cannot claim GPIO23: 'GPIO busy'
+[GPIO] cannot claim GPIO24: 'GPIO busy'
+[GPIO] cannot claim GPIO25: 'GPIO busy'
+[GPIO] cannot claim GPIO16: 'GPIO busy'
+===== RUNNING (Ctrl+C to quit) =====
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 65, in <module>
+    main()
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 56, in main
+    bus.close()
+  File "/home/fibo/cart_ws/intregration/bus_sensor.py", line 26, in close
+    self.cli.loop_stop()
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/paho/mqtt/client.py", line 2364, in loop_stop
+    self._thread.join()
+  File "/usr/lib/python3.12/threading.py", line 1147, in join
+    self._wait_for_tstate_lock()
+  File "/usr/lib/python3.12/threading.py", line 1167, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[MQTT] connected to 127.0.0.1:1883, base='smartcart'
+[BARCODE] open /dev/barcode0 ok
+[BARCODE] open /dev/barcode1 ok
+[ELARA] open /dev/elara0 ok
+[GPIO] cannot claim GPIO23: 'GPIO busy'
+[GPIO] cannot claim GPIO24: 'GPIO busy'
+[GPIO] cannot claim GPIO25: 'GPIO busy'
+[GPIO] cannot claim GPIO16: 'GPIO busy'
+===== RUNNING (Ctrl+C to quit) =====
+Stopped.
+[MQTT] connected to 127.0.0.1:1883, base='smartcart'
+[BARCODE] open /dev/barcode0 ok
+[BARCODE] open /dev/barcode1 ok
+[ELARA] open /dev/elara0 ok
+[GPIO] cannot claim GPIO23: 'GPIO busy'
+[GPIO] cannot claim GPIO24: 'GPIO busy'
+[GPIO] cannot claim GPIO25: 'GPIO busy'
+[GPIO] cannot claim GPIO16: 'GPIO busy'
+===== RUNNING (Ctrl+C to quit) =====
+Stopped.
+[MQTT] connected to 127.0.0.1:1883, base='smartcart'
+[BARCODE] open /dev/barcode0 ok
+[BARCODE] open /dev/barcode1 ok
+[ELARA] open /dev/elara0 ok
+[GPIO] BARCODE1 armed on GPIO23
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[GPIO] BARCODE2 armed on GPIO24
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 1, 'name': 'barcode2'}}
+[GPIO] RFID armed on GPIO25
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[GPIO] RFID armed on GPIO16
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 16, 'value': {'state': 1, 'name': 'rfidB'}}
+===== RUNNING (Ctrl+C to quit) =====
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 13369.829 GPIO23 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'barcode1', 'gpio': 23, 'value': {'code': 'CUH22-1030'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 65, in <module>
+    main()
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 56, in main
+    bus.close()
+  File "/home/fibo/cart_ws/intregration/bus_sensor.py", line 26, in close
+    self.cli.loop_stop()
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/paho/mqtt/client.py", line 2364, in loop_stop
+    self._thread.join()
+  File "/usr/lib/python3.12/threading.py", line 1147, in join
+    self._wait_for_tstate_lock()
+  File "/usr/lib/python3.12/threading.py", line 1167, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[MQTT] connected to 127.0.0.1:1883, base='smartcart'
+[BARCODE] open /dev/barcode0 ok
+[BARCODE] open /dev/barcode1 ok
+[ELARA] open /dev/elara0 ok
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 65, in <module>
+    main()
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 38, in main
+    drv.elara_set_manual_mode(elara)
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 116, in elara_set_manual_mode
+    jsend(elara, {"Cmd":"StopRZ","RZ":["ALL"]}); _ = jread(elara, 0.2)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 99, in jsend
+    elara.write((json.dumps(obj) + '\r\n').encode('utf-8'))
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/serial/serialposix.py", line 654, in write
+    if e.errno not in (errno.EAGAIN, errno.EALREADY, errno.EWOULDBLOCK, errno.EINPROGRESS, errno.EINTR):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[MQTT] connected to 127.0.0.1:1883, base='smartcart'
+[BARCODE] open /dev/barcode0 ok
+[BARCODE] open /dev/barcode1 ok
+[ELARA] open /dev/elara0 ok
+[GPIO] BARCODE1 armed on GPIO23
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[GPIO] BARCODE2 armed on GPIO24
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 0, 'name': 'barcode2'}}
+[GPIO] RFID armed on GPIO25
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 0, 'name': 'rfidA'}}
+[GPIO] RFID armed on GPIO16
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 16, 'value': {'state': 0, 'name': 'rfidB'}}
+===== RUNNING (Ctrl+C to quit) =====
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 65, in <module>
+    main()
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 56, in main
+    bus.close()
+  File "/home/fibo/cart_ws/intregration/bus_sensor.py", line 26, in close
+    self.cli.loop_stop()
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/paho/mqtt/client.py", line 2364, in loop_stop
+    self._thread.join()
+  File "/usr/lib/python3.12/threading.py", line 1147, in join
+    self._wait_for_tstate_lock()
+  File "/usr/lib/python3.12/threading.py", line 1167, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[MQTT] connected to 127.0.0.1:1883, base='smartcart'
+[BARCODE] open /dev/barcode0 ok
+[BARCODE] open /dev/barcode1 ok
+[ELARA] open /dev/elara0 ok
+[GPIO] BARCODE1 armed on GPIO23
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[GPIO] BARCODE2 armed on GPIO24
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 0, 'name': 'barcode2'}}
+[GPIO] RFID armed on GPIO25
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 0, 'name': 'rfidA'}}
+[GPIO] RFID armed on GPIO16
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 16, 'value': {'state': 0, 'name': 'rfidB'}}
+===== RUNNING (Ctrl+C to quit) =====
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 1127.671 GPIO23 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 1146.889 GPIO23 value=0 → scan (MCR12) until success ...
+[BARCODE1] busy; skip
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 1160.165 GPIO23 value=0 → scan (MCR12) until success ...
+[BARCODE1] busy; skip
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'barcode1', 'gpio': 23, 'value': {'code': 'CUH22-1030'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 1211.136 GPIO23 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 65, in <module>
+    main()
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 56, in main
+    bus.close()
+  File "/home/fibo/cart_ws/intregration/bus_sensor.py", line 26, in close
+    self.cli.loop_stop()
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/paho/mqtt/client.py", line 2364, in loop_stop
+    self._thread.join()
+  File "/usr/lib/python3.12/threading.py", line 1147, in join
+    self._wait_for_tstate_lock()
+  File "/usr/lib/python3.12/threading.py", line 1167, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[MQTT] connected to 127.0.0.1:1883, base='smartcart'
+[BARCODE] open /dev/barcode0 ok
+[BARCODE] open /dev/barcode1 ok
+[ELARA] open /dev/elara0 ok
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 65, in <module>
+    main()
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 38, in main
+    drv.elara_set_manual_mode(elara)
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 116, in elara_set_manual_mode
+    jsend(elara, {"Cmd":"StopRZ","RZ":["ALL"]}); _ = jread(elara, 0.2)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fibo/cart_ws/intregration/drivers_sensor.py", line 99, in jsend
+    elara.write((json.dumps(obj) + '\r\n').encode('utf-8'))
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/serial/serialposix.py", line 640, in write
+    abort, ready, _ = select.select([self.pipe_abort_write_r], [self.fd], [], None)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[MQTT] connected to 127.0.0.1:1883, base='smartcart'
+[BARCODE] open /dev/barcode0 ok
+[BARCODE] open /dev/barcode1 ok
+[ELARA] open /dev/elara0 ok
+[GPIO] BARCODE1 armed on GPIO23
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[GPIO] BARCODE2 armed on GPIO24
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 1, 'name': 'barcode2'}}
+[GPIO] RFID armed on GPIO25
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[GPIO] RFID armed on GPIO16
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 16, 'value': {'state': 0, 'name': 'rfidB'}}
+===== RUNNING (Ctrl+C to quit) =====
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 254.825 GPIO23 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 0, 'name': 'barcode2'}}
+[GPIO] (BARCODE2) FALLING @ 277.156 GPIO24 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 279.877 GPIO23 value=0 → scan (MCR12) until success ...
+[BARCODE1] busy; skip
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 1, 'name': 'barcode2'}}
+[PUB] smartcart/sensor: {'sensor': 'barcode1', 'gpio': 23, 'value': {'code': 'CUH22-1030'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 0, 'name': 'rfidA'}}
+[GPIO] (RFID) FALLING @ 293.817 GPIO25 value=0 → read Elara until tag ...
+[PUB] smartcart/sensor: {'sensor': 'rfid0', 'gpio': 25, 'value': {'ascii': 'MXK22-1049'}}
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 65, in <module>
+    main()
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 56, in main
+    bus.close()
+  File "/home/fibo/cart_ws/intregration/bus_sensor.py", line 26, in close
+    self.cli.loop_stop()
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/paho/mqtt/client.py", line 2364, in loop_stop
+    self._thread.join()
+  File "/usr/lib/python3.12/threading.py", line 1147, in join
+    self._wait_for_tstate_lock()
+  File "/usr/lib/python3.12/threading.py", line 1167, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[MQTT] connected to 127.0.0.1:1883, base='smartcart'
+[BARCODE] open /dev/barcode0 ok
+[BARCODE] open /dev/barcode1 ok
+[ELARA] open /dev/elara0 ok
+[GPIO] BARCODE1 armed on GPIO23
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[GPIO] BARCODE2 armed on GPIO24
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 1, 'name': 'barcode2'}}
+[GPIO] RFID armed on GPIO25
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[GPIO] RFID armed on GPIO16
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 16, 'value': {'state': 0, 'name': 'rfidB'}}
+===== RUNNING (Ctrl+C to quit) =====
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 1217.166 GPIO23 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 1220.190 GPIO23 value=0 → scan (MCR12) until success ...
+[BARCODE1] busy; skip
+[PUB] smartcart/sensor: {'sensor': 'barcode1', 'gpio': 23, 'value': {'code': 'CUH22-1030'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 1227.377 GPIO23 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'barcode1', 'gpio': 23, 'value': {'code': 'CUH22-1030'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 0, 'name': 'rfidA'}}
+[GPIO] (RFID) FALLING @ 1232.168 GPIO25 value=0 → read Elara until tag ...
+[PUB] smartcart/sensor: {'sensor': 'rfid0', 'gpio': 25, 'value': {'ascii': 'MXK22-1049'}}
+Stopped.
+Exception ignored in atexit callback: <function _shutdown at 0xffff9df847c0>
+Traceback (most recent call last):
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/gpiozero/devices.py", line 631, in _shutdown
+    _devices_shutdown()
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/gpiozero/devices.py", line 624, in _devices_shutdown
+    dev.close()
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/gpiozero/mixins.py", line 265, in close
+    super().close()
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/gpiozero/devices.py", line 572, in close
+    self._pin.close()
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/gpiozero/pins/lgpio.py", line 133, in close
+    lgpio.gpio_claim_input(
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/lgpio.py", line 755, in gpio_claim_input
+    return _u2i(_lgpio._gpio_claim_input(handle&0xffff, lFlags, gpio))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt: 
+[MQTT] connected to 127.0.0.1:1883, base='smartcart'
+[BARCODE] open /dev/barcode0 ok
+[BARCODE] open /dev/barcode1 ok
+[ELARA] open /dev/elara0 ok
+[GPIO] BARCODE1 armed on GPIO23
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[GPIO] BARCODE2 armed on GPIO24
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 1, 'name': 'barcode2'}}
+[GPIO] RFID armed on GPIO25
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[GPIO] RFID armed on GPIO16
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 16, 'value': {'state': 0, 'name': 'rfidB'}}
+===== RUNNING (Ctrl+C to quit) =====
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 65, in <module>
+    main()
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 56, in main
+    bus.close()
+  File "/home/fibo/cart_ws/intregration/bus_sensor.py", line 26, in close
+    self.cli.loop_stop()
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/paho/mqtt/client.py", line 2364, in loop_stop
+    self._thread.join()
+  File "/usr/lib/python3.12/threading.py", line 1147, in join
+    self._wait_for_tstate_lock()
+  File "/usr/lib/python3.12/threading.py", line 1167, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[MQTT] connected to 127.0.0.1:1883, base='smartcart'
+[BARCODE] open /dev/barcode0 ok
+[BARCODE] open /dev/barcode1 ok
+[ELARA] open /dev/elara0 ok
+[GPIO] BARCODE1 armed on GPIO23
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[GPIO] BARCODE2 armed on GPIO24
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 1, 'name': 'barcode2'}}
+[GPIO] RFID armed on GPIO25
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[GPIO] RFID armed on GPIO16
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 16, 'value': {'state': 0, 'name': 'rfidB'}}
+===== RUNNING (Ctrl+C to quit) =====
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 0, 'name': 'barcode2'}}
+[GPIO] (BARCODE2) FALLING @ 2825.267 GPIO24 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 1, 'name': 'barcode2'}}
+[PUB] smartcart/sensor: {'sensor': 'barcode2', 'gpio': 24, 'value': {'code': 'CUH22-1030'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 0, 'name': 'rfidA'}}
+[GPIO] (RFID) FALLING @ 2863.594 GPIO25 value=0 → read Elara until tag ...
+[PUB] smartcart/sensor: {'sensor': 'rfid0', 'gpio': 25, 'value': {'ascii': 'MXK22-1049'}}
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 65, in <module>
+    main()
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 56, in main
+    bus.close()
+  File "/home/fibo/cart_ws/intregration/bus_sensor.py", line 26, in close
+    self.cli.loop_stop()
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/paho/mqtt/client.py", line 2364, in loop_stop
+    self._thread.join()
+  File "/usr/lib/python3.12/threading.py", line 1147, in join
+    self._wait_for_tstate_lock()
+  File "/usr/lib/python3.12/threading.py", line 1167, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[MQTT] connected to 127.0.0.1:1883, base='smartcart'
+[BARCODE] open /dev/barcode0 ok
+[BARCODE] open /dev/barcode1 ok
+[ELARA] open /dev/elara0 ok
+[GPIO] BARCODE1 armed on GPIO23
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[GPIO] BARCODE2 armed on GPIO24
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 1, 'name': 'barcode2'}}
+[GPIO] RFID armed on GPIO25
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[GPIO] RFID armed on GPIO16
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 16, 'value': {'state': 0, 'name': 'rfidB'}}
+===== RUNNING (Ctrl+C to quit) =====
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 0, 'name': 'barcode2'}}
+[GPIO] (BARCODE2) FALLING @ 3735.602 GPIO24 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 1, 'name': 'barcode2'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 0, 'name': 'barcode2'}}
+[GPIO] (BARCODE2) FALLING @ 3743.313 GPIO24 value=0 → scan (MCR12) until success ...
+[BARCODE2] busy; skip
+[PUB] smartcart/sensor: {'sensor': 'barcode2', 'gpio': 24, 'value': {'code': 'CUH22-1030'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 1, 'name': 'barcode2'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 0, 'name': 'barcode2'}}
+[GPIO] (BARCODE2) FALLING @ 3746.070 GPIO24 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'barcode2', 'gpio': 24, 'value': {'code': 'CUH22-1030'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 3746.429 GPIO23 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 1, 'name': 'barcode2'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 0, 'name': 'rfidA'}}
+[GPIO] (RFID) FALLING @ 3753.928 GPIO25 value=0 → read Elara until tag ...
+[PUB] smartcart/sensor: {'sensor': 'barcode1', 'gpio': 23, 'value': {'code': '89'}}
+[PUB] smartcart/sensor: {'sensor': 'rfid0', 'gpio': 25, 'value': {'ascii': 'MXK22-1049'}}
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 65, in <module>
+    main()
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 56, in main
+    bus.close()
+  File "/home/fibo/cart_ws/intregration/bus_sensor.py", line 26, in close
+    self.cli.loop_stop()
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/paho/mqtt/client.py", line 2364, in loop_stop
+    self._thread.join()
+  File "/usr/lib/python3.12/threading.py", line 1147, in join
+    self._wait_for_tstate_lock()
+  File "/usr/lib/python3.12/threading.py", line 1167, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[MQTT] connected to 127.0.0.1:1883, base='smartcart'
+[BARCODE] open /dev/barcode0 ok
+[BARCODE] open /dev/barcode1 ok
+[ELARA] open /dev/elara0 ok
+[GPIO] BARCODE1 armed on GPIO23
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[GPIO] BARCODE2 armed on GPIO24
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 1, 'name': 'barcode2'}}
+[GPIO] RFID armed on GPIO25
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[GPIO] RFID armed on GPIO16
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 16, 'value': {'state': 0, 'name': 'rfidB'}}
+===== RUNNING (Ctrl+C to quit) =====
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 0, 'name': 'barcode2'}}
+[GPIO] (BARCODE2) FALLING @ 3825.678 GPIO24 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 3826.193 GPIO23 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'barcode2', 'gpio': 24, 'value': {'code': 'CUH22-1030'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 3826.796 GPIO23 value=0 → scan (MCR12) until success ...
+[BARCODE1] busy; skip
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 0, 'name': 'rfidA'}}
+[GPIO] (RFID) FALLING @ 3835.501 GPIO25 value=0 → read Elara until tag ...
+[PUB] smartcart/sensor: {'sensor': 'rfid0', 'gpio': 25, 'value': {'ascii': 'MXK22-1049'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 1, 'name': 'barcode2'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 0, 'name': 'barcode2'}}
+[GPIO] (BARCODE2) FALLING @ 4029.239 GPIO24 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'barcode2', 'gpio': 24, 'value': {'code': 'CUH22-1030'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 1, 'name': 'barcode2'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 4029.966 GPIO23 value=0 → scan (MCR12) until success ...
+[BARCODE1] busy; skip
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 0, 'name': 'barcode2'}}
+[GPIO] (BARCODE2) FALLING @ 4030.250 GPIO24 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 0, 'name': 'rfidA'}}
+[GPIO] (RFID) FALLING @ 4067.953 GPIO25 value=0 → read Elara until tag ...
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 65, in <module>
+    main()
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 56, in main
+    bus.close()
+  File "/home/fibo/cart_ws/intregration/bus_sensor.py", line 26, in close
+    self.cli.loop_stop()
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/paho/mqtt/client.py", line 2364, in loop_stop
+    self._thread.join()
+  File "/usr/lib/python3.12/threading.py", line 1147, in join
+    self._wait_for_tstate_lock()
+  File "/usr/lib/python3.12/threading.py", line 1167, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[MQTT] connected to 127.0.0.1:1883, base='smartcart'
+[BARCODE] open /dev/barcode0 ok
+[BARCODE] open /dev/barcode1 ok
+[ELARA] open /dev/elara0 ok
+[GPIO] BARCODE1 armed on GPIO23
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[GPIO] BARCODE2 armed on GPIO24
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 1, 'name': 'barcode2'}}
+[GPIO] RFID armed on GPIO25
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[GPIO] RFID armed on GPIO16
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 16, 'value': {'state': 0, 'name': 'rfidB'}}
+===== RUNNING (Ctrl+C to quit) =====
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 0, 'name': 'barcode2'}}
+[GPIO] (BARCODE2) FALLING @ 100.728 GPIO24 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 1, 'name': 'barcode2'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 0, 'name': 'barcode2'}}
+[GPIO] (BARCODE2) FALLING @ 104.690 GPIO24 value=0 → scan (MCR12) until success ...
+[BARCODE2] busy; skip
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 1, 'name': 'barcode2'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 0, 'name': 'barcode2'}}
+[GPIO] (BARCODE2) FALLING @ 108.293 GPIO24 value=0 → scan (MCR12) until success ...
+[BARCODE2] busy; skip
+[PUB] smartcart/sensor: {'sensor': 'barcode2', 'gpio': 24, 'value': {'code': 'CUH22-1030'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 1, 'name': 'barcode2'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 0, 'name': 'rfidA'}}
+[GPIO] (RFID) FALLING @ 117.947 GPIO25 value=0 → read Elara until tag ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 0, 'name': 'rfidA'}}
+[GPIO] (RFID) FALLING @ 118.821 GPIO25 value=0 → read Elara until tag ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[PUB] smartcart/sensor: {'sensor': 'rfid0', 'gpio': 25, 'value': {'ascii': '2-10'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 0, 'name': 'rfidA'}}
+[GPIO] (RFID) FALLING @ 119.986 GPIO25 value=0 → read Elara until tag ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[PUB] smartcart/sensor: {'sensor': 'rfid0', 'gpio': 25, 'value': {'ascii': '2-10'}}
+[PUB] smartcart/sensor: {'sensor': 'rfid0', 'gpio': 25, 'value': {'ascii': '2-10'}}
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 65, in <module>
+    main()
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 56, in main
+    bus.close()
+  File "/home/fibo/cart_ws/intregration/bus_sensor.py", line 26, in close
+    self.cli.loop_stop()
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/paho/mqtt/client.py", line 2364, in loop_stop
+    self._thread.join()
+  File "/usr/lib/python3.12/threading.py", line 1147, in join
+    self._wait_for_tstate_lock()
+  File "/usr/lib/python3.12/threading.py", line 1167, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[MQTT] connected to 127.0.0.1:1883, base='smartcart'
+[BARCODE] open /dev/barcode0 ok
+[BARCODE] open /dev/barcode1 ok
+[ELARA] open /dev/elara0 ok
+[GPIO] BARCODE1 armed on GPIO23
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[GPIO] BARCODE2 armed on GPIO24
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 1, 'name': 'barcode2'}}
+[GPIO] RFID armed on GPIO25
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[GPIO] RFID armed on GPIO16
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 16, 'value': {'state': 0, 'name': 'rfidB'}}
+===== RUNNING (Ctrl+C to quit) =====
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 65, in <module>
+    main()
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 56, in main
+    bus.close()
+  File "/home/fibo/cart_ws/intregration/bus_sensor.py", line 26, in close
+    self.cli.loop_stop()
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/paho/mqtt/client.py", line 2364, in loop_stop
+    self._thread.join()
+  File "/usr/lib/python3.12/threading.py", line 1147, in join
+    self._wait_for_tstate_lock()
+  File "/usr/lib/python3.12/threading.py", line 1167, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[MQTT] connected to 127.0.0.1:1883, base='smartcart'
+[BARCODE] open /dev/barcode0 ok
+[BARCODE] open /dev/barcode1 ok
+[ELARA] open /dev/elara0 ok
+[GPIO] BARCODE1 armed on GPIO23
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[GPIO] BARCODE2 armed on GPIO24
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 1, 'name': 'barcode2'}}
+[GPIO] RFID armed on GPIO25
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[GPIO] RFID armed on GPIO16
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 16, 'value': {'state': 0, 'name': 'rfidB'}}
+===== RUNNING (Ctrl+C to quit) =====
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 0, 'name': 'rfidA'}}
+[GPIO] (RFID) FALLING @ 5402.070 GPIO25 value=0 → read Elara until tag ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 0, 'name': 'rfidA'}}
+[GPIO] (RFID) FALLING @ 5404.246 GPIO25 value=0 → read Elara until tag ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[PUB] smartcart/sensor: {'sensor': 'rfid0', 'gpio': 25, 'value': {'ascii': '2-10'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 0, 'name': 'rfidA'}}
+[GPIO] (RFID) FALLING @ 5405.522 GPIO25 value=0 → read Elara until tag ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[PUB] smartcart/sensor: {'sensor': 'rfid0', 'gpio': 25, 'value': {'ascii': '2-10'}}
+[PUB] smartcart/sensor: {'sensor': 'rfid0', 'gpio': 25, 'value': {'ascii': '2-10'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 0, 'name': 'rfidA'}}
+[GPIO] (RFID) FALLING @ 5412.824 GPIO25 value=0 → read Elara until tag ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 0, 'name': 'barcode2'}}
+[GPIO] (BARCODE2) FALLING @ 5423.642 GPIO24 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 5424.506 GPIO23 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 1, 'name': 'barcode2'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 0, 'name': 'barcode2'}}
+[GPIO] (BARCODE2) FALLING @ 5426.659 GPIO24 value=0 → scan (MCR12) until success ...
+[BARCODE2] busy; skip
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 1, 'name': 'barcode2'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 0, 'name': 'barcode2'}}
+[GPIO] (BARCODE2) FALLING @ 5428.452 GPIO24 value=0 → scan (MCR12) until success ...
+[BARCODE2] busy; skip
+[PUB] smartcart/sensor: {'sensor': 'barcode2', 'gpio': 24, 'value': {'code': 'CUH22-1030'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 1, 'name': 'barcode2'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 0, 'name': 'rfidA'}}
+[GPIO] (RFID) FALLING @ 5438.708 GPIO25 value=0 → read Elara until tag ...
+[PUB] smartcart/sensor: {'sensor': 'rfid0', 'gpio': 25, 'value': {'ascii': 'MXK22-1049'}}
+[PUB] smartcart/sensor: {'sensor': 'rfid0', 'gpio': 25, 'value': {'ascii': 'MXK22-1049'}}
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 65, in <module>
+    main()
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 56, in main
+    bus.close()
+  File "/home/fibo/cart_ws/intregration/bus_sensor.py", line 26, in close
+    self.cli.loop_stop()
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/paho/mqtt/client.py", line 2364, in loop_stop
+    self._thread.join()
+  File "/usr/lib/python3.12/threading.py", line 1147, in join
+    self._wait_for_tstate_lock()
+  File "/usr/lib/python3.12/threading.py", line 1167, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[MQTT] connected to 127.0.0.1:1883, base='smartcart'
+[BARCODE] open /dev/barcode0 ok
+[BARCODE] open /dev/barcode1 ok
+[ELARA] open /dev/elara0 ok
+[GPIO] BARCODE1 armed on GPIO23
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[GPIO] BARCODE2 armed on GPIO24
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 1, 'name': 'barcode2'}}
+[GPIO] RFID armed on GPIO25
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[GPIO] RFID armed on GPIO16
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 16, 'value': {'state': 0, 'name': 'rfidB'}}
+===== RUNNING (Ctrl+C to quit) =====
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 65, in <module>
+    main()
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 56, in main
+    bus.close()
+  File "/home/fibo/cart_ws/intregration/bus_sensor.py", line 26, in close
+    self.cli.loop_stop()
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/paho/mqtt/client.py", line 2364, in loop_stop
+    self._thread.join()
+  File "/usr/lib/python3.12/threading.py", line 1147, in join
+    self._wait_for_tstate_lock()
+  File "/usr/lib/python3.12/threading.py", line 1167, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[MQTT] connected to 127.0.0.1:1883, base='smartcart'
+[BARCODE] open /dev/barcode0 ok
+[BARCODE] open /dev/barcode1 ok
+[ELARA] open /dev/elara0 ok
+[GPIO] BARCODE1 armed on GPIO23
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[GPIO] BARCODE2 armed on GPIO24
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 1, 'name': 'barcode2'}}
+[GPIO] RFID armed on GPIO25
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[GPIO] RFID armed on GPIO16
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 16, 'value': {'state': 0, 'name': 'rfidB'}}
+===== RUNNING (Ctrl+C to quit) =====
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 0, 'name': 'barcode2'}}
+[GPIO] (BARCODE2) FALLING @ 11736.435 GPIO24 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 1, 'name': 'barcode2'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 11737.819 GPIO23 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'barcode2', 'gpio': 24, 'value': {'code': 'CUH22-1030'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 0, 'name': 'rfidA'}}
+[GPIO] (RFID) FALLING @ 11752.068 GPIO25 value=0 → read Elara until tag ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[PUB] smartcart/sensor: {'sensor': 'rfid0', 'gpio': 25, 'value': {'ascii': '2-10'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 0, 'name': 'rfidA'}}
+[GPIO] (RFID) FALLING @ 11767.303 GPIO25 value=0 → read Elara until tag ...
+[PUB] smartcart/sensor: {'sensor': 'rfid0', 'gpio': 25, 'value': {'ascii': 'MXK22-1049'}}
+[PUB] smartcart/sensor: {'sensor': 'barcode1', 'gpio': 23, 'value': {'code': ':l*'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 0, 'name': 'barcode2'}}
+[GPIO] (BARCODE2) FALLING @ 12237.152 GPIO24 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 1, 'name': 'barcode2'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 0, 'name': 'rfidA'}}
+[GPIO] (RFID) FALLING @ 12703.753 GPIO25 value=0 → read Elara until tag ...
+[PUB] smartcart/sensor: {'sensor': 'rfid0', 'gpio': 25, 'value': {'ascii': 'MXK22-1049'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 0, 'name': 'rfidA'}}
+[GPIO] (RFID) FALLING @ 12736.216 GPIO25 value=0 → read Elara until tag ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 25, 'value': {'state': 1, 'name': 'rfidA'}}
+[PUB] smartcart/sensor: {'sensor': 'rfid0', 'gpio': 25, 'value': {'ascii': 'MXK22-1049'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 12773.876 GPIO23 value=0 → scan (MCR12) until success ...
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 0, 'name': 'barcode1'}}
+[GPIO] (BARCODE1) FALLING @ 12775.887 GPIO23 value=0 → scan (MCR12) until success ...
+[BARCODE1] busy; skip
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 23, 'value': {'state': 1, 'name': 'barcode1'}}
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 0, 'name': 'barcode2'}}
+[GPIO] (BARCODE2) FALLING @ 12782.420 GPIO24 value=0 → scan (MCR12) until success ...
+[BARCODE2] busy; skip
+[PUB] smartcart/sensor: {'sensor': 'photo', 'gpio': 24, 'value': {'state': 1, 'name': 'barcode2'}}
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 65, in <module>
+    main()
+  File "/home/fibo/cart_ws/intregration/main_sensor.py", line 56, in main
+    bus.close()
+  File "/home/fibo/cart_ws/intregration/bus_sensor.py", line 26, in close
+    self.cli.loop_stop()
+  File "/home/fibo/cart_env/lib/python3.12/site-packages/paho/mqtt/client.py", line 2364, in loop_stop
+    self._thread.join()
+  File "/usr/lib/python3.12/threading.py", line 1147, in join
+    self._wait_for_tstate_lock()
+  File "/usr/lib/python3.12/threading.py", line 1167, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

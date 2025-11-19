@@ -3610,3 +3610,2901 @@ Traceback (most recent call last):
     tn = self._connect()
          ^^^^^^^^^^^^^^^
 TimeoutError: timed out
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback, re
+/home/fibo/cart_ws/intregration/communicate_AMR.py:468: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Exception in thread AMRHeartbeat:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 222, in _heartbeat_loop
+    if not HEARTBEAT_SEC:
+           ^^^^^^^^^^^^^
+NameError: name 'HEARTBEAT_SEC' is not defined
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback, re
+/home/fibo/cart_ws/intregration/communicate_AMR.py:468: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Exception in thread AMRHeartbeat:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 222, in _heartbeat_loop
+    if not HEARTBEAT_SEC:
+           ^^^^^^^^^^^^^
+NameError: name 'HEARTBEAT_SEC' is not defined
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback, re
+/home/fibo/cart_ws/intregration/communicate_AMR.py:468: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Exception in thread AMRHeartbeat:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 222, in _heartbeat_loop
+    if not HEARTBEAT_SEC:
+           ^^^^^^^^^^^^^
+NameError: name 'HEARTBEAT_SEC' is not defined
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback, re
+/home/fibo/cart_ws/intregration/communicate_AMR.py:468: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Exception in thread AMRHeartbeat:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 222, in _heartbeat_loop
+    if not HEARTBEAT_SEC:
+           ^^^^^^^^^^^^^
+NameError: name 'HEARTBEAT_SEC' is not defined
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback, re
+/home/fibo/cart_ws/intregration/communicate_AMR.py:468: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Exception in thread AMRHeartbeat:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 222, in _heartbeat_loop
+    if not HEARTBEAT_SEC:
+           ^^^^^^^^^^^^^
+NameError: name 'HEARTBEAT_SEC' is not defined
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback, re
+/home/fibo/cart_ws/intregration/communicate_AMR.py:468: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Exception in thread AMRHeartbeat:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 222, in _heartbeat_loop
+    if not HEARTBEAT_SEC:
+           ^^^^^^^^^^^^^
+NameError: name 'HEARTBEAT_SEC' is not defined
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback, re
+/home/fibo/cart_ws/intregration/communicate_AMR.py:468: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Exception in thread AMRHeartbeat:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 222, in _heartbeat_loop
+    if not HEARTBEAT_SEC:
+           ^^^^^^^^^^^^^
+NameError: name 'HEARTBEAT_SEC' is not defined
+[TELNET] connect 192.168.0.3:7171
+[MAIN] running. Press Ctrl+C to quit.
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[TELNET] connected + monitors set.
+[MATCH] update complete=True ts=1762233621.3491964
+[MATCH] update complete=True ts=1762233621.3901055
+[MATCH] update complete=True ts=1762233621.3902276
+[MATCH] update complete=True ts=1762233621.4311433
+[MATCH] update complete=False ts=1762233641.7561405
+[MATCH] update complete=False ts=1762233642.0256457
+[MATCH] update complete=False ts=1762233644.006964
+[MATCH] update complete=False ts=1762233644.6505458
+[MATCH] update complete=False ts=1762233645.349119
+[MATCH] update complete=False ts=1762233645.5587327
+[MATCH] update complete=False ts=1762233645.9244838
+[MATCH] update complete=False ts=1762233657.2534459
+[MATCH] update complete=False ts=1762233657.6482637
+[MATCH] update complete=False ts=1762233657.8487506
+[MATCH] update complete=False ts=1762233658.2758443
+[MATCH] update complete=False ts=1762233671.977736
+[MATCH] update complete=False ts=1762233672.1893086
+[MATCH] update complete=False ts=1762233672.2397897
+[MATCH] update complete=False ts=1762233673.732411
+[MATCH] update complete=False ts=1762233673.8343246
+[MATCH] update complete=False ts=1762233674.374222
+[MATCH] update complete=False ts=1762233675.4771285
+[MATCH] update complete=False ts=1762233675.7040203
+[MATCH] update complete=False ts=1762233677.637046
+[MATCH] update complete=False ts=1762233679.1649168
+[MATCH] update complete=False ts=1762233680.3859477
+[MATCH] update complete=False ts=1762233681.0618463
+[MATCH] update complete=False ts=1762233695.9774423
+[MATCH] update complete=False ts=1762233699.4894698
+[MATCH] update complete=False ts=1762233699.5306308
+[MATCH] update complete=False ts=1762233700.05713
+[MATCH] update complete=False ts=1762233700.1595097
+[MATCH] update complete=False ts=1762233700.3050463
+[MATCH] update complete=False ts=1762233711.4711382
+[MATCH] update complete=False ts=1762233726.9722955
+[MATCH] update complete=True ts=1762233727.0015771
+[TRIGGER] received. op=Request goal_id=DOT400002
+[MAP] goal_id 'DOT400002' mapped to goal 'Goal13'
+[TELNET:send] Goto ROEQ_SAF_cart500_entry
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[MATCH] update complete=False ts=1762233728.506141
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[MATCH] update complete=False ts=1762233744.204325
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET:send] Goto Goal13
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[TELNET:send] doTask wait 15
+[WAIT] wait 15s completed ...
+[WAIT] wait 15s completed ...
+[WAIT] wait 15s completed ...
+[TELNET:send] say "5 4 3 2 1 0 Good luck"
+[WAIT] say started ...
+[WAIT] say finished (message) ...
+[WAIT] speaking ~3.1s (estimated)
+[WAIT] say finished (poll) ...
+[WAIT] say finished (poll) ...
+[WAIT] say finished (poll) ...
+[WAIT] say finished (poll) ...
+[WAIT] say finished (poll) ...
+[WAIT] say finished (poll) ...
+[WAIT] say finished (poll) ...
+[WAIT] say fallback done (no explicit finish message)
+[TELNET:send] Goto ROEQ_SAF_cart500
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[SEQ] Completed all steps.
+[MATCH] update complete=True ts=1762234032.8173618
+[MATCH] update complete=False ts=1762234091.55664
+[MATCH] update complete=False ts=1762234093.5254073
+[MATCH] update complete=False ts=1762234093.9908433
+[MATCH] update complete=False ts=1762234098.805999
+[MATCH] update complete=True ts=1762234108.0481348
+[TRIGGER] received. op=Request goal_id=DOT400002
+[MAP] goal_id 'DOT400002' mapped to goal 'Goal13'
+[TELNET:send] Goto ROEQ_SAF_cart500_entry
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET:send] Goto Goal13
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[TELNET:send] doTask wait 15
+[WAIT] wait 15s completed ...
+[WAIT] wait 15s completed ...
+[WAIT] wait 15s completed ...
+[TELNET:send] say "5 4 3 2 1 0 Good luck"
+[WAIT] say finished (message) ...
+[WAIT] speaking ~3.1s (estimated)
+[WAIT] say finished (poll) ...
+[WAIT] say finished (poll) ...
+[WAIT] say finished (poll) ...
+[WAIT] say finished (poll) ...
+[WAIT] say finished (poll) ...
+[WAIT] say finished (poll) ...
+[WAIT] say finished (poll) ...
+[WAIT] say fallback done (no explicit finish message)
+[TELNET:send] Goto ROEQ_SAF_cart500
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[SEQ] Completed all steps.
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback, re
+/home/fibo/cart_ws/intregration/communicate_AMR.py:468: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Exception in thread AMRHeartbeat:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 222, in _heartbeat_loop
+    if not HEARTBEAT_SEC:
+           ^^^^^^^^^^^^^
+NameError: name 'HEARTBEAT_SEC' is not defined
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback, re
+/home/fibo/cart_ws/intregration/communicate_AMR.py:468: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Exception in thread AMRHeartbeat:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 222, in _heartbeat_loop
+    if not HEARTBEAT_SEC:
+           ^^^^^^^^^^^^^
+NameError: name 'HEARTBEAT_SEC' is not defined
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MATCH] update complete=False ts=1762236024.1397996
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MATCH] update complete=False ts=1762236076.5043762
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MATCH] update complete=False ts=1762236082.4188206
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MATCH] update complete=False ts=1762236096.2812297
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MATCH] update complete=False ts=1762236104.6434858
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MATCH] update complete=False ts=1762236128.214299
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[TELNET] connect 192.168.0.3:7171
+[MAIN] running. Press Ctrl+C to quit.
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[TELNET] connected + monitors set.
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MATCH] update complete=True ts=1762236129.1487792
+[TRIGGER] received. op=Request goal_id=DOT400002
+[MAP] goal_id 'DOT400002' mapped to goal 'Goal13'
+[TELNET:send] Goto ROEQ_SAF_cart500_entry
+[MATCH] update complete=False ts=1762236129.1798332
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET:send] Goto Goal13
+[WAIT] Arrived at Goal13 ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at Goal13 ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at Goal13 ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at Goal13 ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at Goal13 ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at Goal13 ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at Goal13 ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at Goal13 ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at Goal13 ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at Goal13 ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at Goal13 ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at Goal13 ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[TELNET:send] doTask wait 15
+[WAIT] wait 15s completed ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] wait 15s completed ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] wait 15s completed ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[TELNET:send] say "5 4 3 2 1 0 Good luck"
+[WAIT] say started ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] say finished (message) ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] speaking ~3.1s (estimated)
+[WAIT] say finished (poll) ...
+[WAIT] say finished (poll) ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] say finished (poll) ...
+[WAIT] say finished (poll) ...
+[WAIT] say finished (poll) ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] say finished (poll) ...
+[WAIT] say finished (poll) ...
+[WAIT] say fallback done (no explicit finish message)
+[TELNET:send] Goto ROEQ_SAF_cart500
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[SEQ] Completed all steps.
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MATCH] update complete=False ts=1762236545.3850195
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MATCH] update complete=False ts=1762236544.694599
+[MATCH] update complete=False ts=1762236544.9492052
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MATCH] update complete=False ts=1762236571.309227
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MATCH] update complete=False ts=1762236577.3443415
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MATCH] update complete=False ts=1762236579.4445207
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MATCH] update complete=False ts=1762236597.245191
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MATCH] update complete=False ts=1762236621.5104
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MATCH] update complete=False ts=1762236563.0010061
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MATCH] update complete=False ts=1762236564.5887585
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MATCH] update complete=False ts=1762236568.8315117
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MATCH] update complete=False ts=1762236578.7436998
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MATCH] update complete=False ts=1762236592.7568512
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MATCH] update complete=False ts=1762236668.870237
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback, re
+/home/fibo/cart_ws/intregration/communicate_AMR.py:468: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Exception in thread AMRHeartbeat:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 222, in _heartbeat_loop
+    if not HEARTBEAT_SEC:
+           ^^^^^^^^^^^^^
+NameError: name 'HEARTBEAT_SEC' is not defined
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MATCH] update complete=False ts=1762236682.8608704
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MATCH] update complete=False ts=1762236729.027285
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MATCH] update complete=True ts=1762236746.9427133
+[TRIGGER] received. op=Request goal_id=DOT400002
+[MAP] goal_id 'DOT400002' mapped to goal 'Goal13'
+[TELNET:send] Goto ROEQ_SAF_cart500_entry
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback, re
+/home/fibo/cart_ws/intregration/communicate_AMR.py:468: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Exception in thread AMRHeartbeat:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 222, in _heartbeat_loop
+    if not HEARTBEAT_SEC:
+           ^^^^^^^^^^^^^
+NameError: name 'HEARTBEAT_SEC' is not defined
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback, re
+/home/fibo/cart_ws/intregration/communicate_AMR.py:468: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Exception in thread AMRHeartbeat:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 222, in _heartbeat_loop
+    if not HEARTBEAT_SEC:
+           ^^^^^^^^^^^^^
+NameError: name 'HEARTBEAT_SEC' is not defined
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback, re
+/home/fibo/cart_ws/intregration/communicate_AMR.py:468: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Exception in thread AMRHeartbeat:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 222, in _heartbeat_loop
+    if not HEARTBEAT_SEC:
+           ^^^^^^^^^^^^^
+NameError: name 'HEARTBEAT_SEC' is not defined
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback, re
+/home/fibo/cart_ws/intregration/communicate_AMR.py:468: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Exception in thread AMRHeartbeat:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 222, in _heartbeat_loop
+    if not HEARTBEAT_SEC:
+           ^^^^^^^^^^^^^
+NameError: name 'HEARTBEAT_SEC' is not defined
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback, re
+/home/fibo/cart_ws/intregration/communicate_AMR.py:468: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Exception in thread AMRHeartbeat:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 222, in _heartbeat_loop
+    if not HEARTBEAT_SEC:
+           ^^^^^^^^^^^^^
+NameError: name 'HEARTBEAT_SEC' is not defined
+[TELNET] connect 192.168.0.3:7171
+[MAIN] running. Press Ctrl+C to quit.
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[TELNET] connected + monitors set.
+[MATCH] update complete=True ts=1762242378.1647701
+[MATCH] update complete=True ts=1762242378.2051382
+[MATCH] update complete=True ts=1762242378.2052908
+[MATCH] update complete=True ts=1762242378.2461
+[MATCH] update complete=False ts=1762242407.5210998
+[MATCH] update complete=False ts=1762242407.7343524
+[MATCH] update complete=False ts=1762242407.8362067
+[MATCH] update complete=False ts=1762242413.2468417
+[MATCH] update complete=False ts=1762242413.83475
+[MATCH] update complete=False ts=1762242413.9366117
+[MATCH] update complete=False ts=1762242421.6712368
+[MATCH] update complete=False ts=1762242421.9199977
+[MATCH] update complete=False ts=1762242422.021697
+[MATCH] update complete=False ts=1762242422.7531228
+[MATCH] update complete=False ts=1762242423.323069
+[MATCH] update complete=False ts=1762242423.4258368
+[MATCH] update complete=False ts=1762242425.7313197
+[MATCH] update complete=False ts=1762242429.4484632
+[MATCH] update complete=True ts=1762242434.577156
+[TRIGGER] received. op=Request goal_id=DOT400002
+[MAP] goal_id 'DOT400002' mapped to goal 'Goal13'
+[TELNET:send] Goto ROEQ_SAF_cart500_entry
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET:send] Goto Goal13
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[TELNET:send] doTask wait 15
+[WAIT] wait 15s completed ...
+[WAIT] wait 15s completed ...
+[WAIT] wait 15s completed ...
+[TELNET:send] say "5 4 3 2 1 0 Good luck"
+[WAIT] say started ...
+[WAIT] say finished (message) ...
+[WAIT] speaking ~3.1s (estimated)
+[WAIT] say finished (poll) ...
+[WAIT] say finished (poll) ...
+[WAIT] say finished (poll) ...
+[WAIT] say finished (poll) ...
+[WAIT] say finished (poll) ...
+[WAIT] say finished (poll) ...
+[WAIT] say finished (poll) ...
+[WAIT] say fallback done (no explicit finish message)
+[TELNET:send] Goto ROEQ_SAF_cart500
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[SEQ] Completed all steps.
+[MATCH] update complete=True ts=1762243301.0822382
+[MATCH] update complete=True ts=1762244211.8906255
+[MATCH] update complete=True ts=1762244212.8497355
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback, re
+/home/fibo/cart_ws/intregration/communicate_AMR.py:468: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Exception in thread AMRHeartbeat:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 222, in _heartbeat_loop
+    if not HEARTBEAT_SEC:
+           ^^^^^^^^^^^^^
+NameError: name 'HEARTBEAT_SEC' is not defined
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback, re
+/home/fibo/cart_ws/intregration/communicate_AMR.py:468: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Exception in thread AMRHeartbeat:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 222, in _heartbeat_loop
+    if not HEARTBEAT_SEC:
+           ^^^^^^^^^^^^^
+NameError: name 'HEARTBEAT_SEC' is not defined
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback, re
+/home/fibo/cart_ws/intregration/communicate_AMR.py:468: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Exception in thread AMRHeartbeat:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 222, in _heartbeat_loop
+    if not HEARTBEAT_SEC:
+           ^^^^^^^^^^^^^
+NameError: name 'HEARTBEAT_SEC' is not defined
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback, re
+/home/fibo/cart_ws/intregration/communicate_AMR.py:468: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Exception in thread AMRHeartbeat:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 222, in _heartbeat_loop
+    if not HEARTBEAT_SEC:
+           ^^^^^^^^^^^^^
+NameError: name 'HEARTBEAT_SEC' is not defined
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback, re
+/home/fibo/cart_ws/intregration/communicate_AMR.py:468: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Exception in thread AMRHeartbeat:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 222, in _heartbeat_loop
+    if not HEARTBEAT_SEC:
+           ^^^^^^^^^^^^^
+NameError: name 'HEARTBEAT_SEC' is not defined
+[TELNET] connect 192.168.0.3:7171
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] running. Press Ctrl+C to quit.
+[TELNET] connected + monitors set.
+[MATCH] update complete=True ts=1762246375.252775
+[MATCH] update complete=True ts=1762246375.2930984
+[MATCH] update complete=True ts=1762246375.2932484
+[MATCH] update complete=True ts=1762246375.3340924
+[TRIGGER] received. op=Return goal_id=DOT400002
+[MAP] goal_id 'DOT400002' mapped to goal 'Goal13'
+[TELNET:send] Goto ROEQ_SAF_cart500_entry
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET:send] Goto Goal13
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[SEQ] Return: waiting for match at DESTINATION ...
+[MATCH] waiting for complete ...
+[MATCH] waiting for complete ...
+[MATCH] waiting for complete ...
+[MATCH] update complete=True ts=1762246509.9487174
+[MATCH] complete signal received.
+[TELNET:send] say "5 4 3 2 1 0 Good luck"
+[MATCH] update complete=True ts=1762246510.0511594
+[WAIT] say finished (message) ...
+[MATCH] update complete=True ts=1762246510.7115614
+[WAIT] speaking ~3.1s (estimated)
+[WAIT] say finished (poll) ...
+[WAIT] say finished (poll) ...
+[WAIT] say finished (poll) ...
+[WAIT] say finished (poll) ...
+[WAIT] say finished (poll) ...
+[WAIT] say finished (poll) ...
+[WAIT] say finished (poll) ...
+[WAIT] say fallback done (no explicit finish message)
+[TELNET:send] Goto ROEQ_SAF_cart500
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[SEQ] Completed all steps.
+[MATCH] update complete=True ts=1762246786.238774
+[MATCH] update complete=True ts=1762246790.0866945
+[MATCH] update complete=False ts=1762246865.4091842
+[TRIGGER] received. op=Return goal_id=DOT400002
+[MAP] goal_id 'DOT400002' mapped to goal 'Goal13'
+[TELNET:send] Goto ROEQ_SAF_cart500_entry
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET:send] Goto Goal13
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[WAIT] Arrived at Goal13 ...
+[SEQ] Return: waiting for match at DESTINATION ...
+[MATCH] waiting for complete ...
+[MATCH] waiting for complete ...
+[MATCH] update complete=True ts=1762246988.2440004
+[MATCH] complete signal received.
+[TELNET:send] say "5 4 3 2 1 0 Good luck"
+[MATCH] update complete=True ts=1762246988.3451016
+[MATCH] update complete=True ts=1762246988.900829
+[WAIT] say finished (message) ...
+[WAIT] speaking ~3.1s (estimated)
+[WAIT] say finished (poll) ...
+[WAIT] say finished (poll) ...
+[WAIT] say finished (poll) ...
+[WAIT] say finished (poll) ...
+[WAIT] say finished (poll) ...
+[WAIT] say finished (poll) ...
+[WAIT] say finished (poll) ...
+[WAIT] say fallback done (no explicit finish message)
+[TELNET:send] Goto ROEQ_SAF_cart500
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[WAIT] Arrived at ROEQ_SAF_cart500 ...
+[SEQ] Completed all steps.
+[MATCH] update complete=True ts=1762247080.6536174
+[MATCH] update complete=True ts=1762247080.9441462
+[MATCH] update complete=True ts=1762247270.524037
+[MATCH] update complete=False ts=1762247337.5672033
+[MATCH] update complete=False ts=1762247337.7166538
+[MATCH] update complete=False ts=1762247338.0967228
+[MATCH] update complete=False ts=1762247338.1986637
+[MATCH] update complete=False ts=1762247339.2818277
+[MATCH] update complete=False ts=1762247347.5271888
+[MATCH] update complete=True ts=1762247349.477972
+[TRIGGER] received. op=Request goal_id=DOT400002
+[MAP] goal_id 'DOT400002' mapped to goal 'Goal13'
+[TELNET:send] Goto ROEQ_SAF_cart500_entry
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 167, in _reader_loop
+    chunk = tn.read_eager()
+            ^^^^^^^^^^^^^^^
+EOFError: telnet connection closed
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 162, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+TimeoutError: timed out
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 162, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 162, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 162, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 162, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 162, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 162, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 162, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 162, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 162, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 162, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 162, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 162, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 162, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 162, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 162, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 162, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 162, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 162, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 162, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET] reader error: telnet connection closed
+[TELNET] disconnected.
+[TELNET] connect 192.168.0.3:7171
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET] reader error: timed out
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET] connect 192.168.0.3:7171
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET] reader error: [Errno 113] No route to host
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET] connect 192.168.0.3:7171
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET] reader error: [Errno 113] No route to host
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET] connect 192.168.0.3:7171
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET] reader error: [Errno 113] No route to host
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[MAIN] starting communicate_AMR (seq-2.2-return-match-at-destination)
+[MQTT] sub smartcart/toggle_omron , smartcart/match
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET] connect 192.168.0.3:7171
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET] reader error: [Errno 113] No route to host
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET] connect 192.168.0.3:7171
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET] reader error: [Errno 113] No route to host
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET] connect 192.168.0.3:7171
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET] reader error: [Errno 113] No route to host
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET] connect 192.168.0.3:7171
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET] reader error: [Errno 113] No route to host
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET] connect 192.168.0.3:7171
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET] reader error: [Errno 113] No route to host
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET] connect 192.168.0.3:7171
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET] reader error: [Errno 113] No route to host
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET] connect 192.168.0.3:7171
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET] reader error: [Errno 113] No route to host
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET] connect 192.168.0.3:7171
+[TELNET] reader error: [Errno 113] No route to host
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET] connect 192.168.0.3:7171
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET] reader error: [Errno 113] No route to host
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET] connect 192.168.0.3:7171
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+[TELNET] reader error: [Errno 113] No route to host
+[WAIT] Arrived at ROEQ_SAF_cart500_entry ...
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 162, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 162, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 162, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 162, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 162, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 162, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 162, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 162, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 162, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 162, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 162, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 162, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 162, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 162, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback, re
+/home/fibo/cart_ws/intregration/communicate_AMR.py:468: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Exception in thread AMRHeartbeat:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 222, in _heartbeat_loop
+    if not HEARTBEAT_SEC:
+           ^^^^^^^^^^^^^
+NameError: name 'HEARTBEAT_SEC' is not defined
+Traceback (most recent call last):
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 162, in _reader_loop
+    tn = self._connect()
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 113] No route to host
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback, re
+/home/fibo/cart_ws/intregration/communicate_AMR.py:468: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Exception in thread AMRHeartbeat:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 222, in _heartbeat_loop
+    if not HEARTBEAT_SEC:
+           ^^^^^^^^^^^^^
+NameError: name 'HEARTBEAT_SEC' is not defined
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback, re
+/home/fibo/cart_ws/intregration/communicate_AMR.py:468: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Exception in thread AMRHeartbeat:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 222, in _heartbeat_loop
+    if not HEARTBEAT_SEC:
+           ^^^^^^^^^^^^^
+NameError: name 'HEARTBEAT_SEC' is not defined
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback, re
+/home/fibo/cart_ws/intregration/communicate_AMR.py:468: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Exception in thread AMRHeartbeat:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 222, in _heartbeat_loop
+    if not HEARTBEAT_SEC:
+           ^^^^^^^^^^^^^
+NameError: name 'HEARTBEAT_SEC' is not defined
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback, re
+/home/fibo/cart_ws/intregration/communicate_AMR.py:468: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Exception in thread AMRHeartbeat:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 222, in _heartbeat_loop
+    if not HEARTBEAT_SEC:
+           ^^^^^^^^^^^^^
+NameError: name 'HEARTBEAT_SEC' is not defined
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback, re
+/home/fibo/cart_ws/intregration/communicate_AMR.py:468: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Exception in thread AMRHeartbeat:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 222, in _heartbeat_loop
+    if not HEARTBEAT_SEC:
+           ^^^^^^^^^^^^^
+NameError: name 'HEARTBEAT_SEC' is not defined
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback, re
+/home/fibo/cart_ws/intregration/communicate_AMR.py:468: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Exception in thread AMRHeartbeat:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 222, in _heartbeat_loop
+    if not HEARTBEAT_SEC:
+           ^^^^^^^^^^^^^
+NameError: name 'HEARTBEAT_SEC' is not defined
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback, re
+/home/fibo/cart_ws/intregration/communicate_AMR.py:468: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Exception in thread AMRHeartbeat:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 222, in _heartbeat_loop
+    if not HEARTBEAT_SEC:
+           ^^^^^^^^^^^^^
+NameError: name 'HEARTBEAT_SEC' is not defined
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback, re
+/home/fibo/cart_ws/intregration/communicate_AMR.py:468: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Exception in thread AMRHeartbeat:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 222, in _heartbeat_loop
+    if not HEARTBEAT_SEC:
+           ^^^^^^^^^^^^^
+NameError: name 'HEARTBEAT_SEC' is not defined
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback, re
+/home/fibo/cart_ws/intregration/communicate_AMR.py:468: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Exception in thread AMRHeartbeat:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 222, in _heartbeat_loop
+    if not HEARTBEAT_SEC:
+           ^^^^^^^^^^^^^
+NameError: name 'HEARTBEAT_SEC' is not defined
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback, re
+/home/fibo/cart_ws/intregration/communicate_AMR.py:468: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Exception in thread AMRHeartbeat:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 222, in _heartbeat_loop
+    if not HEARTBEAT_SEC:
+           ^^^^^^^^^^^^^
+NameError: name 'HEARTBEAT_SEC' is not defined
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback, re
+/home/fibo/cart_ws/intregration/communicate_AMR.py:468: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Exception in thread AMRHeartbeat:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 222, in _heartbeat_loop
+    if not HEARTBEAT_SEC:
+           ^^^^^^^^^^^^^
+NameError: name 'HEARTBEAT_SEC' is not defined
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback, re
+/home/fibo/cart_ws/intregration/communicate_AMR.py:468: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Exception in thread AMRHeartbeat:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 222, in _heartbeat_loop
+    if not HEARTBEAT_SEC:
+           ^^^^^^^^^^^^^
+NameError: name 'HEARTBEAT_SEC' is not defined
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback, re
+/home/fibo/cart_ws/intregration/communicate_AMR.py:468: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Exception in thread AMRHeartbeat:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 222, in _heartbeat_loop
+    if not HEARTBEAT_SEC:
+           ^^^^^^^^^^^^^
+NameError: name 'HEARTBEAT_SEC' is not defined
+/home/fibo/cart_ws/intregration/communicate_AMR.py:4: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  import os, json, time, telnetlib, signal, threading, queue, traceback, re
+/home/fibo/cart_ws/intregration/communicate_AMR.py:468: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cli = mqtt.Client(client_id="communicate_AMR", userdata={})
+Exception in thread AMRHeartbeat:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/fibo/cart_ws/intregration/communicate_AMR.py", line 222, in _heartbeat_loop
+    if not HEARTBEAT_SEC:
+           ^^^^^^^^^^^^^
+NameError: name 'HEARTBEAT_SEC' is not defined
