@@ -25,16 +25,16 @@ AMR_PORT   = int(os.getenv("AMR_PORT", "7171"))
 AMR_PASS   = os.getenv("AMR_PASS", "adept")
 TELNET_TIMEOUT = 5.0
 
-# Goals (ตั้งชื่อให้ตรงกับ ARCL)
-PICKUP_GOAL   = os.getenv("PICKUP_GOAL",  "ROEQ_SAF_cart500_entry")  # จุดเข้า/รับจาก Home
-DROPOFF_GOAL  = os.getenv("DROPOFF_GOAL", "ROEQ_SAF_cart500")        # จุดจอดกลับ Home
+# Goals ( related with ARCL)
+PICKUP_GOAL   = os.getenv("PICKUP_GOAL",  "ROEQ_SAF_cart500_entry")  # Pickup (Home)
+DROPOFF_GOAL  = os.getenv("DROPOFF_GOAL", "ROEQ_SAF_cart500")        # Dropoff (Home)
 
-# Request: เวลารอปล่อยของ
-WAIT_DURATION = int(os.getenv("WAIT_DURATION", "15"))  # วินาที
-# ข้อความพูดก่อนกลับ
+# Request: time to delay
+WAIT_DURATION = int(os.getenv("WAIT_DURATION", "15"))  # sec
+# word to say something
 COUNTDOWN_MSG = os.getenv("COUNTDOWN_MSG", "5 4 3 2 1 0 Good luck")
 
-# ถ้า ARCL ของคุณมีข้อความยืนยันการพูดเสร็จ เพิ่ม pattern ตรงนี้
+
 SAY_DONE_PATTERNS = (
     "Finished saying",
     "Done speaking",
@@ -52,11 +52,7 @@ def _load_json(path: str):
         return {}
 
 def _resolve_goal(goal_id: str, goals_map: dict):
-    """
-    คืนชื่อ goal ใน ARCL จาก goal_id
-      - {"DOT400002": "Goal13"}
-      - {"DOT400002": {"goal":"Goal13", ...}}
-    """
+    
     if not goal_id or not isinstance(goals_map, dict):
         return None
     entry = goals_map.get(goal_id)
@@ -84,7 +80,7 @@ class TelnetAMR:
         self._writer_q = queue.Queue()
         self._connected = False
 
-        self._cv = threading.Condition()     # ปลุกเมื่อมีบรรทัดใหม่
+        self._cv = threading.Condition()     
         self._evt_buf = deque(maxlen=1200)   # ring buffer: (ts, line)
 
         self._reader_th = threading.Thread(target=self._reader_loop, name="AMRReader", daemon=True)
@@ -100,7 +96,7 @@ class TelnetAMR:
         # gate สำหรับรอ match_id
         self._last_match_complete = False
         self._last_match_ts = 0.0
-        self._current_goal_id = None   # goal_id ปัจจุบัน (ใช้กรอง match ถ้าต้องการ)
+        self._current_goal_id = None   # goal_id
 
     # ---------- lifecycle ----------
     def start(self):
@@ -358,7 +354,7 @@ class TelnetAMR:
           4) say COUNTDOWN_MSG
           5) Goto DROPOFF_GOAL
 
-        Return (ตามที่ผู้ใช้กำหนด):
+        Return :
           1) Goto PICKUP_GOAL
           2) Goto destination_goal
           3) **Reset match gate & wait for match at destination**
